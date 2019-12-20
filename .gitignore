@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Local Files
+.10-K_form_excel/
+.10-K/
