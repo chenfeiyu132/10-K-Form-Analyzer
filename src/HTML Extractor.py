@@ -1,21 +1,33 @@
 from bs4 import BeautifulSoup as bs
 import re
 
-page = open('/Users/Ju1y/PycharmProjects/10-K-Form-Analyzer/Test_HTML/1800-ABBOTT LABORATORIES-10-K-2010-02-19.html')
+page = open('/Users/Ju1y/Documents/GIES Research Project/10-K/2010Q1/1800-ABBOTT LABORATORIES-10-K-2010-02-19.html')
 soup = bs(page.read(), 'html.parser')
 
-trial1 = soup.findAll(text=re.compile('FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA'))
-trial2 = soup.select_one('font[FONT-WEIGHT~="BOLD"]', text=re.compile('FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA'))
+locators = soup.findAll(text=re.compile(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA', re.IGNORECASE))
+item_8_start = ''
+tag_name = ''
+item_8_found = False
 
-if trial1:
-    for data in trial1:
-        print(data)
-        print(data.parent)
-        print(data.parent.name == 'b')
-elif trial2:
-    print('Trial 2 found')
-    print(trial2)
+if locators:
+    for data in locators:
+        if data.parent.name == 'b':
+            tag_name = 'b'
+            item_8_found = True
+        elif data.parent.name == 'font' and data.parent.has_attr('style') and 'FONT-WEIGHT: bold' in data.parent['style']:
+            tag_name = 'font'
+            item_8_found = True
+        if item_8_found:
+            while data.parent.name != 'body':
+                data = data.parent
+            item_8_start = data
+            print('tag_name: ', tag_name)
+            print(item_8_start)
+            break;
 else:
-    print('No Trial found, check document manually')
+    print('No keyword found, check document manually')
 
+
+if item_8_found:
+    if tag_name == 'b':
 
