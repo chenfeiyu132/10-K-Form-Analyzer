@@ -12,7 +12,7 @@ soup = bs(page.read(), "lxml")
 
 item_8_start = ''
 item_9_start = ''
-tag_name = ''
+
 
 
 def delete_section(beginning, end):  # deletes section based on beginning html tag and end html tag
@@ -39,43 +39,44 @@ def find_root_parent(element):  # finds the top most parent for certain element 
     return element
 
 
-item_8_locators = soup.findAll(text=re.compile(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA', re.IGNORECASE))
-if item_8_locators:
-    for data in item_8_locators:
-        if data.parent.name == 'b':  # case is <b></b> is used for the bold font
-            tag_name = 'b'
-            item_8_start = find_root_parent(data)
-            print('tag_name: ', tag_name)  # debugging purposes
-            item_9_locators = item_8_start.find_all_next(text=re.compile(r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*DISCLOSURE', re.IGNORECASE))
-            for locator in item_9_locators:
-                if locator.parent.name == 'b':
-                    item_9_start = find_root_parent(locator)
-                    break
-            break
-        elif data.parent.name == 'font' \
-                and data.parent.has_attr('style') \
-                and 'FONT-WEIGHT: bold' in data.parent['style']:  # case if <font></font> is used for bold font
-            tag_name = 'font'
-            item_8_start = find_root_parent(data)
-            print('tag_name: ', tag_name)  # debugging purposes
-            item_9_locators = item_8_start.find_all_next(text=re.compile(r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*'
-                                                                 r'ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*'
-                                                                 r'DISCLOSURE',
-                                                                 re.IGNORECASE))
-            for locator in item_9_locators:
-                if locator.parent.name == 'font' and locator.parent.has_attr('style') and 'FONT-WEIGHT: bold' in locator.parent['style']:
-                    item_9_start = find_root_parent(locator)
-                    break
-            break
-else:
-    print('No keyword found, check document manually')
+def locate_item(regex):
 
+    locators = soup.findAll(text=re.compile(regex, re.IGNORECASE))
+    if locators:
+        for tag in locators:
+            if tag.parent.name == 'b':
+                print('tag_name: ', 'b')  # debugging purposes
+                return find_root_parent(tag)
+            elif tag.parent.name == 'font' and tag.parent.has_attr('style') \
+                    and 'FONT-WEIGHT: bold' in tag.parent['style']:
+                        print('tag_name: ', 'font')
+                        return find_root_parent(tag)
+    print('item not found')
+    return None
+
+
+def locate_next_item(tag, regex):
+    locators = tag.find_all_next(text=re.compile(regex, re.IGNORECASE))
+    if locators:
+        for t in locators:
+            if tag.find('b') and t.parent.name == 'b':
+                return find_root_parent(t)
+            elif t.parent.name == 'font' and t.parent.has_attr('style') and 'FONT-WEIGHT: bold' in t.parent['style']:
+                return find_root_parent(t)
+    print('next item not found')
+    return None
+
+
+item_8_start = locate_item(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA')
+item_9_start = locate_next_item(item_8_start, r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*'
+                                r'ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*'
+                                r'DISCLOSURE')
 
 delete_section('', item_8_start)
 delete_section(item_9_start, '')
 item_9_start.extract()
 
-#soup.body.content[0].extract()  # delete privacy message
+print(item_8_start.previous_sibling.previous_sibling)  # delete privacy message
 
 # for doc in soup.body.findAll('document'):
 #     doc.extract()
