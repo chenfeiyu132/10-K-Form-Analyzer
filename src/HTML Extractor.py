@@ -16,21 +16,26 @@ tag_name = ''
 
 
 def delete_section(beginning, end):  # deletes section based on beginning html tag and end html tag
-    if beginning == '':
-        beginning = soup.body.contents[0]
-    if end == '':
-        end = soup.body.contents[-1]
-    for elm in beginning.find_next_siblings:
-        if elm != end:
+    if beginning == '' and end == '':
+        return
+    elif beginning == '':
+        for elm in end.find_previous_siblings():
             elm.extract()
-        else:
-            break
+    elif end == '':
+        for elm in beginning.find_next_siblings():
+            elm.extract()
+    else:
+        for elm in beginning.find_next_siblings():
+            if elm != end:
+                elm.extract()
+            else:
+                break
 
 
 def find_root_parent(element):  # finds the top most parent for certain element under body
     while element.parent and element.parent.name != 'text':
         element = element.parent
-        print(element.name)
+        #print(element.name)
     return element
 
 
@@ -41,7 +46,6 @@ if item_8_locators:
             tag_name = 'b'
             item_8_start = find_root_parent(data)
             print('tag_name: ', tag_name)  # debugging purposes
-            #print(item_8_start)  # debugging purposes
             item_9_locators = item_8_start.find_all_next(text=re.compile(r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*DISCLOSURE', re.IGNORECASE))
             for locator in item_9_locators:
                 if locator.parent.name == 'b':
@@ -54,7 +58,6 @@ if item_8_locators:
             tag_name = 'font'
             item_8_start = find_root_parent(data)
             print('tag_name: ', tag_name)  # debugging purposes
-            #print(item_8_start)  # debugging purposes
             item_9_locators = item_8_start.find_all_next(text=re.compile(r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*'
                                                                  r'ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*'
                                                                  r'DISCLOSURE',
@@ -67,6 +70,18 @@ if item_8_locators:
 else:
     print('No keyword found, check document manually')
 
+
+delete_section('', item_8_start)
+delete_section(item_9_start, '')
+item_9_start.extract()
+
+#soup.body.content[0].extract()  # delete privacy message
+
+# for doc in soup.body.findAll('document'):
+#     doc.extract()
+
+with open('test_output_1.html', 'w', encoding='utf-8') as file:
+    file.write(str(soup))
 
 
 
