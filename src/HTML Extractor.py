@@ -7,12 +7,11 @@ import re
     # extract/delete anything before start of item_8 and after start of item_9
     # output new html after extraction
 
-page = open('/Users/Ju1y/Documents/GIES Research Project/10-K/2010Q1/1800-ABBOTT LABORATORIES-10-K-2010-02-19.html')
+page = open('/Users/Ju1y/Documents/GIES Research Project/10-K/2010Q1/2098-ACME UNITED CORP-10-K-2010-03-09.html')
 soup = bs(page.read(), "lxml")
 
 item_8_start = ''
 item_9_start = ''
-
 
 
 def delete_section(beginning, end):  # deletes section based on beginning html tag and end html tag
@@ -32,56 +31,55 @@ def delete_section(beginning, end):  # deletes section based on beginning html t
                 break
 
 
-def find_root_parent(element):  # finds the top most parent for certain element under body
-    while element.parent and element.parent.name != 'text':
+def find_root_parent(element, grandparent):  # finds the top most parent for certain element under body
+    while element.parent and element.parent.name != grandparent:
         element = element.parent
-        #print(element.name)
     return element
 
 
-def locate_item(regex):
+def locate_item(regex, grandparent):
 
     locators = soup.findAll(text=re.compile(regex, re.IGNORECASE))
     if locators:
         for tag in locators:
             if tag.parent.name == 'b':
                 print('tag_name: ', 'b')  # debugging purposes
-                return find_root_parent(tag)
+                return find_root_parent(tag, grandparent)
             elif tag.parent.name == 'font' and tag.parent.has_attr('style') \
                     and 'FONT-WEIGHT: bold' in tag.parent['style']:
-                        print('tag_name: ', 'font')
-                        return find_root_parent(tag)
+                        print('tag_name: ', 'font')  # debuging purposes
+                        return find_root_parent(tag, grandparent)
     print('item not found')
     return None
 
 
-def locate_next_item(tag, regex):
+def locate_next_item(tag, regex, grandparent):
     locators = tag.find_all_next(text=re.compile(regex, re.IGNORECASE))
     if locators:
         for t in locators:
             if tag.find('b') and t.parent.name == 'b':
-                return find_root_parent(t)
+                return find_root_parent(t, grandparent)
             elif t.parent.name == 'font' and t.parent.has_attr('style') and 'FONT-WEIGHT: bold' in t.parent['style']:
-                return find_root_parent(t)
+                return find_root_parent(t, grandparent)
     print('next item not found')
     return None
 
 
-item_8_start = locate_item(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA')
+item_8_start = locate_item(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA', 'text')
 item_9_start = locate_next_item(item_8_start, r'CHANGES\s*IN\s*AND\s*DISAGREEMENTS\s*WITH\s*'
                                 r'ACCOUNTANTS\s*ON\s*ACCOUNTING\s*AND\s*FINANCIAL\s*'
-                                r'DISCLOSURE')
+                                r'DISCLOSURE', 'text')
 
-delete_section('', item_8_start)
-delete_section(item_9_start, '')
-item_9_start.extract()
 
-print(item_8_start.previous_sibling.previous_sibling)  # delete privacy message
+delete_section('', item_8_start)  # deletes everything up to item 8
+delete_section(item_9_start, '')  # deletes everything after start of item 9
+item_9_start.extract()  # deletes start of item 9
 
-# for doc in soup.body.findAll('document'):
-#     doc.extract()
+item_document = locate_item(r'FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY\s*DATA', 'sec-document')
 
-with open('test_output_1.html', 'w', encoding='utf-8') as file:
+delete_section(item_document, '')  # deletes every other document besides the one which item 8 is located in
+
+with open('test_output_2.html', 'w', encoding='utf-8') as file:  # output processed soup into html
     file.write(str(soup))
 
 
