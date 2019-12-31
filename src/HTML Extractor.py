@@ -10,23 +10,6 @@ import copy
     # output new html after extraction
 
 
-def delete_section(beginning, end):  # deletes section based on beginning html tag and end html tag
-    if beginning == '' and end == '':
-        return
-    elif beginning == '':
-        for elm in end.find_previous_siblings():
-            elm.extract()
-    elif end == '':
-        for elm in beginning.find_next_siblings():
-            elm.extract()
-    else:
-        for elm in beginning.find_next_siblings():
-            if elm != end:
-                elm.extract()
-            else:
-                break
-
-
 def find_root_parent(tag_1, reference):  # finds the top most parent for certain element under body
     if not tag_1:
         return tag_1
@@ -82,8 +65,6 @@ def process_html(path, output_folder_path):
         print(output_path)
         with open(output_path, 'w', encoding='utf-8') as file:  # output processed soup into html
             file.write(str(new_soup))
-
-
 
 
 directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/2010Q1/'
