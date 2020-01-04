@@ -52,11 +52,10 @@ def process_html(path, output_folder_path):
     item_9_start = locate_item(r'((ITEM)\s*9)|(CHANGES).?\s*(IN).?\s*(AND).?\s*(DISAGREEMENTS).?\s*(WITH).?\s*'
                                     r'(ACCOUNTANTS).?\s*(ON).?\s*(ACCOUNTING).?\s*(AND).?\s*(FINANCIAL).?\s*'
                                     r'(DISCLOSURE).?', soup)
-    item_8_parent = find_root_parent(item_8_start, item_9_start)
-    print(item_8_start)
-    item_9_parent = find_root_parent(item_9_start, item_8_start)
     new_soup = bs(features='lxml')
     if item_8_start and item_9_start:
+        item_8_parent = find_root_parent(item_8_start, item_9_start)
+        item_9_parent = find_root_parent(item_9_start, item_8_start)
         new_soup = append_tags(item_8_parent.previous_sibling, item_9_parent, new_soup)
         output_path = output_folder_path + file_name
         #print(output_path)
@@ -69,11 +68,10 @@ output_folder = '/Users/Ju1y/Documents/GIES Research Project/Item8/'
 
 #count = 0
 
-process_html(directory+'3202-ALASKA AIRLINES INC-10-K-2010-02-24.html', output_folder)
-# for filename in os.listdir(directory):
-#     if filename.endswith('.html'):
-#         print(filename)
-#         process_html(directory+filename, output_folder)
+for filename in os.listdir(directory):
+    if filename.endswith('.html'):
+        print(filename)
+        process_html(directory+filename, output_folder)
     # elif filename.endswith('.txt') and count < 20:
     #     print(filename)
     #     pre, ext = os.path.splitext(directory+filename)
