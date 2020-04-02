@@ -34,10 +34,26 @@ def chi2_analysis(vectorizer, dataset, n_terms, lemmatization):
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array)
 
+
+def locate_file(dir, year, cik):
+    folder_found = False
+    for folder in os.listdir(dir):
+        if folder[:4] == year:
+            folder_found = True
+            for form in os.listdir(dir+'/'+folder):
+                if form.split('-')[0] == cik:
+                    return form
+        elif folder_found:
+            break
+    return ''
+
+
+
+
 path_to_csv = '/Users/Ju1y/Documents/GIES Research Project/10-K form excel/label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/2010Q1/'
+directory = '/Users/Ju1y/Documents/GIES Research Project/10-K'
 output_folder = '/Users/Ju1y/Documents/GIES Research Project/Item8/'
 
 my_stop_words = text.ENGLISH_STOP_WORDS
@@ -49,12 +65,26 @@ form_text_F = []
 
 #Data Import and split into truth and false sets
 
-for filename in os.listdir(directory):
-    if filename.endswith('.html'):
-        cik = filename.split('-')[0];
-        companies_found = df_csv.loc[df_csv['cik'] == float(cik)];
-        if not companies_found.empty:
-            print(companies_found)
+for ind in df_csv.index:
+    cik = df_csv['cik'][ind]
+    date = df_csv['datadate'][ind]
+    if not pd.isnull(date) and not pd.isnull(cik):
+        date.astype(np.int64)
+        cik = int(cik)
+        month_date = str(int(date))[4:]
+        if month_date == '1231':
+            actual_year = int(str(date)[:4]) + 1
+            file = locate_file(directory, str(actual_year), str(cik))
+            if file != '':
+                print(file)
+
+
+# for filename in os.listdir(directory):
+#     if filename.endswith('.html'):
+#         cik = filename.split('-')[0];
+#         companies_found = df_csv.loc[df_csv['cik'] == float(cik)];
+#         if not companies_found.empty:
+#             print(companies_found)
 
 
 
