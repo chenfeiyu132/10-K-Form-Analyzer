@@ -57,6 +57,7 @@ lemmatizer = WordNetLemmatizer()
 
 
 # Scans label sheet and locates corresponding 10-K forms
+counter = 0
 for ind in df_csv.index:
     cik = df_csv['cik'][ind]
     date = df_csv['datadate'][ind]
@@ -68,6 +69,7 @@ for ind in df_csv.index:
             actual_year = int(str(date)[:4]) + 1
             file = locate_file(directory, str(actual_year), str(cik))
             if file != '':
+                counter += 1
                 dispo = df_csv['disposition'][ind]
                 head, tail = os.path.split(file)
                 if dispo == 1:
@@ -95,6 +97,7 @@ for path in paths:
 
 csv_out.close()
 
+print(counter)
 
 
 
