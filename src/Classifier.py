@@ -46,7 +46,7 @@ def locate_file(dir, year, cik):
     return ''
 
 
-path_to_csv = '.src/label_reference.csv'
+path_to_csv = 'src/label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
 directory = '/mnt/volume/10-K/10-K_files'
