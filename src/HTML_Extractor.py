@@ -50,12 +50,12 @@ def backup_locator(item8_regex, item9_regex, soup):
         for start_title in locators:
             end_title = start_title.findNext(text=re.compile(item9_regex, re.IGNORECASE))
             if not end_title:
-                break;
+                continue
             # very important that you use the parent of the located titles
             start_parent = find_root_parent(start_title.parent, end_title.parent)
             end_parent = find_root_parent(end_title.parent, start_title.parent)
             btw = ' '.join(text for text in between(start_parent, end_parent))
-            if len(btw) > max_length:
+            if start_parent and end_parent and len(btw) > max_length:
                 max_length = len(btw)
                 correct_start = start_parent
                 correct_end = end_parent
@@ -69,11 +69,12 @@ def backup_locator(item8_regex, item9_regex, soup):
 
 
 def append_tags(begin, end, soup):
-    for tag in begin.find_next_siblings():
-        if tag != end:
-            soup.append(tag)
-        else:
-            break
+    if begin:
+        for tag in begin.find_next_siblings():
+            if tag != end:
+                soup.append(tag)
+            else:
+                break
     return soup
 
 
