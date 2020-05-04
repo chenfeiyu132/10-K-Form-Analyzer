@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/10-K-Form-Analyzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/10-K-Form-Analyzer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10-K form excel/Prosecution data entry template July 2019[1].xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/10-K form excel/federal regulatory actions 01-19[2].csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_HTML/1800-ABBOTT LABORATORIES-10-K-2010-02-19.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HTML_Extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTML_Extractor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,14 +52,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="18758" />
+          <entry key="py" value="18759" />
           <entry key="txt" value="1641" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1678" />
-          <entry key="Python" value="18516" />
+          <entry key="Python" value="18517" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -93,11 +87,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+            <state relative-caret-position="237">
+              <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
-                <marker date="1588556333657" expanded="true" signature="952:1492" ph="..." />
+                <marker date="1588563194336" expanded="true" signature="952:1492" ph="..." />
               </folding>
             </state>
           </provider>
@@ -525,11 +519,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="237">
+          <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
-            <marker date="1588556333657" expanded="true" signature="952:1492" ph="..." />
+            <marker date="1588563194336" expanded="true" signature="952:1492" ph="..." />
           </folding>
         </state>
       </provider>

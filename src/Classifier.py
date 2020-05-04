@@ -54,8 +54,8 @@ def locate_file(dir, year, cik):
 path_to_csv = 'label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' #/mnt/volume/10-K/10-K_files
-output_folder = '/Users/Ju1y/Documents/GIES Research Project/Item8/'
+directory = '/mnt/volume/10-K/10-K_files'
+output_folder = '/mnt/volume/10-K/10-K_files'
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
