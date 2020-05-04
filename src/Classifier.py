@@ -3,7 +3,7 @@ from sklearn.feature_selection import chi2
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 
-from src.extractor.HTML_Extractor import *
+from .extractor.HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
