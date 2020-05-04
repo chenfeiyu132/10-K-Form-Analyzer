@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="fixed algorithm for locate_file">
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
@@ -98,11 +98,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+            <state relative-caret-position="206">
+              <caret line="74" column="57" lean-forward="true" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1588620361557" expanded="true" signature="832:1296" ph="..." />
+                <marker date="1588620386373" expanded="true" signature="832:1296" ph="..." />
               </folding>
             </state>
           </provider>
@@ -533,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588620161407</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fixed algorithm for locate_file">
+      <created>1588620366538</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1588620366538</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -661,11 +668,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        <state relative-caret-position="206">
+          <caret line="74" column="57" lean-forward="true" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1588620361557" expanded="true" signature="832:1296" ph="..." />
+            <marker date="1588620386373" expanded="true" signature="832:1296" ph="..." />
           </folding>
         </state>
       </provider>

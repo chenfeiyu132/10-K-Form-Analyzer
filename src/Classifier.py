@@ -73,24 +73,24 @@ for ind in df_csv.index:
                     os.rename(file, directory+'Truth_Set/'+tail)
 
 # Processes 10-K forms in the truth and false set folders
-# convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
-# convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
+convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
+convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 
 #making csv from processed false and truth sets
-# csv_out = open('processed_10-K.csv', mode='w')
-# writer = csv.writer(csv_out)
-# fields = ['cik', 'company name', 'date', 'full text', 'prosecution']
-# paths = ['False_Set_Processed/', 'Truth_Set_Processed/']
-# for path in paths:
-#     for filename in os.listdir(directory+path):
-#         page = open(directory+path+filename)
-#         soup = bs(page.read(), "lxml")
-#         filename = filename.split('-')
-#         date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
-#         label = 0 if path == paths[0] else 1
-#         writer.writerow([filename[0], filename[1], date, soup.text, label]);
-#
-# csv_out.close()
+csv_out = open('processed_10-K.csv', mode='w')
+writer = csv.writer(csv_out)
+fields = ['cik', 'company name', 'date', 'full text', 'prosecution']
+paths = ['False_Set_Processed/', 'Truth_Set_Processed/']
+for path in paths:
+    for filename in os.listdir(directory+path):
+        page = open(directory+path+filename)
+        soup = bs(page.read(), "lxml")
+        filename = filename.split('-')
+        date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
+        label = 0 if path == paths[0] else 1
+        writer.writerow([filename[0], filename[1], date, soup.text, label]);
+
+csv_out.close()
 print('new files found: ', counter)
 
 
