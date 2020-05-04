@@ -10,6 +10,7 @@ from src.HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
+import csv
 
 
 def lemmatize(dataset):
@@ -40,9 +41,9 @@ def locate_file(dir, year, cik):
     for folder in os.listdir(dir):
         if folder[:4] == year:
             folder_found = True
-            for form in os.listdir(dir+'/'+folder):
+            for form in os.listdir(dir+folder):
                 if form.split('-')[0] == cik:
-                    return form
+                    return dir+folder+'/'+form
         elif folder_found:
             break
     return ''
@@ -50,42 +51,54 @@ def locate_file(dir, year, cik):
 
 
 
-path_to_csv = '/Users/Ju1y/Documents/GIES Research Project/10-K form excel/label_reference.csv'
+path_to_csv = 'label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/Users/Ju1y/Documents/GIES Research Project/10-K'
+directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' #/mnt/volume/10-K/10-K_files
 output_folder = '/Users/Ju1y/Documents/GIES Research Project/Item8/'
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
 
-form_text = []
-form_text_T = []
-form_text_F = []
 
-#Data Import and split into truth and false sets
+# # Scans label sheet and locates corresponding 10-K forms
+# for ind in df_csv.index:
+#     cik = df_csv['cik'][ind]
+#     date = df_csv['datadate'][ind]
+#     if not pd.isnull(date) and not pd.isnull(cik):
+#         date.astype(np.int64)
+#         cik = int(cik)
+#         month_date = str(int(date))[4:]
+#         if month_date == '1231':
+#             actual_year = int(str(date)[:4]) + 1
+#             file = locate_file(directory, str(actual_year), str(cik))
+#             if file != '':
+#                 dispo = df_csv['disposition'][ind]
+#                 head, tail = os.path.split(file)
+#                 if dispo == 1:
+#                     os.rename(file, directory+'False_Set/'+tail)
+#                 else:
+#                     os.rename(file, directory+'Truth_Set/'+tail)
+#
+# # Processes 10-K forms in the truth and false set folders
+# convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
+# convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 
-for ind in df_csv.index:
-    cik = df_csv['cik'][ind]
-    date = df_csv['datadate'][ind]
-    if not pd.isnull(date) and not pd.isnull(cik):
-        date.astype(np.int64)
-        cik = int(cik)
-        month_date = str(int(date))[4:]
-        if month_date == '1231':
-            actual_year = int(str(date)[:4]) + 1
-            file = locate_file(directory, str(actual_year), str(cik))
-            if file != '':
-                print(file)
+#making csv from processed false and truth sets
+csv_out = open('processed_10-K.csv', mode='w')
+writer = csv.writer(csv_out)
+fields = ['cik', 'company name', 'date', 'full text', 'prosecution']
+paths = ['False_Set_Processed/', 'Truth_Set_Processed/']
+for path in paths:
+    for filename in os.listdir(directory+path):
+        page = open(directory+path+filename)
+        soup = bs(page.read(), "lxml")
+        filename = filename.split('-')
+        date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
+        label = 0 if path == paths[0] else 1
+        writer.writerow([filename[0], filename[1], date, soup.text, label]);
 
-
-# for filename in os.listdir(directory):
-#     if filename.endswith('.html'):
-#         cik = filename.split('-')[0];
-#         companies_found = df_csv.loc[df_csv['cik'] == float(cik)];
-#         if not companies_found.empty:
-#             print(companies_found)
-
+csv_out.close()
 
 
 

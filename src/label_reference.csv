@@ -1,0 +1,361 @@
+gvkey,COMPANY,disposition,DATE,PRIMARY_CRIME_CODE,PDF_,crime_start,crime_end,settle_m3,settle_m2,settle_m1,settle,rec_amt,USAO,Key_words,Notes,cik,datadate
+1078,Abbott Laboratories,3,05/07/2012,FDCA / Ph,Y,01/01/1998,12/31/2006,1,1,2,2,"1,500,000",USDOJ - Criminal Division - Fraud Section,A,,1800,20121231
+1164,MCI,1,09/01/2005,Fraud - S,,,,,,,,,Massachusetts,,,723527,
+1300,Honeywell Int'l Inc.,3,03/11/2011,Environme,Y,,,0,1,1,1,,USDOJ - Criminal Division - Fraud Section,,,773840,20111231
+1300,Honeywell Int'l,3,09/13/2007,Environme,Y,,,0,1,2,2,,USDOJ - Criminal Division,,,773840,20071231
+1356,"Alcoa World Alumina, LLC",3,01/09/2014,FCPA,Y,,,1,1,2,2,,"Connecticut,USDOJ - Criminal Division - Fraud Section,Virginia - Eastern Distri",,,,20141231
+1439,"American Ecology Recycle Center, Inc.",3,08/08/2002,Environme,N,,,1,1,1,2,,USDOJ - Antitrust Division,,,742126,20021231
+1440,AEP Energy Services,2,01/26/2005,Fraud - G,Y,,,1,1,2,2,,"New York - Eastern District,New York - Southern District",,,4904,20051231
+1447,American Express Bank Int'l,2,08/03/2007,Bank Secr,Y,04/24/2002,04/30/2004,0,0,0,2,"60,000,000",USDOJ - Criminal Division - Fraud Section,,,4962,20071231
+1487,AIG,1,02/07/2006,Fraud - S,Y,,,0,1,2,2,,USDOJ - Criminal Division - Fraud Section,,Name Change to encompa,5272,20061231
+1487,AIG Financial Products Corp.,1,11/30/2004,Fraud - S,Y,,,0,0,0,2,,New York - Southern District,,,5272,20041231
+1602,"Amgen, Inc.",3,12/19/2012,FDCA / Ph,h,01/01/2002,12/31/2007,1,1,2,2,"70,000,000",District of Columbia,x,,318154,20121231
+1609,"BP Products North America, Inc.",3,03/12/2009,Environme,Y,,,0,2,2,2,"50,000,000",California - Central District,,,93397,
+1619,AmSouth Bancorp,2,10/01/2004,Bank Secr,Y,01/01/2000,07/31/2004,0,0,1,1,,New York - Northern District,,,3133,20041231
+1633,BK Medical ApS (subs of Analogic),1,06/21/2016,FCPA,Y,01/01/2001,,1,1,1,2,,North Carolina - Western District,,,6284,20160731
+1722,Archer Daniels Midland Company,3,03/06/2008,Environme,,,,0,0,1,1,,USDOJ - Criminal Division - Fraud Section,,,7084,20080630
+1722,Archer Daniels Midland Co.,1,12/20/2013,FCPA,Y,01/01/2002,12/31/2008,1,1,1,2,,"USDOJ - Criminal Division - Fraud Section,Virginia - Eastern District",,,7084,20131231
+1794,Ashland Inc.,3,05/13/2002,Environme,Y,,,0,0,0,0,,Virginia - Western District,,,1674862,20020930
+1920,"Avon Products, Inc.",2,12/17/2014,FCPA,Y,01/01/2004,09/30/2008,1,1,2,2,"68,000,000",USDOJ - Criminal Division - Fraud Section,,,8868,20141231
+1967,"Prudential Equity Group, LLC (subs. Of prudential securities)",1,08/01/2008,Fraud - S,Y,,,1,2,2,2,,USDOJ - Criminal Division - Fraud Section,,,898733,
+1976,Baker Hughes,2,04/01/2007,FCPA,Y,05/01/2001,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,808362,20071231
+1976,Baker Hughes Services Int'l,3,04/11/2007,FCPA,Y,05/02/2001,,1,1,1,2,,USDOJ - Enron Task Force,,,808362,20071231
+2002,Banco Popular de Puerto Rico,2,01/01/2003,Bank Secr,Y,,,0,1,2,2,,USDOJ,,,763901,20031231
+2019,Bank of New York,1,11/01/2005,Bank Secr,Y,02/01/1996,07/31/1999,0,0,0,0,,New York - Southern District,,,1390777,20051231
+2044,"C.R. Bard, Inc.",1,05/13/2013,Other,Y,01/01/1998,12/31/2006,1,2,2,2,"51,000,000","New York - Eastern District,USDOJ - Civil Division",,,9892,20131231
+2086,Baxter Healthcare Corp.,2,01/12/2017,FDCA / Ph,Y,07/01/2011,11/30/2012,0,0,0,1,,"Colorado,USDOJ - Civil Division - Office of Consumer Litigation",N,,10456,20171231
+2220,"Bio-Rad Laboratories, Inc.",1,11/03/2014,FCPA,Y,,,1,1,2,2,"35,000,000",New York - Eastern District,,,12208,20141231
+2230,"Biomet, Inc. & Biomet Orthopedics, Inc. (subsid)",2,09/01/2007,Kickbacks,Y,01/01/2002,12/31/2006,1,1,1,2,,USDOJ,,,351346,20080531
+2230,Biomet Inc.,2,03/26/2012,FCPA,Y,01/01/2001,12/31/2008,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,351346,20120531
+2285,Boeing Co.,1,06/01/2006,Fraud - G,Y,01/01/1999,12/31/2003,1,1,1,2,,New York - Southern District,D,,12927,20061231
+2403,Bristol-Myers Squibb,2,06/01/2005,Fraud - S,Y,01/01/2000,12/31/2001,1,1,1,2,"150,000,000",New Jersey,,,14272,20051231
+2403,Bristol-Myers Squibb Co.,3,06/11/2007,Antitrust,Y,01/01/2006,06/12/2006,1,1,1,1,,New York - Southern District,,,14272,20071231
+2410,"BP Exploration & Production, Inc.",3,01/30/2013,Environme,Y,,,1,1,2,2,,USDOJ - Criminal Division - Fraud Section,,,313807,20131231
+2410,British Petroleum (BP),2,10/01/2007,Fraud - G,Y,02/05/2004,03/12/2004,0,1,1,2,,New York - Southern District,,,313807,20071231
+2410,BP Exploration (Alaska) Inc.,3,10/25/2007,Environme,Y,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,313807,20071231
+2616,Scios Inc.,3,10/05/2011,FDCA / Ph,Y,08/01/2001,04/01/2003,1,1,1,2,,USDOJ - Antitrust Division,A,,726512,
+2968,JPMorgan Securities (Asia Pacific) Limited,1,11/17/2016,FCPA,Y,01/01/2006,12/31/2012,1,1,1,1,,Pennsylvania - Eastern District,,,19617,20161231
+2968,JP Morgan Chase & Co,3,05/20/2015,Antitrust,Y,12/01/2007,01/31/2013,0,0,0,1,,"Massachusetts,USDOJ - Civil Division - Office of Consumer Litigation",,The two missing financ,19617,20151231
+2968,JPMorgan Chase & Co.,1,07/06/2011,Antitrust,Y,,,1,1,1,1,,Louisiana - Eastern District,,euros,19617,20111231
+2968,"JPMorgan Chase Bank, N.A.",2,01/06/2014,Bank Secr,Y,,,0,0,2,2,,Louisiana - Eastern District,,,19617,20141231
+2991,Chevron,1,11/01/2007,FCPA,Y,04/17/2001,05/31/2002,0,0,0,0,,USDOJ - Antitrust Division,,,93410,20071231
+3066,Citicorp,3,05/20/2015,Antitrust,Y,12/01/2007,01/31/2013,0,1,1,1,,USDOJ - Criminal Division - Fraud Section,,,20405,
+3221,Aon Corp.,1,12/20/2011,FCPA,Y,01/01/1999,12/31/2002,1,1,1,2,,New York - Eastern District,,,315293,20111231
+3310,Computer Associates,2,09/01/2004,Fraud - S,Y,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,356028,20050331
+3362,ConAgra Foods Inc.,3,09/01/2005,Environme,N,,,2,2,2,2,"104,900,000",Texas - Southern District,,,23217,20060531
+3362,"Conagra Grocery Products Company, LLC",3,05/20/2015,Food,Y,10/06/2006,02/14/2007,2,2,2,2,"7,500,000",South Carolina,,,23217,20150531
+3608,Crompton,3,03/28/2004,Antitrust,Y,07/01/1995,12/31/2001,0,1,2,2,,Montana,,,25760,
+3784,DPC (Tianjin) Co. Ltd.,3,05/20/2005,FCPA,Y,,12/12/2002,1,2,2,2,"4,900,000",New York - Eastern District,,,27089,
+3937,Alliance One,1,08/06/2010,FCPA,Y,10/01/1996,02/28/2004,1,1,2,2,"19,500,000",USDOJ - Criminal Division - Fraud Section,,,939930,20110331
+3946,"Diebold, Inc.",2,10/15/2013,FCPA,Y,,,1,1,2,2,,Virginia - Eastern District,,,28823,20131231
+4093,Duke Energy Beckjord LLC,3,11/22/2016,Environme,Y,08/18/2014,,1,2,2,2,,USDOJ - Criminal Division - Fraud Section,,,1326160,20161231
+4093,"Duke Energy Business Services, LLC",3,05/14/2015,Environme,Y,,,0,1,2,2,,"USDOJ - Criminal Division,Virginia - Eastern District",,,1326160,20151231
+4093,Duke Energy Renewables Inc.,3,11/07/2013,Wildlife,Y,,,0,0,0,2,,California - Northern District,,,1326160,20131231
+4108,Flowserve / Flowserve Pompes SAS (subsid.),2,02/21/2008,FCPA,Y,01/01/1997,12/31/2003,1,1,2,2,,"Massachusetts,USDOJ - Criminal Division - Fraud Section",,,30625,20081231
+4242,El Paso,1,02/01/2007,FCPA,Y,,03/31/2003,1,1,2,2,,USDOJ - Antitrust Division,,,1066107,20071231
+4245,Elan Corp.,1,12/08/2010,FDCA / Ph,Y,04/01/2001,12/31/2005,1,1,1,2,"206,300,000",USDOJ - Criminal Division - Fraud Section,g,,737572,20101231
+4367,Weatherford Int'l Ltd.,2,11/26/2013,FCPA,Y,,,1,1,2,2,"100,000,000",USDOJ - Criminal Division - Fraud Section,,,1603923,20131231
+4503,Exxon Mobil Corp.,3,08/12/2009,Wildlife,Y,,,0,0,0,0,,Louisiana - Middle District,,,34088,20091231
+4503,Exxon Mobil Pipeline Co.,3,12/23/2008,Environme,Y,,,0,0,0,2,,Illinois - Southern District,,,34088,20081231
+4739,Wachovia,1,03/01/2010,Bank Secr,Y,,,0,0,0,0,,Connecticut,,,36995,
+4739,Wachovia,2,12/08/2011,Antitrust,Y,,,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,,20fs cannot be located,36995,
+4739,WakeMed,2,02/08/2013,False Sta,,,,,,,0,,Connecticut,,Unavailable,36995,
+4843,Forest Laboratories,1,09/15/2010,FDCA / Ph,Y,,,1,2,2,2,"170,000,000",Tennessee - Eastern District,T,,38074,20110331
+4936,G&K Services Inc.,3,09/02/2010,Environme,Y,10/01/2005,08/16/2008,0,0,0,0,,"New York - Southern District,USDOJ - Criminal Division - Fraud Section",,,39648,20110630
+5047,General Electric (GE),1,12/03/2004,FCPA,Y,01/01/2001,12/31/2004,0,0,0,0,,Georgia - Northern District,,,40545,20041231
+5048,"GE Funding Capital Market Services, Inc. (subs. Of GE Capital)",1,12/23/2011,Antitrust,Y,,,1,1,1,1,,,,,40554,20111231
+5073,General Motors,2,09/17/2015,Fraud - G,Y,01/01/2012,12/31/2014,0,0,1,2,,North Carolina - Western District|USDOJ - Consumer Protection Branch,,,1467858,20151231
+5080,General Reinsurance Corp.,1,01/18/2010,Fraud - S,Y,10/01/2000,09/30/2004,1,1,2,2,,USDOJ - Criminal Division,,,317745,
+5180,Glaxosmithkline LLC,3,07/02/2012,FDCA / Ph,Y,01/01/1999,12/31/2003,,,,,,USDOJ - Antitrust Division,D,,1131399,20121231
+5180,GlaxoSmithKline,1,10/21/2010,FDCA / Ph,Y,01/01/2001,04/01/2005,1,1,1,2,,New Jersey,C,,1131399,20101231
+5439,"Halliburton Energy Services, Inc.",3,07/26/2013,Obstructi,Y,,,1,1,1,2,,New York - Southern District,,Unretreivable,45012,20131231
+5439,Halliburton Co.,1,02/06/2009,FCPA,Y,,,1,1,2,2,,USDOJ - Antitrust Division,,,45012,20091231
+5581,Helmerich & Payne International Drilling Co.,3,11/08/2013,False Sta,Y,,,1,1,2,2,,USDOJ - Antitrust Division (New York),,,46765,20140930
+5581,Helmerich & Payne,1,07/29/2009,FCPA,Y,11/01/2003,07/31/2008,0,0,1,2,,Illinois - Southern District,,,46765,20090930
+5594,Herley Industries,3,05/05/2008,Other,Y,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,47035,20080731
+5597,Hershey Creamery Co.,3,11/03/2008,Environme,Y,,,0,0,0,0,,Minnesota,,,47111,20081231
+5606,ZAO Hewlett-Packard A.O.,3,04/09/2014,FCPA,Y,01/01/2000,12/31/2007,1,1,1,2,,"Massachusetts,USDOJ - Office of Consumer Litigation",,,47217,20141031
+5650,Hitachi Corp.,1,01/20/2006,Antitrust,Y,,,0,0,0,0,,USDOJ - Antitrust Division,,,47710,20060331
+5860,ITT Corp.,2,03/01/2007,Import /,y,03/17/1998,04/13/2003,0,1,2,2,"25,000,000","Florida - Southern District,USDOJ - Criminal Division - Asset Forfeiture & Mone",,,216228,20071231
+5959,Ingersoll Rand,2,10/01/2007,FCPA,Y,,,0,1,1,2,,"Texas - Southern District (Financial Litigation),USDOJ - Criminal Division - Fr",,,1466258,20071231
+6239,Jefferies Group LLC,1,01/29/2014,Fraud - G,Y,01/01/2009,,0,0,2,2,"22,400,000",USDOJ - Antitrust Division,,,1084580,20141130
+6266,"Ortho-McNeil-Janssen Pharmaceuticals, Inc. (sub of Johnson & Jo",1,04/26/2010,FDCA / Ph,Y,01/01/2001,12/31/2003,1,1,1,2,,Louisiana - Eastern District,P,,200406,20101231
+6266,DePuy Orthopaedics (subs. Of JNJ),2,09/01/2007,Kickbacks,Y,01/01/2002,12/31/2006,0,1,1,2,,"Florida - Southern District,USDOJ - Tax Division",,,200406,20071231
+6266,"Janssen Pharmaceuticals, Inc.",3,11/07/2013,FDCA / Ph,Y,03/03/2002,12/31/2002,0,2,2,2,,North Carolina - Eastern District,V,,200406,20131231
+6266,Johnson & Johnson,2,01/14/2011,FCPA,Y,,,1,1,1,2,,New York - Southern District,,,200406,20111231
+6307,Sears,2,04/01/2001,Fraud - G,Y,09/01/1994,03/31/1995,0,0,0,2,,USDOJ - Criminal Division - Fraud Section,,Unavailable,1310067,20020131
+6357,Kaydon Corp.,3,04/10/2001,False Sta,N,,,1,1,2,2,"14,900,000",Pennsylvania - Middle District,,,740694,20011231
+6375,"Kellogg Brown & Root, LLC",3,02/11/2009,FCPA,Y,08/01/1994,06/30/2004,1,1,2,2,,"USDOJ - Criminal Division - Fraud Section, California - Northern District",,,55067,20091231
+6617,"Lawson Products, Inc.",2,08/01/2008,Fraud - G,Y,,,1,1,1,2,,Pennsylvania - Eastern District,,,703604,20081231
+6730,Eli Lilly,3,12/21/2005,FDCA / Ph,Y,05/17/1998,12/04/1998,1,1,2,2,"36,000,000",Texas - Southern District,I,,59478,20051231
+6730,Eli Lilly,3,01/30/2009,FDCA / Ph,Y,09/01/1999,11/30/2003,1,1,2,2,,USDOJ - Antitrust Division,E,,59478,20091231
+6900,MTS Systems Corp.,3,03/12/2008,Import /,Y,,,0,0,2,2,"100,000","New York - Eastern District,USDOJ - Criminal Division - Asset Forfeiture & Mone",,,68709,20080930
+6908,"MacDermid, Inc.",3,11/28/2001,Environme,Y,,,1,1,1,2,,"USDOJ - Civil Division - Office of Consumer Litigation,Pennsylvania - Eastern D",,,61138,20011231
+7114,Panasonic Corp.,3,11/18/2010,Antitrust,Y,10/14/2004,12/31/2007,0,0,1,1,,"USDOJ - Criminal Division - Fraud Section,Virginia - Eastern District",,,63271,20110331
+7114,Panasonic Corporation,3,08/07/2013,Antitrust,Y,09/01/2003,02/28/2010,1,1,0,0,,Arkansas - Western District,,euros; did not publish,63271,20140331
+7124,Maxwell Technologies,2,01/31/2011,FCPA,Y,07/01/2002,05/31/2009,0,2,2,2,"9,300,000","California - Central District,Nevada",,,319815,20111231
+7238,"Mellon Bank, N.A.",1,08/01/2006,Other,Y,,,0,0,1,2,,Maine,,,64782,20061231
+7241,CVS/Pharmacy (subs. Of CVS Caremark),1,10/13/2010,Controlle,Y,09/01/2007,,0,0,1,2,,Louisiana - Eastern District,,,64803,20101231
+7257,"Merck & Co., Inc.",1,11/07/2011,FDCA / Ph,Y,05/01/1999,04/30/2002,0,1,2,2,"950,000,000",New Mexico,A,,310158,20111231
+7267,Micrus Corp.,2,02/01/2005,FCPA,Y,05/01/2002,06/30/2004,,,,2,,USDOJ - Criminal Division - Fraud Section|Georgia - Northern District,,,65100,20051231
+7267,Merrill Lynch,1,09/01/2003,False Sta,Y,,,0,0,0,1,,North Carolina - Eastern District,,,65100,20031231
+7402,Miller Industries,3,02/06/2007,Environme,Y,,,0,0,0,0,,"New York - Eastern District,USDOJ - Civil Division",,,66388,20070430
+7448,Mississippi Chemical,3,09/16/2004,Wildlife,Y,09/29/1998,03/17/2003,0,0,0,2,,USDOJ - Environment & Natural Resources Division,,,66895,
+7652,NEC,1,01/01/2006,Antitrust,Y,,,1,1,2,,"1,900,000,00",Florida - Southern District,,,72127,20060331
+7672,Northwest Airlines LLC,3,08/27/2010,Antitrust,Y,07/01/2004,02/14/2006,0,0,0,0,,California - Central District,,,1058033,
+7691,Nash-Finch Co. Inc.,3,08/13/2004,FDCA / Ph,N,,,,,,,,USDOJ - Antitrust Division,s,,69671,20041231
+7691,Nash-Finch Co. Inc.,3,10/10/2001,FDCA / Ph,N,,,,,,,,District of Columbia,N,,69671,20011231
+7750,Tenet Healthcare,1,09/30/2016,Fraud - G,Y,01/01/2003,12/31/2013,1,1,1,2,,California - Northern District,L,,70318,20161231
+7898,"Nichols Institute Diagnostics, Inc.",3,04/24/2009,FDCA / Ph,Y,05/01/2001,04/30/2006,1,2,2,2,"316,000,000",Michigan - Western District,D,,765410,
+8020,Novo Nordisk A/S,2,05/06/2009,FCPA,Y,01/01/2001,04/30/2003,0,0,0,0,,Rhode Island,,,353278,20091231
+8099,FirstEnergy Nuclear Operating Co.,2,01/20/2006,Environme,Y,,,1,1,2,2,,Texas - Southern District,,,1031296,20061231
+8210,"Overseas Shipholding Group, Inc.",3,12/19/2006,Environme,Y,,,1,2,2,2,"10,000,000",Arkansas - Eastern District,,Unavailable,75208,20061231
+8245,PNC ICLC Corp.,2,06/01/2003,Fraud - S,Y,05/01/2001,01/29/2002,0,0,0,2,,"District of Columbia,USDOJ - Antitrust Division",,,713676,20031231
+8247,PPG Industries,1,12/21/2010,Import /,Y,,,0,1,1,2,,Florida - Southern District,,,79879,20101231
+8333,"Par Pharmaceutical Companies, Ind.",3,03/05/2013,Food,Y,07/01/2005,12/31/2009,1,1,,2,,New Jersey,,,1559149,20131231
+8439,Penn Traffic Co.,1,10/23/2008,Fraud - S,Y,01/01/2002,12/31/2002,1,1,1,1,,Connecticut,,,77155,20090131
+8530,Pfizer H.C.P. Corp.,2,08/07/2012,FCPA,Y,,,0,0,0,1,,Massachusetts,,,78003,20121231
+8530,Pfizer,1,03/01/2007,Kickbacks,Y,,,0,0,0,0,,"Connecticut,USDOJ - National Security Division",,,78003,20071231
+9016,"Unico, Inc. (subs of Regal Beloit)",2,01/30/2013,False Sta,Y,06/13/2007,,0,0,0,0,,USDOJ - Antitrust Division,,,82811,20131231
+9061,"HSBC Bank USA, N.A. & HSBC Holdings plc",2,12/11/2012,Bank Secr,Y,01/01/2006,12/31/2010,0,0,0,2,,USDOJ - Criminal Division - Fraud Section,,,83246,20121231
+9142,Riggs Bank N.A.,3,01/27/2005,Money Lau,Y,,,0,2,2,2,"90,000,000",USDOJ - Criminal Division - Fraud Section,,Merged with BCB,350847,
+9236,Rhone-Polenc Biochimie SA,3,09/18/2003,Antitrust,Y,11/01/1990,12/31/1999,,,1,2,,USDOJ - Criminal Division - Fraud Section,,,217028,
+9258,"Rowan Companies, Inc.",3,10/04/2007,Environme,N,,,1,1,2,2,"9,000,000",USDOJ - Antitrust Division,,,85408,20071231
+9340,ICN Pharmaceuticals Inc.,3,06/26/2002,Environme,N,,,0,0,0,2,,"Ohio - Northern District,USDOJ - Criminal Division - Fraud Section",,,930184,20021231
+9340,ICN Pharmaceuticals Inc.,3,12/11/2001,Fraud - S,Y,,,,,,,,Ohio - Southern District,,,930184,20011231
+9411,Sara Lee Corp.,3,06/22/2001,Food,Y,,,1,1,1,2,,"New York - Southern District,USDOJ - Tax Division",,,23666,20010630
+9459,Schering Plough Corp.,1,08/24/2006,Kickbacks,Y,04/01/1998,08/31/2001,2,2,2,2,"500,000,000",Connecticut,,,,20061231
+9465,Schlumberger Oilfield Holdings Ltd.,3,04/30/2015,Import /,Y,01/01/2004,12/31/2010,1,1,1,2,"205,000,000",Georgia - Northern District,,,87347,20151231
+9465,"WesternGeco, LLC (subsidiary of Schlumberger Seismic, Inc.)",2,06/01/2006,Immigrati,y,09/01/2000,10/31/2004,0,1,1,2,,Kansas,,,87347,20061231
+9863,Union Pacific Railroad Company,3,04/16/2008,Environme,Y,,,1,1,1,1,,New Jersey,,,92259,
+9864,Norfolk Southern Railway Co.,3,08/14/2000,Wildlife,N,,,0,0,0,0,,USDOJ - National Security Division,,no agreement hard to s,92275,20001231
+9867,Southern Union Co.,3,10/07/2009,Environme,Y,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,203248,20091231
+9919,"Spartan Motors Chassis, Inc.",3,12/15/2008,Kickbacks,Y,,,0,0,0,2,,Louisiana - Western District,,,743238,20081231
+10035,State Street Corp.,2,01/18/2017,Fraud - G,Y,,,2,2,2,2,"2,000,000",USDOJ - Criminal Division - Fraud Section,,,93751,20171231
+10115,Stryker Corp.,1,08/28/2014,Fraud - H,Y,05/01/2006,11/30/2009,1,1,1,1,"33,000,000",USDOJ - Criminal Division - Fraud Section,,,310764,20141231
+10115,Stryker Orthopedics,1,10/01/2005,Kickbacks,Y,,,0,0,0,1,,Vermont,,,310764,20051231
+10187,"SunTrust Mortgage, Inc.",1,07/02/2014,Fraud - G,Y,,,0,0,1,2,,Massachusetts,,,750556,20141231
+10190,Shoppers Food Warehouse Corp. (subs. Of SuperValu),2,09/01/2010,Bribery,,12/01/2002,05/29/2008,0,0,0,0,,"District of Columbia,USDOJ - Criminal Division - Fraud Section",,,95521,20110228
+10232,Symbol Technologies,1,06/01/2004,Fraud - A,Y,01/01/1999,12/31/2002,0,1,1,2,"72,000,000",New York - Eastern District,E,,278352,20041231
+10238,Syncor Taiwan Inc.,3,12/09/2002,FCPA,Y,01/01/1997,11/06/2002,0,0,0,,,New York - Eastern District,,,202763,
+10301,TRW Deutschland Holding GmbH,3,09/25/2012,Antitrust,Y,01/01/2008,06/30/2011,0,0,1,2,,USDOJ - Criminal Division - Fraud Section,,,100030,
+10426,"TIN, Inc.",3,02/06/2013,Environme,Y,,,1,,1,2,,,,,731939,
+10519,Textron,1,08/01/2007,FCPA,Y,01/01/2001,12/31/2003,0,0,0,0,,Florida - Southern District,,,217346,20071231
+10551,Thorn Apple Valley Inc.,3,04/10/2001,Food,,,,,,,,,"New York - Northern District,USDOJ - Civil Division - Consumer Protection Branc",,went out of business i,38851,
+10588,Titan Corp.,3,03/01/2005,FCPA,Y,,,0,2,2,,"3,000,000","USDOJ - Criminal Division - Fraud Section,New York - Southern District",,unretreiveable,32258,
+10787,"Tyco Int'l, Ltd.",1,09/20/2012,FCPA,Y,01/01/1999,12/31/2009,1,1,1,2,,USDOJ - Antitrust Division (Chicago),,,1608109,20120930
+10793,Tyson Foods,2,02/01/2011,FCPA,Y,01/01/1994,12/31/2006,1,1,1,0,,"Texas - Southern District (Financial Litigation),USDOJ - Antitrust Division - N",,,100493,20110930
+10793,"Tyson Foods, Inc.",3,01/06/2009,OSHA,Y,10/10/2003,10/10/2003,1,1,1,0,,USDOJ - Criminal Division - Fraud Section,,,100493,20090930
+10795,"United Continental Holdings, Inc.",1,07/11/2016,Bribery,,,,0,0,1,1,,New York - Southern District,,,100517,20161231
+10884,"Chiquita Brands Int'l, Inc.",3,03/19/2007,Other,Y,09/10/2001,01/31/2004,1,1,2,2,"25,000,000",USDOJ - Environment & Natural Resources Division,,,101063,20071231
+10920,"United Parcel Service, Inc.",1,03/29/2013,Controlle,Y,01/01/2004,05/31/2006,0,1,1,2,,USDOJ - Antitrust Division,,,1090727,20131231
+10983,Pratt & Whitney Canada Corp.,3,06/28/2012,Import /,Y,01/01/2002,09/30/2006,0,0,2,2,"45,000,000",Colorado,,,101829,20121231
+11017,Universal Corp.,1,08/01/2010,FCPA,Y,03/01/2000,07/31/2004,1,1,1,1,,Texas - Southern District,,,102037,20110331
+11040,Pharmacia & Upjohn,3,04/03/2007,Fraud - H,Y,,,1,1,1,1,,Nebraska,,,949573,
+11040,Pharmacia & Upjohn,3,08/31/2009,FDCA / Ph,Y,11/01/2001,04/30/2005,1,1,2,2,,Massachusetts,R,,949573,
+11056,Utilicorp United,3,03/15/2001,Environme,N,,,0,0,2,2,,West Virginia - Southern District,,,66960,20011231
+11217,AB Volvo [on behalf of itself and subsidiaries Renault Trucks S,2,03/20/2008,FCPA,Y,12/01/2000,01/31/2003,,,,,,New York - Southern District,,,753762,20081231
+11288,Warner-Lambert Co. LLC,3,05/13/2004,FDCA / Ph,Y,,,1,1,2,2,"427,000,000",Pennsylvania - Middle District,N,,104669,
+11296,"Washington Gas Energy Systems, Inc.",2,11/19/2014,Fraud - G,Y,,,0,0,0,2,,California - Central District,,,1103601,20150930
+11535,Winn-Dixie Stores Inc.,3,05/22/2006,Wildlife,N,,,0,0,0,0,,"USDOJ - Criminal Division - Fraud Section,Virginia - Eastern District",,went bankrupt,107681,20060630
+11781,Encana Oil and Gas (USA) Inc.,3,08/26/2010,Wildlife,Y,,,0,0,0,0,,New York - Eastern District,,,1157806,20101231
+11925,"Noble Drilling (U.S.), LLC",3,12/08/2014,Environme,Y,,,0,1,1,2,,Texas - Southern District,,,1458891,20141231
+11925,Noble Corp.,1,11/01/2010,FCPA,Y,01/01/2007,07/31/2007,1,1,1,2,,Massachusetts,,,1458891,20101231
+12384,"Shell Nigeria Exploration and Production Co., Ltd.",2,11/10/2011,FCPA,Y,03/01/2004,11/30/2006,1,1,2,2,,Michigan - Eastern District,,,1306965,20111231
+12484,Adelphia Communications,1,05/01/2005,Fraud - S,Y,,,,1,2,2,"175,000,000",Puerto Rico,,,796486,20051231
+12508,Appalachian Oil,2,01/31/2007,Fraud - G,Y,,,,,,,,USDOJ - Criminal Division - Fraud Section,,,732814,
+12589,HealthSouth Corp.,1,05/01/2006,Fraud - S,Y,01/01/1996,03/19/2003,1,1,1,2,,USDOJ - Criminal Division - Fraud Section|New York - Eastern District,,company died in 2002.,785161,20061231
+12673,Barclays Bank,2,08/01/2010,Import /,y,,09/30/2006,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,Same as Pratt and WHit,312069,20101231
+12673,Barclays PLC,3,05/20/2015,Fraud - G,Y,12/01/2007,01/31/2007,0,0,1,2,,New York - Southern District,,,312069,20151231
+12726,Unum Group,1,06/01/2008,Fraud - G,Y,01/01/1995,12/31/2005,1,1,1,2,,"California - Northern District,USDOJ - Criminal Division - Fraud Section",D,,5513,20081231
+12785,"Pilgrim's Pride, Inc.",1,12/30/2009,Immigrati,Y,,,0,1,1,2,,Massachusetts,,,802481,20101231
+12884,"Comverse Technology, Inc.",1,04/01/2011,FCPA,Y,01/01/2003,12/31/2006,1,1,2,2,,California - Northern District,,,803014,20120131
+13135,York Int'l Corp.,2,10/01/2007,FCPA,Y,11/01/2000,03/31/2003,1,1,1,1,,"USDOJ - Criminal Division - Fraud Section,Virginia - Eastern District",,,842662,
+13145,British Airways,3,08/23/2007,Antitrust,Y,03/01/2002,02/14/2006,0,0,1,2,,USDOJ - Criminal Division - Fraud Section,,,809023,20080331
+13498,Carnival Corp.,3,04/19/2002,Environme,Y,01/01/1996,01/01/2001,0,1,1,1,,USDOJ - Criminal Division,,,815097,20021130
+13634,Exide Technologies,1,03/01/2015,Environme,Y,,,0,0,0,0,,Ohio - Southern District,,,813781,
+14363,IMC Potash,1,09/01/2002,Environme,N,,,0,0,0,0,,"North Carolina - Eastern District,USDOJ - Environment & Natural Resources Divis",,,820626,20021231
+14412,Sotheby's Holdings Inc.,3,10/05/2000,Antitrust,N,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,823094,20001231
+14538,Teva Pharmaceutical Industries LTD,2,12/22/2016,FCPA,Y,01/01/2006,12/31/2012,1,1,1,2,,North Carolina - Eastern District,,,818686,20161231
+14908,"Pride Int'l, Inc.",2,11/04/2010,FCPA,Y,,,1,1,2,2,"56,200,000",Alaska,,Acquired in 2003,833081,20101231
+15172,Fiat S.p.A. / Iveco (subsid.) / CNF Italia (subsid.) / CNF Fran,2,12/22/2008,FCPA,Y,10/01/2000,06/30/2001,1,1,1,2,,USDOJ - Criminal Division - Asset Forfeiture & Money Laundering Section,,,1605484,20081231
+15290,"Armor Holdings, Inc.",1,07/13/2011,FCPA,Y,,,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,,,845752,
+15334,Akzo Nobel,1,12/20/2007,FCPA,Y,07/01/1998,12/01/2001,0,1,1,1,,USDOJ - Criminal Division - Fraud Section,,,3124,20071231
+15334,Akzo Nobel Chemicals International,3,05/17/2006,Antitrust,Y,07/01/1998,12/01/2001,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,3124,20061231
+15484,Union Bank of California (subs. Of Mitusbishi Bank of Tokyo),2,09/01/2007,Bank Secr,Y,05/01/2003,04/30/2004,0,0,2,2,,USDOJ - Criminal Division - Fraud Section,,,,
+15575,Commerzbank AG,2,03/12/2015,Bank Secr,Y,01/01/2002,12/31/2008,0,0,1,2,,"Massachusetts,USDOJ - Civil Division - Office of Consumer Litigation",,,,
+15576,Deutsche Bank AG,2,04/23/2015,Antitrust,,,,0,0,0,2,,Ohio - Southern District,,,1159508,20151231
+15576,Deutsche Bank (Suisse) SA,1,11/24/2015,Fraud - T,y,,,1,1,1,0,,New Jersey,,,1159508,20151231
+15576,Deutsche Bank AG,2,12/21/2010,Fraud - T,Y,01/01/1996,12/31/2002,1,1,1,0,,Rhode Island,,they went into chapter,1159508,20101231
+15581,Canadian Imperial Bank of Commerce,2,12/01/2003,Fraud - A,Y,01/01/1998,,0,0,1,2,,"Louisiana - Middle District,USDOJ - Criminal Division - Fraud Section",F,Cannot find 10-ks for,1045520,20041031
+15605,Lloyds TSB Bank plc,2,01/09/2009,Import /,Y,,01/31/2007,0,2,2,2,"180,000,000","Texas - Southern District (Financial Litigation),USDOJ - Criminal Division - Fr",,,,
+15617,ING Bank N.V.,2,06/12/2012,Import /,y,,,0,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,1039765,20121231
+15634,Royal Bank of Scotland (RBS),3,05/20/2015,Fraud - G,Y,12/01/2007,01/31/2013,0,0,0,1,,"District of Columbia,New York - Southern District,USDOJ - Criminal Division - A",,,844150,20151231
+15634,Royal Bank of Scotland plc,2,02/05/2013,Fraud - G,Y,01/01/2006,12/31/2010,0,0,1,1,,"USDOJ - Antitrust Division,USDOJ - Criminal Division - Fraud Section",,,844150,20131231
+15708,Allergan,3,05/10/2010,FDCA / Ph,Y,01/01/2001,12/31/2008,0,1,1,2,,"Massachusetts,USDOJ - Criminal Division",l,,850693,20101231
+15784,Societe Generale Private Banking (Lugano-Svizzera) SA,1,05/18/2015,Fraud - T,Y,,,0,0,0,0,,Maryland,,,906433,20151231
+15784,Societe Generale Private Banking (Suisse) SA,1,06/02/2015,Fraud - T,Y,,,0,0,0,0,,USDOJ - Civil Division - Office of Consumer Litigation,,,906433,20151231
+15929,Lloyds Banking Group plc,2,07/28/2014,Fraud - G,Y,01/01/2006,07/31/2009,1,1,1,2,,Connecticut,,been forcibly delisted,1160106,20141231
+16441,Electronic Clearing House,1,03/01/2007,Gambling,Y,01/01/2001,12/31/2006,0,0,0,2,,Texas - Southern District,,,721773,20070930
+16538,Cathay Pacific Airways Ltd.,3,07/22/2008,Antitrust,Y,05/01/2002,02/14/2006,0,0,1,2,,Missouri - Western District,,,,
+16681,BankAtlantic,2,03/01/2006,Bank Secr,Y,06/01/1997,04/30/2004,0,1,2,2,"10,000,000",USDOJ - Criminal Division,,,921768,20061231
+17105,Pamrapo Savings Bank,3,03/29/2010,Money Lau,Y,,,0,1,2,,,California - Southern District,,,854071,
+17828,Daimler AG & DaimlerChrysler China (subsid.),2,03/24/2010,FCPA,Y,01/01/1998,01/31/2008,1,1,1,2,,California - Northern District,,,1067318,20101231
+18683,Science Applications International Corp.,2,03/08/2012,Fraud - G,Y,01/01/2003,12/31/2010,0,0,0,2,,USDOJ - Tax Division,,,1571123,20130131
+18699,Parametric Technology (Shanghai) Software Co. Ltd. and Parametr,1,02/16/2016,FCPA,Y,,,1,1,2,2,"28,200,000","District of Columbia,USDOJ - National Security Division",,,857005,20160930
+19043,Mitsubishi Electric Corp.,3,11/06/2013,Antitrust,Y,01/01/2001,02/28/2010,0,0,0,0,,New Jersey,,,773753,
+19349,Siemens Aktiengesellschaft,3,12/15/2008,FCPA,Y,,12/31/2006,1,1,2,2,"1,000,000,00","District of Columbia (Fraud and Public Corruption Section),USDOJ",,,1135644,20090930
+19661,Toyota Motor Corp.,2,03/09/2014,Fraud - G,Y,,,0,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,1094517,20140331
+20145,Furukawa Electric Co.,3,11/14/2011,Antitrust,Y,01/01/2000,01/31/2010,0,0,0,0,,Minnesota,,,,
+20185,Scotts Miracle-Gro Co.,3,01/25/2012,Environme,N,,,2,2,2,2,"28,600,000","New Jersey,USDOJ - Criminal Division - Asset Forfeiture & Money Laundering Sect",,,825542,20120930
+21186,Medicis Pharmaceutical Corp.,1,10/01/2006,FDCA / Ph,Y,,,0,1,1,1,,USDOJ - Enron Task Force,P,,859368,20061231
+23251,Ralphs Grocery Co.,3,06/30/2006,Fraud - G,Y,10/01/2003,02/28/2004,0,1,1,1,,California - Central District,,,836023,
+23667,Royal Ahold,1,09/01/2006,Fraud - S,Y,,,0,1,1,1,,USDOJ - Criminal Division - Fraud Section,,,854499,20061231
+23877,"Coventry Health Care, Inc.",1,11/19/2012,Fraud - H,Y,05/01/2005,12/29/2006,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,1054833,20121231
+23945,Cephalon,3,09/26/2008,FDCA / Ph,Y,01/01/2001,10/01/2001,1,1,1,2,,"USDOJ - Criminal Division - Fraud Section,Connecticut",S,,873364,20081231
+24384,Special Devices Inc.,3,01/02/2001,Environme,N,,,,0,0,2,,Wyoming,,Unavailable,875525,20011031
+24625,Total S.A.,2,05/29/2013,FCPA,Y,05/01/1995,11/29/2004,1,1,2,2,"398,200,000","USDOJ - Criminal Division - Fraud Section,Virginia - Eastern District",,,879764,20131231
+24853,Spectranetics Corp.,1,12/17/2009,Fraud - G,Y,01/01/2003,12/31/2008,0,0,1,2,,Delaware,,Bankrupt and solf to N,789132,20091231
+25180,AGCO Corp.,2,09/29/2009,FCPA,Y,01/01/2000,03/31/2003,1,1,1,2,,New Jersey,,,880266,20091231
+25356,"Express Scripts, Inc.",1,09/01/2007,FDCA / Ph,Y,10/01/2000,12/31/2005,,,,,,"USDOJ - Consumer Protection Branch,Virginia - Western District",H,,1532063,20071231
+25405,General Cable Corp.,1,12/22/2016,FCPA,Y,01/01/2003,12/31/2013,0,2,2,2,"24,000,000",USDOJ - Criminal Division - Fraud Section,,,886035,20161231
+25761,Tommy Hilfiger,1,08/01/2005,Fraud - G,Y,01/01/1990,12/31/2004,0,0,0,1,,USDOJ - Antitrust Division,E,,888747,
+26069,Gulfport Energy Corp,3,10/27/2014,Environme,Y,,,0,0,0,0,,USDOJ - Antitrust Division (New York),,,874499,20141231
+28256,XTO Energy Inc.,3,04/22/2008,Wildlife,N,,,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,,,868809,20081231
+28272,Astrazeneca Pharm LP,3,06/20/2003,Fraud - G,Y,01/01/1991,12/31/2002,0,0,2,2,"350,000,000","Alabama - Northern District,USDOJ - Criminal Division - Fraud Section",,10-ks not available in,901832,20031231
+28338,"Transocean Deepwater, Inc.",3,01/03/2013,Environme,Y,,,1,1,2,2,,USDOJ - Antitrust Division,,,1451505,20131231
+28338,Transocean,2,11/01/2010,FCPA,Y,,,1,1,1,2,,Michigan - Eastern District,,,1451505,20101231
+28380,Orthofix Int'l N.V.,2,06/07/2012,FCPA,Y,,,0,1,2,2,"7,500,000",USDOJ - Antitrust Division - National Criminal Enforcement Section,,euros,884624,20121231
+28838,Credit Suisse,3,05/19/2014,Fraud - T,Y,,,1,1,1,2,"175,000,000",New York - Northern District,,,1159510,20141231
+28838,Credit Suisse AG,2,12/16/2009,Import /,Y,,,0,1,1,2,,California - Northern District,,,1159510,20091231
+28883,Sociedad Quimica y Minera de Chile (SQM),2,01/13/2017,FCPA,Y,01/01/2008,12/31/2015,0,1,2,2,,"USDOJ - Criminal Division,USDOJ - Major Frauds Section (California - Central Di",,,909037,
+28997,Friedman's Inc.,1,11/01/2005,Fraud - S,Y,01/01/1999,09/29/2003,,,,,,"Illinois - Central District,USDOJ - Criminal Division - Fraud Section",,,911004,
+29170,Mace Personal Defense Inc.,3,01/03/2011,Environme,Y,01/01/1998,12/31/2008,1,1,2,2,"100,000",Minnesota,,,912607,20111231
+29217,Schnitzer Steel,2,10/16/2010,FCPA,Y,01/01/1995,08/31/2004,2,2,2,2,,USDOJ - Tax Division,,,912603,20110831
+29755,"Beazer Homes USA, Inc.",2,07/01/2009,Fraud - G,Y,,,0,1,1,2,,Massachusetts,,,915840,20090930
+29955,Biovail Pharmaceuticals Inc. & Biovail Corp.,1,05/16/2008,Kickbacks,Y,,,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,,Acquired by abbott in,885590,20081231
+30328,CommunityOne Bank,2,04/01/2011,Bank Secr,Y,,,0,0,0,2,,Virginia - Eastern District,,,764811,20111231
+30398,"FalconStor Software, Inc.",2,06/27/2012,Other,Y,,,0,1,2,2,"7,500,000",Pennsylvania - Western District,,,922521,20121231
+30644,Collins & Aikman Corp.,1,03/01/2007,Fraud - T,,,,,,,,,Massachusetts,,,846815,
+30775,Orphan Medical Inc.,3,07/13/2007,FDCA / Ph,Y,,,0,,,,,USDOJ - Criminal Division,,,929548,
+30923,Technip S.A.,2,06/01/2010,FCPA,Y,08/01/1994,06/30/2004,,,,,,"USDOJ - Assistant Attorney General - National Security Divison,Virginia - Weste",,,1681459,20101231
+31166,Guidant LLC,3,03/11/2010,FDCA / Ph,Y,04/16/2002,06/17/2005,1,1,2,2,,California - Northern District,V,,929987,
+60979,Westinghouse Air Brake Technologies Corp.,1,02/01/2008,FCPA,Y,01/01/2001,12/31/2005,1,1,2,2,,New Hampshire,,,943452,20081231
+61738,ITT Corp.,3,03/28/2007,Import /,y,03/17/1998,04/13/2003,0,1,2,2,"25,000,000",USDOJ - Antitrust Division,,,1001149,
+61996,ArthroCare Corp.,2,01/09/2014,Fraud - G,Y,12/01/2005,12/31/2008,1,1,2,2,,New York - Southern District,,,1005010,
+62017,Endovascular Technologies,3,06/12/2003,FDCA / Ph,Y,09/01/1999,03/15/2001,0,0,1,2,,Texas - Northern District,Z,,1005122,
+62200,Endocare,1,07/18/2006,Fraud - S,Y,10/01/2001,12/31/2003,1,1,1,2,,New York - Southern District,,,1003464,20061231
+62305,"Scientigo, Inc.",3,04/26/2005,Other,N,,,,0,2,2,,"USDOJ - Antitrust Division,USDOJ - Criminal Division - Fraud Section",,,1043933,20050831
+62599,"Lucent Technologies, Inc.",1,11/01/2007,FCPA,Y,,,1,1,1,1,,USDOJ - Civil Division - Office of Consumer Litigation,,euros,1006240,
+62599,"Alcatel-Lucent Centroamerica, S.A.",3,02/22/2011,FCPA,,,,,,,,,Massachusetts,,,1006240,
+62688,InVision,1,12/03/2004,FCPA,Y,01/01/2001,06/30/2004,0,0,0,,,"Colorado,USDOJ - Environment & Natural Resources Division - Environmental Crime",,,1005969,
+62748,"Whitehall Jewellers, Inc.",1,09/01/2004,Fraud - G,Y,01/01/1999,12/31/2003,0,1,1,2,"8,600,000",Texas - Northern District|USDOJ - Consumer Protection Branch,,,868984,20050131
+62948,Exactech,2,12/08/2010,Kickbacks,Y,,,1,1,2,2,"3,000,000",Florida - Middle District,,,913165,20101231
+63087,Fine Host Corp.,1,11/10/2008,Fraud - G,Y,01/01/1998,09/01/2002,,,,,,New York - Eastern District,l,,1011584,
+63477,BAE Systems PLC,3,02/04/2010,Import /,y,01/01/2000,12/31/2002,1,1,2,2,,USDOJ - Criminal Division - Fraud Section,,,895564,20101231
+63495,"Willbros Group, Inc. & Willbros Int'l, Inc.",2,05/01/2008,FCPA,Y,,,1,1,2,2,,North Carolina - Western District,,,1449732,20081231
+63645,"Endo Pharmaceuticals, Inc.",2,02/21/2014,FDCA / Ph,Y,01/01/2002,12/31/2006,1,2,2,2,,New York - Southern District,l,,1593034,20141231
+63857,Optimal Group,1,10/01/2009,Gambling,Y,,,0,2,2,2,,Maryland,,,1015923,20091231
+63892,"National Oilwell Varco, Inc.",1,11/01/2016,Import /,Y,04/26/2006,12/29/2007,1,1,1,1,,Texas - Eastern District,,,1021860,20161231
+63987,VimpelCom Ltd.,2,02/10/2016,FCPA,Y,,,1,1,2,2,,New Jersey,,,1468091,20161231
+64166,"Quest Diagnostics, Inc.",1,04/15/2009,FDCA / Ph,Y,05/01/2001,04/30/2006,1,2,2,2,"316,000,000","New York - Eastern District,USDOJ - Criminal Division - Fraud Section",V,,1022079,20091231
+64542,Kos Pharmaceuticals,2,12/07/2010,Kickbacks,Y,,,1,1,1,1,,"California - Northern District,USDOJ - Criminal Division - Fraud Section",,,1018952,
+64690,Autoliv Inc.,3,06/21/2012,Antitrust,Y,05/01/2008,02/28/2011,0,1,1,2,"75,000,000",Texas - Eastern District,,Unavailable,1034670,20121231
+64891,Ralph Lauren Corp.,1,04/22/2013,FCPA,Y,01/01/2004,12/31/2009,0,0,0,0,,Florida - Southern District,,,1037038,20140331
+64901,Maximus,2,07/01/2007,Fraud - H,Y,07/01/1999,03/31/2002,1,1,2,2,,"California - Southern District,USDOJ - Criminal Division - Fraud Section",,,1032220,20070930
+65421,Faro Technologies,1,06/01/2008,FCPA,Y,01/01/2004,12/31/2005,1,1,2,2,"2,650,000",Tennessee - Eastern District,,"Bought by GE, unretrei",917491,20081231
+65570,American Italian Pasta Co.,1,09/15/2008,Fraud - G,Y,01/01/2002,12/31/2004,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,r,,849667,20080930
+66646,CSK Auto Corp.,1,08/30/2011,Fraud - S,Y,01/01/2001,12/31/2006,1,1,2,2,"21,400,000",USDOJ - Criminal Division - Fraud Section,,,1051848,
+100012,Mitsubishi Heavy Industries Ltd,3,11/06/2013,Antitrust,Y,01/01/2001,02/28/2010,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,,euros,,
+100080,Bayer AG,3,12/09/2004,Antitrust,Y,07/01/1995,12/31/2001,0,0,1,2,,USDOJ - Criminal Division - Fraud Section,,,790075,20041231
+100102,Bilfinger SE,2,12/09/2013,FCPA,Y,,06/30/2005,0,0,0,0,,New York - Southern District,,,,
+100369,Bridgestone Corp.,3,10/05/2011,FCPA,Y,01/01/1999,05/31/2007,1,1,1,2,,New York - Eastern District,,???,,
+100369,Bridgestone,3,04/30/2014,Antitrust,y,01/01/2001,12/31/2008,0,1,2,2,,USDOJ - Criminal Division - Fraud Section,,,,
+100545,Marubeni Corp.,2,01/17/2012,FCPA,Y,08/01/1994,06/15/2004,0,0,0,1,,Michigan - Eastern District,,,,
+100545,Marubeni Corp.,3,03/19/2014,FCPA,Y,08/01/1994,06/15/2004,0,0,0,1,,USDOJ - Antitrust Division (Cleveland),,Only public for one ye,,
+100699,Sharp Corp.,3,12/17/2008,Antitrust,Y,04/01/2001,12/01/2006,0,0,0,1,,USDOJ - Criminal Division - Fraud Section,,,800840,20090331
+100737,Volkswagen AG,3,04/21/2017,Fraud - G,Y,05/01/2006,11/30/2015,0,1,2,2,,California - Northern District,,,839772,
+100774,"Johnson Matthey, Inc.",3,09/03/2008,Environme,Y,,,0,0,0,0,,Massachusetts,,,,
+100980,Skanska,1,03/17/2011,Fraud - G,Y,01/01/1997,,0,0,0,0,,MIchigan - Eastern District,Z,,,
+101204,Genzyme Corp. (subs of Sanofi),2,08/31/2015,FDCA / Ph,Y,,,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,B,,1121404,20151231
+101310,Novartis Pharmaceuticals Co.,3,09/30/2010,FDCA / Ph,Y,07/01/2000,06/30/2004,1,1,2,2,"397,000,000",Tennessee - Eastern District,H,,1114448,20101231
+101317,Smith & Nephew PLC,2,09/01/2007,Kickbacks,Y,,,0,1,1,2,,Ohio - Southern District,,,845982,20071231
+101352,Alcatel-Lucent,2,12/27/2010,FCPA,Y,,,1,1,2,2,,New York - Southern District,,,886125,20101231
+101352,Alcatel-Lucent France,3,02/22/2011,FCPA,,,,,,,,,"Massachusetts,USDOJ - Civil Division - Office of Consumer Litigation",,,886125,20111231
+101394,Solvay S.A.,3,03/09/2006,Antitrust,Y,06/01/1998,12/01/2001,,,,,,USDOJ - Criminal Division (California - Central District),,,,
+102045,"Serono Holding, Inc. / Serono, Inc. / Serono S.A. / Ares-Tradin",1,10/01/2005,FDCA / Ph,Y,09/01/1996,12/31/1999,0,0,0,0,,USDOJ - Criminal Division - Fraud Section,d,,1117399,20051231
+102045,Serono Laboratories Inc.,3,10/13/2005,FDCA / Ph,Y,09/01/1996,12/31/1999,0,0,0,0,,New York - Southern District,b,,1117399,20051231
+105547,Barclays Bank PLC,1,06/26/2012,Fraud - G,Y,01/01/2005,12/31/2007,0,0,1,2,,Kansas,,,312070,20131231
+109084,"Omega Protein, Inc.",3,06/04/2013,Environme,Y,,,1,1,2,2,"7,700,000",New Jersey,,,1053650,20131231
+110566,"Innospec, Inc.",3,03/18/2010,FCPA,Y,,,1,1,1,2,,Texas - Southern District,,,1054905,20101231
+111169,RAE Systems,1,12/10/2010,FCPA,Y,01/01/2004,12/31/2008,0,1,2,2,"3,500,000",USDOJ - Antitrust Division,,,1084876,20101231
+111839,OMI Corp.,3,01/21/2004,Environme,N,,,1,1,2,2,,Virginia - Western District,,,1061571,20041231
+112040,Rhodia Inc.,3,12/29/2003,Environme,N,12/01/1998,08/31/2000,,0,0,2,,USDOJ - Criminal Division - Fraud Section,,,1062814,20031231
+112088,Aurora Foods,1,01/22/2001,Fraud - A,Y,,02/28/2000,,,1,1,,California - Southern District,e,,1060024,20011231
+112168,"Republic Services, Inc.",1,10/01/2008,Immigrati,Y,01/01/2002,12/31/2006,0,0,0,0,,New York - Southern District,,Unretrievable,1060391,20081231
+124555,"Leiner Health Products, LLC",3,06/11/2008,Fraud - G,Y,12/13/2006,,,,,0,,Massachusetts,,,1043055,
+132525,"UTStarcom, Inc.",1,12/31/2009,FCPA,Y,01/01/2002,12/31/2007,1,1,1,2,,New Jersey,,,1030471,20091231
+132525,"UTStarcom, Inc.",1,12/31/2009,FCPA,Y,01/01/2002,12/31/2007,1,1,1,2,,New Jersey,,,1030471,20101231
+132538,IFCO Systems,1,12/19/2008,Immigrati,Y,01/01/2003,04/30/2006,,,0,0,,"North Carolina - Eastern District,USDOJ - Environment & Natural Resources Divis",,,1102957,
+132740,Infineon Technologies AG,3,10/20/2004,Antitrust,Y,07/01/1999,06/15/2002,1,2,2,2,"28,000,000",Wyoming,,,1107457,20050930
+133246,InterMune,2,10/01/2006,FDCA / Ph,Y,01/01/2000,06/30/2003,0,1,1,2,,Texas - Southern District,l,,1087432,20061231
+133768,Metropolitan Life Insurance Co. (MetLife),1,04/15/2010,Other,Y,01/01/1999,12/31/2005,1,1,1,1,,Nebraska,,,1099219,20101231
+134464,"CHS, Inc.",3,01/22/2013,Environme,Y,,,0,0,2,2,,New Jersey,,,823277,20130831
+137170,"Atrium Companies, Inc.",1,01/01/2012,Immigrati,Y,01/01/2006,12/31/2010,0,0,0,0,,USDOJ - Criminal Division - Asset Forfeiture & Money Laundering Section,,,1029336,
+140033,Mirant Energy Trading,2,07/01/2007,Other,Y,02/01/2000,12/31/2000,1,1,1,1,,"Ohio - Northern District,USDOJ - Environment & Natural Resources Division - Env",,,1010775,20071231
+140760,Monsanto,2,01/01/2005,FCPA,Y,,,0,0,1,2,,California - Southern District,,euros,1110783,20050831
+140905,"Energy Partners, Ltd.",3,02/19/2008,Environme,Y,,,0,0,2,2,,USDOJ - Antitrust Division,,,750199,20081231
+140977,Reliant Energy Services,2,03/01/2007,Fraud - G,Y,06/01/2000,06/30/2000,1,2,2,2,,New Mexico,,,1126294,20071231
+141400,Aracoma Coal Co.,3,01/14/2009,OSHA,Y,10/22/2005,01/19/2006,0,1,2,2,,USDOJ - Criminal Division - Fraud Section,,,37748,20091231
+143421,Wright Medical Technology Inc. (extension),2,09/01/2011,Kickbacks,Y,,,,,,1,,"Connecticut,New Jersey,USDOJ - Criminal Division - Fraud Section",,,1492658,20111231
+143421,"Wright Medical Technology, Inc.",2,10/01/2010,Kickbacks,?,,,1,1,1,2,,"Connecticut,USDOJ - Criminal Division - Fraud Section",,,1492658,20101231
+143710,Williams Power Co. (subs. Of Global Power),2,02/01/2006,Fraud - G,Y,,,1,1,2,2,,USDOJ - Criminal Division - Fraud Section,,,1136294,20081231
+144496,UBS,3,05/20/2015,Fraud - G,Y,01/01/2001,06/30/2010,0,0,1,2,,"New York - Southern District,USDOJ - Criminal Division",,,1610520,20151231
+144496,UBS AG,1,12/18/2012,Fraud - G,Y,01/01/2001,06/30/2010,0,1,1,2,,"Pennsylvania - Eastern District,USDOJ - Civil Division - Office of Consumer Lit",,Fine Host was acquired,1610520,20121231
+144496,UBS Securities Japan Co. Ltd.,3,12/19/2012,Fraud - G,Y,01/01/2001,06/30/2010,0,1,1,2,,USDOJ - Criminal Division - Fraud Section,I,,1610520,20121231
+144496,UBS AG,1,05/04/2011,Antitrust,Y,,,1,1,1,2,,"Florida - Middle District,USDOJ - Civil Division - Consumer Protection Branch",,,1610520,20111231
+144496,UBS AG,2,02/18/2009,Fraud - T,Y,01/01/2000,12/31/2007,0,0,2,2,,USDOJ - Criminal Division - Fraud Section,,This amount is in frac,1610520,20091231
+144559,"Zimmer Holdings, Inc.",2,09/01/2007,Kickbacks,Y,01/01/2002,12/31/2006,0,1,1,2,,North Carolina - Eastern District,,,1136869,20071231
+150580,RxBazaar Inc.,3,08/27/2004,Fraud - G,N,,,,,,,,USDOJ - Tax Division,,,1115295,
+151933,"Tenaris, S.A.",1,03/14/2011,FCPA,Y,12/01/2006,05/31/2007,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,2005 IPO,1190723,20111231
+153668,NTL Inc.,3,11/22/2004,Environme,Y,,,0,0,0,0,,South Carolina,,,1270400,20041231
+160329,Google,1,08/19/2011,FDCA / Ph,Y,01/01/2003,,0,0,0,2,,Alaska,,,1652044,20111231
+160488,"NeuroMetrix, Inc.",2,01/26/2009,Fraud - H,Y,08/01/2004,10/31/2006,1,1,2,2,,USDOJ - Criminal Division,,,1289850,20091231
+160724,"MoneyGram Int'l, Inc.",2,11/09/2012,Bank Secr,Y,,,0,1,1,2,"100,000,000",Massachusetts,,,,
+160739,LG Display America Inc.,3,12/08/2008,Antitrust,Y,09/21/2001,06/01/2006,0,1,1,2,,USDOJ - Criminal Division,,,1290109,20081231
+161844,Las Vegas Sands Corp.,1,01/17/2017,FCPA,Y,01/01/2006,12/31/2009,1,1,2,2,,Connecticut,,,1300514,20171231
+161844,Las Vegas Sands Corp.,1,08/26/2013,Bank Secr,Y,10/19/2006,,0,0,0,0,,USDOJ - Antitrust Division,,,1300514,20131231
+162448,"Alpha Natural Resources, Inc.",1,12/06/2011,OSHA,Y,,,0,0,1,1,,Illinois - Northern District,,,1301063,20111231
+163060,Diana Shipping Services S.A.,3,12/06/2013,Obstructi,N,,,0,0,1,2,,USDOJ - Antitrust Division,,,1318885,20131231
+175263,The Western Union Co.,2,01/19/2017,Bank Secr,Y,01/01/2004,12/31/2012,1,1,2,2,,"USDOJ - Criminal Division,USDOJ - National Security Division",,,1365135,20171231
+177287,Jazz Pharmaceuticals,1,07/01/2007,FDCA / Ph,Y,,,,,,2,,Ohio - Southern District,N,,1232524,20071231
+178814,"Och-Ziff Capital Management Group, LLC",2,09/28/2016,FCPA,Y,01/01/2005,12/31/2015,1,1,1,2,,Massachusetts|USDOJ - Criminal Division - Fraud Section,,,1403256,20161231
+180272,"Lender Processing Services, Inc.",1,02/15/2013,Fraud - G,Y,03/01/2003,11/30/2009,1,1,2,,,New Jersey,,,1627014,20131231
+180279,AGA Medical,2,06/03/2008,FCPA,Y,,,,,,,,"California - Central District,Virginia - Eastern District",,,1421419,20081231
+183257,CareFusion Corp.,1,03/13/2013,FDCA / Ph,Y,,,,,,,,District of Columbia,X,,1457543,20130630
+183920,AOL,2,12/14/2004,Fraud - S,Y,07/01/1999,01/31/2002,0,1,1,2,"300,000,000",Massachusetts,,,1468516,20051231
+185416,"Imperial Holdings, Inc.",1,04/30/2012,Fraud - S,Y,01/01/2006,12/31/2011,0,0,2,2,,"North Carolina - Eastern District,USDOJ - Environment & Natural Resources Divis",,,1494448,20121231
+185645,"GNC Holdings, Inc.",1,12/07/2016,FDCA / Ph,Y,08/01/2013,,0,0,0,1,,Louisiana - Eastern District,T,,1502034,20161231
+186994,"Swisher Hygiene, Inc.",2,10/06/2015,Fraud - G,Y,,,1,1,1,2,,"North Carolina - Western District,USDOJ - Criminal Division - Asset Forfeiture",,,1504747,20151231
+187084,Parker Drilling Co.,2,04/16/2013,FCPA,Y,,04/30/2002,1,1,2,2,"15,850,000",California - Northern District,,,1592058,20131231
+200976,Braskem S.A.,3,12/21/2016,Fraud - G,Y,01/01/2002,12/31/2014,0,1,2,2,,USDOJ - Criminal Division - Fraud Section,C,,1071438,20161231
+205677,"Wal-Mart Stores, Inc.",3,05/28/2013,Environme,Y,07/01/2006,02/28/2008,1,1,1,1,,USDOJ - Criminal Division - Fraud Section,,,1046247,
+210418,ABB Inc.,3,09/29/2010,FCPA,Y,03/01/2004,09/27/2004,1,1,1,2,,USDOJ - Criminal Division - Fraud Section,,,1091587,20101231
+210418,ABB Vetco Gray (UK) Ltd.,3,07/09/2004,FCPA,Y,,,0,1,2,2,,"Pennsylvania - Western District,USDOJ - Criminal Division - Fraud Section",,,1091587,20041231
+210418,ABB Middle East & Africa Participations AG,3,04/11/2001,Antitrust,Y,06/01/1989,09/20/1996,,,,2,,USDOJ - Criminal Division - Fraud Section,,,1091587,20011231
+213288,Embraer S.A.,2,10/24/2016,FCPA,Y,08/01/2008,10/31/2010,1,1,1,2,,"New York - Southern District,USDOJ - Criminal Division - Fraud Section",,,1355444,20161231
+214526,"Magyar Telekom, Plc.",2,12/29/2011,FCPA,Y,01/01/2005,12/31/2006,1,1,1,2,,Connecticut,,,1047564,20111231
+218399,"Alstom Grid, Inc.",2,12/01/2014,FCPA,Y,01/01/2002,12/31/2010,0,0,1,2,,Pennsylvania - Western District,,,1062066,20150331
+220244,Qantas Airways Ltd.,3,01/14/2008,Antitrust,Y,01/01/2000,02/14/2006,0,1,1,2,,Connecticut,,,,
+220487,LATAM Airlines Group S.A.,2,07/25/2016,FCPA,Y,,,0,0,0,2,,USDOJ - Criminal Division - Fraud Section,,euros,1047716,20161231
+220546,"Statoil, ASA",2,10/01/2006,FCPA,Y,06/01/2002,01/31/2003,1,1,1,2,,Virginia - Eastern District,,,1140625,20061231
+221616,Deutsche Telekom AG,1,12/29/2011,FCPA,Y,01/01/2005,12/31/2006,1,1,1,2,,Massachusetts,,,946770,20111231
+222123,Odebrecht S.A.,3,12/21/2016,Fraud - G,Y,01/01/2001,12/21/2016,0,0,0,0,,"New Jersey,USDOJ - Civil Division - Consumer Protection Branch",,,,
+222185,Merck Sharp & Dohme Corp.,3,12/12/2011,FDCA / Ph,Y,05/01/1999,04/30/2002,0,1,2,2,"950,000,000",USDOJ - Antitrust Division,Z,,,
+237335,Sportingbet PLC,1,09/01/2010,Gambling,Y,01/01/1998,12/31/2006,0,0,0,0,,Louisiana - Eastern District,,,,
+240556,Allied Telesis Labs Inc.,3,03/18/2008,Fraud - G,Y,,,,,,,,USDOJ - Criminal Division - Fraud Section,,,,
+243394,United Bank for Africa,1,07/01/2007,Obstructi,Y,01/01/1999,12/31/2004,,,0,2,,"Montana,USDOJ - Environment & Natural Resources Division",,,,
+252384,Intertek Testing Services Environmental Laboratori,3,10/05/2001,Fraud - G,Y,01/01/1994,12/31/1997,1,1,1,2,"6,200,000",Massachusetts,w,,,
+258670,"El Al Israel Airlines, Ltd.",3,02/04/2009,Antitrust,Y,01/01/2003,02/14/2006,1,1,2,2,"20,000,000",Missouri - Western District,,,,
+260778,"Wellcare Health Plans, Inc.",2,05/05/2009,Fraud - H,Y,,10/31/2007,0,1,1,2,,"Florida - Middle District,USDOJ - Criminal Division - Fraud Section",,,1279363,20091231
+281459,Takata Corp.,3,12/15/2013,Fraud - G,Y,01/01/2003,02/28/2011,,,,0,,"Minnesota,USDOJ - Civil Division - Office of Consumer Litigation",,,,
