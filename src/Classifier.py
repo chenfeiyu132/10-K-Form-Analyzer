@@ -35,11 +35,13 @@ def chi2_analysis(vectorizer, dataset, n_terms, lemmatization):
 
 def locate_file(dir, year, cik):
     for folder in os.listdir(dir):
-        if int(folder[:4]) == int(year):
+        if int(folder[:4]) < int(year):
+            continue
+        elif folder[:4] == year:
             for form in os.listdir(dir+folder):
                 if form.split('-')[0] == cik:
                     return dir+folder+'/'+form
-        elif int(folder[:4]) > int(year):
+        else:
             break
     return ''
 
