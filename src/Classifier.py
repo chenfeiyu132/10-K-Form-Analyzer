@@ -67,6 +67,7 @@ for ind in df_csv.index:
         month_date = str(int(date))[4:]
         if month_date == '1231':
             actual_year = int(str(date)[:4]) + 1
+            print('year: ' + actual_year)
             file = locate_file(directory, str(actual_year), str(cik))
             if file != '':
                 counter += 1

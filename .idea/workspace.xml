@@ -4,8 +4,6 @@
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processed_10-K.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="19105" />
-          <entry key="txt" value="1759" />
+          <entry key="py" value="19199" />
+          <entry key="txt" value="1805" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1796" />
-          <entry key="Python" value="18863" />
+          <entry key="PLAIN_TEXT" value="1842" />
+          <entry key="Python" value="18957" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -100,11 +98,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+            <state relative-caret-position="443">
+              <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1588577522361" expanded="true" signature="832:1338" ph="..." />
+                <marker date="1588579892627" expanded="true" signature="832:1363" ph="..." />
               </folding>
             </state>
           </provider>
@@ -500,7 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588574760746</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="bug fixes for locate_file">
+      <created>1588577549299</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1588577549299</updated>
+    </task>
+    <task id="LOCAL-00026" summary="bug fixes for locate_file">
+      <created>1588579674033</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1588579674033</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -564,7 +576,8 @@
     <MESSAGE value="fixed directory names" />
     <MESSAGE value="added __init__.py" />
     <MESSAGE value="added counter for classifier" />
-    <option name="LAST_COMMIT_MESSAGE" value="added counter for classifier" />
+    <MESSAGE value="bug fixes for locate_file" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes for locate_file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -626,11 +639,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        <state relative-caret-position="443">
+          <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1588577522361" expanded="true" signature="832:1338" ph="..." />
+            <marker date="1588579892627" expanded="true" signature="832:1363" ph="..." />
           </folding>
         </state>
       </provider>
