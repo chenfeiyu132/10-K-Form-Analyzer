@@ -6,7 +6,7 @@ from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 
-from src.HTML_Extractor import *
+from .HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
