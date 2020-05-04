@@ -56,28 +56,28 @@ my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
 
 
-# # Scans label sheet and locates corresponding 10-K forms
-# for ind in df_csv.index:
-#     cik = df_csv['cik'][ind]
-#     date = df_csv['datadate'][ind]
-#     if not pd.isnull(date) and not pd.isnull(cik):
-#         date.astype(np.int64)
-#         cik = int(cik)
-#         month_date = str(int(date))[4:]
-#         if month_date == '1231':
-#             actual_year = int(str(date)[:4]) + 1
-#             file = locate_file(directory, str(actual_year), str(cik))
-#             if file != '':
-#                 dispo = df_csv['disposition'][ind]
-#                 head, tail = os.path.split(file)
-#                 if dispo == 1:
-#                     os.rename(file, directory+'False_Set/'+tail)
-#                 else:
-#                     os.rename(file, directory+'Truth_Set/'+tail)
-#
-# # Processes 10-K forms in the truth and false set folders
-# convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
-# convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
+# Scans label sheet and locates corresponding 10-K forms
+for ind in df_csv.index:
+    cik = df_csv['cik'][ind]
+    date = df_csv['datadate'][ind]
+    if not pd.isnull(date) and not pd.isnull(cik):
+        date.astype(np.int64)
+        cik = int(cik)
+        month_date = str(int(date))[4:]
+        if month_date == '1231':
+            actual_year = int(str(date)[:4]) + 1
+            file = locate_file(directory, str(actual_year), str(cik))
+            if file != '':
+                dispo = df_csv['disposition'][ind]
+                head, tail = os.path.split(file)
+                if dispo == 1:
+                    os.rename(file, directory+'False_Set/'+tail)
+                else:
+                    os.rename(file, directory+'Truth_Set/'+tail)
+
+# Processes 10-K forms in the truth and false set folders
+convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
+convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 
 #making csv from processed false and truth sets
 csv_out = open('processed_10-K.csv', mode='w')
