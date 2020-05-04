@@ -63,10 +63,8 @@ for ind in df_csv.index:
         month_date = str(int(date))[4:]
         if month_date == '1231':
             actual_year = int(str(date)[:4]) + 1
-            print('year: ', actual_year)
             file = locate_file(directory, str(actual_year), str(cik))
             if file != '':
-                counter += 1
                 dispo = df_csv['disposition'][ind]
                 head, tail = os.path.split(file)
                 if dispo == 1:
@@ -93,9 +91,7 @@ for ind in df_csv.index:
 #         writer.writerow([filename[0], filename[1], date, soup.text, label]);
 #
 # csv_out.close()
-
-print(counter)
-
+print('new files found: ', counter)
 
 
 #lemmatize(form_text_T)

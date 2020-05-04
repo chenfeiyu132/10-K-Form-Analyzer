@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="fixed algorithm for locate_file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="19199" />
-          <entry key="txt" value="1805" />
+          <entry key="py" value="19410" />
+          <entry key="txt" value="1836" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1842" />
-          <entry key="Python" value="18957" />
+          <entry key="PLAIN_TEXT" value="1873" />
+          <entry key="Python" value="19168" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,11 +98,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+            <state relative-caret-position="383">
+              <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1588579892627" expanded="true" signature="832:1363" ph="..." />
+                <marker date="1588620361557" expanded="true" signature="832:1296" ph="..." />
               </folding>
             </state>
           </provider>
@@ -512,7 +512,28 @@
       <option name="project" value="LOCAL" />
       <updated>1588579674033</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bug fixes for locate_file">
+      <created>1588579897579</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1588579897579</updated>
+    </task>
+    <task id="LOCAL-00028" summary="bug fixes for locate_file">
+      <created>1588580072692</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1588580072692</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fixed algorithm for locate_file">
+      <created>1588620161407</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1588620161407</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -577,7 +598,8 @@
     <MESSAGE value="added __init__.py" />
     <MESSAGE value="added counter for classifier" />
     <MESSAGE value="bug fixes for locate_file" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes for locate_file" />
+    <MESSAGE value="fixed algorithm for locate_file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed algorithm for locate_file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -639,11 +661,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="69" column="41" lean-forward="true" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+        <state relative-caret-position="383">
+          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1588579892627" expanded="true" signature="832:1363" ph="..." />
+            <marker date="1588620361557" expanded="true" signature="832:1296" ph="..." />
           </folding>
         </state>
       </provider>
