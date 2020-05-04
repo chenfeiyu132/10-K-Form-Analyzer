@@ -1,12 +1,9 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction import text
 from sklearn.feature_selection import chi2
 
-from sklearn.naive_bayes import MultinomialNB, BernoulliNB
-
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 
-from src.HTML_Extractor import *
+from src.extractor.HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
@@ -51,7 +48,7 @@ def locate_file(dir, year, cik):
 
 
 
-path_to_csv = 'label_reference.csv'
+path_to_csv = './extractor/label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
 directory = '/mnt/volume/10-K/10-K_files'
