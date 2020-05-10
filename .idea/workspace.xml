@@ -13,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589071704303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589146734503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="21349" />
-          <entry key="txt" value="2075" />
+          <entry key="py" value="21412" />
+          <entry key="txt" value="2160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2112" />
-          <entry key="Python" value="21107" />
+          <entry key="PLAIN_TEXT" value="2197" />
+          <entry key="Python" value="21170" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -73,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
+            <state relative-caret-position="181">
+              <caret line="84" column="99" lean-forward="true" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="129" column="55" selection-start-line="129" selection-start-column="55" selection-end-line="129" selection-end-column="55" />
+            <state relative-caret-position="29">
+              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589079730063" expanded="true" signature="988:2857" ph="..." />
-                <marker date="1589079730063" expanded="true" signature="2111:2857" ph="..." />
+                <marker date="1589146734489" expanded="true" signature="1104:2954" ph="..." />
+                <marker date="1589146734489" expanded="true" signature="2206:2954" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,6 +129,7 @@
       <find>Alaska</find>
       <find>has been identified as one of many potentially</find>
       <find>output_folder</find>
+      <find>split</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -584,7 +585,28 @@
       <option name="project" value="LOCAL" />
       <updated>1589079425580</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fixed Unicode fit_transform bug">
+      <created>1589079763067</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1589079763067</updated>
+    </task>
+    <task id="LOCAL-00038" summary="enhanced lemmatization by removing title of section 8">
+      <created>1589081023648</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1589081023648</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixed directory addreses">
+      <created>1589081091928</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589081091928</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -630,8 +652,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added test html file and extrator code file" />
-    <MESSAGE value="Successfully found a way to locate item 8 titles and check which one is bold" />
     <MESSAGE value="Successfully implemented algorithm to identify start of item 8" />
     <MESSAGE value="Added process outline&#10;&#10;Changed parser so document parses more robustly and accurately&#10;&#10;Successfully implemented algorithm to locate item 9&#10;&#10;Next step would be testing the deletion method" />
     <MESSAGE value="Successfully deleted all content after item 8 and exported new html file&#10;&#10;Current problem is certain content still persists in different documents which cannot be reached by sibling iteration" />
@@ -655,7 +675,9 @@
     <MESSAGE value="added function to conduct naive bayes text importance ranking" />
     <MESSAGE value="added chi2 test for uni and bigram correlation" />
     <MESSAGE value="fixed Unicode fit_transform bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Unicode fit_transform bug" />
+    <MESSAGE value="enhanced lemmatization by removing title of section 8" />
+    <MESSAGE value="fixed directory addreses" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed directory addreses" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -696,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
+        <state relative-caret-position="181">
+          <caret line="84" column="99" lean-forward="true" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
@@ -710,12 +732,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="129" column="55" selection-start-line="129" selection-start-column="55" selection-end-line="129" selection-end-column="55" />
+        <state relative-caret-position="29">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589079730063" expanded="true" signature="988:2857" ph="..." />
-            <marker date="1589079730063" expanded="true" signature="2111:2857" ph="..." />
+            <marker date="1589146734489" expanded="true" signature="1104:2954" ph="..." />
+            <marker date="1589146734489" expanded="true" signature="2206:2954" ph="..." />
           </folding>
         </state>
       </provider>

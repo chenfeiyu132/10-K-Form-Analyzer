@@ -61,7 +61,7 @@ def topTermsNB(df_form, vectorizer):
     words = vectorizer.get_feature_names()
     y = [int(pros) for pros in df_form['prosecution']]
 
-    clf = MultinomialNB(alpha=0)
+    clf = MultinomialNB(alpha=0.1)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
