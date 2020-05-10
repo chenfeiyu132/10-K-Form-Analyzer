@@ -4,6 +4,7 @@
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTML_Extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTML_Extractor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +14,14 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1588571967606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589071433694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2023454949">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.14" value="1" />
@@ -28,9 +29,9 @@
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -54,14 +55,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="19410" />
-          <entry key="txt" value="1836" />
+          <entry key="py" value="21110" />
+          <entry key="txt" value="1921" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1873" />
-          <entry key="Python" value="19168" />
+          <entry key="PLAIN_TEXT" value="1958" />
+          <entry key="Python" value="20868" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -73,14 +74,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1314">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="97">
+              <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1587422725538" expanded="true" signature="346:348" ph="..." />
-                <marker date="1587422725538" expanded="true" signature="2284:2285" ph="..." />
-                <marker date="1587422725538" expanded="true" signature="2319:2324" ph="..." />
-                <marker date="1587422725538" expanded="true" signature="2464:2465" ph="..." />
+                <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
+                <marker date="1589062699617" expanded="true" signature="2318:2319" ph="..." />
+                <marker date="1589062699617" expanded="true" signature="2367:2376" ph="..." />
+                <marker date="1589062699617" expanded="true" signature="2532:2533" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,11 +99,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="74" column="57" lean-forward="true" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
+            <state relative-caret-position="120">
+              <caret line="79" column="96" lean-forward="true" selection-start-line="79" selection-start-column="96" selection-end-line="79" selection-end-column="96" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1588620386373" expanded="true" signature="832:1296" ph="..." />
+                <marker date="1589071539806" expanded="true" signature="1120:2928" ph="..." />
+                <marker date="1589071539806" expanded="true" signature="2182:2928" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,6 +129,7 @@
       <find>abbo</find>
       <find>Alaska</find>
       <find>has been identified as one of many potentially</find>
+      <find>output_folder</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,11 +142,11 @@
         <option value="$PROJECT_DIR$/src/HTML Extractor.py" />
         <option value="$PROJECT_DIR$/src/Data Importer.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
-        <option value="$PROJECT_DIR$/src/HTML_Extractor.py" />
         <option value="$PROJECT_DIR$/src/requirements.txt" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
+        <option value="$PROJECT_DIR$/src/HTML_Extractor.py" />
         <option value="$PROJECT_DIR$/src/Classifier.py" />
       </list>
     </option>
@@ -540,7 +543,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588620366538</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="initiating new file processing">
+      <created>1588620406648</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1588620406648</updated>
+    </task>
+    <task id="LOCAL-00032" summary="made changes to backup_locator for bug fixes">
+      <created>1588621981508</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1588621981509</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -556,12 +573,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21243942" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21567044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.3958904" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3958904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -606,7 +623,9 @@
     <MESSAGE value="added counter for classifier" />
     <MESSAGE value="bug fixes for locate_file" />
     <MESSAGE value="fixed algorithm for locate_file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed algorithm for locate_file" />
+    <MESSAGE value="initiating new file processing" />
+    <MESSAGE value="made changes to backup_locator for bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="made changes to backup_locator for bug fixes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -625,12 +644,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test_HTML/1800-ABBOTT LABORATORIES-10-K-2010-02-19.html" />
-    <entry file="file://$PROJECT_DIR$/src/processed_10-K.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processed_10-K.csv" />
     <entry file="file://$PROJECT_DIR$/src/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -642,6 +656,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/__init__.py" />
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -649,30 +664,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1314">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="97">
+          <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1587422725538" expanded="true" signature="346:348" ph="..." />
-            <marker date="1587422725538" expanded="true" signature="2284:2285" ph="..." />
-            <marker date="1587422725538" expanded="true" signature="2319:2324" ph="..." />
-            <marker date="1587422725538" expanded="true" signature="2464:2465" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2318:2319" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2367:2376" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2532:2533" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="74" column="57" lean-forward="true" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
+        <state relative-caret-position="120">
+          <caret line="79" column="96" lean-forward="true" selection-start-line="79" selection-start-column="96" selection-end-line="79" selection-end-column="96" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1588620386373" expanded="true" signature="832:1296" ph="..." />
+            <marker date="1589071539806" expanded="true" signature="1120:2928" ph="..." />
+            <marker date="1589071539806" expanded="true" signature="2182:2928" ph="..." />
           </folding>
         </state>
       </provider>

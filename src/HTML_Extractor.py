@@ -107,7 +107,9 @@ def process_html(path, output_folder_path):
 
 def convert_html(directory_name, output_folder_name):
     for filename in os.listdir(directory_name):
-        if filename.endswith('.html'):
+        if filename in os.listdir(output_folder_name):
+            continue
+        elif filename.endswith('.html'):
             print(filename)
             process_html(directory_name+filename, output_folder_name)
         elif filename.endswith('.txt'):
