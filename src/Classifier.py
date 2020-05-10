@@ -32,7 +32,7 @@ def topTermsIDF(vectorizer):
 def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     if lemmatization:
         df_form['full text'] = lemmatize(df_form['full text'], text.ENGLISH_STOP_WORDS)
-    response_all = vectorizer.fit_transform(df_form['full text'])
+    response_all = vectorizer.fit_transform(df_form['full text'].values.astype('U13'))
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'])
     indices = np.argsort(features_chi2[0])
@@ -58,9 +58,9 @@ def locate_file(dir, year, cik):
 
 
 def topTermsNB(df_form, vectorizer):
-    X = vectorizer.fit_transform(df_form['full text'])
+    X = vectorizer.fit_transform(df_form['full text'].values.astype('U13'))
     words = vectorizer.get_feature_names()
-    y = [int(pros) for pros in df_form['prosecution']]
+    y = [int(pros) for pros in df_form['prosecution'].values.astype('U13')]
 
     clf = MultinomialNB(alpha=0)
     clf.fit(X, y)
