@@ -4,7 +4,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
-
+import nltk
+nltk.download('wordnet')
 from src.HTML_Extractor import *
 import pandas as pd
 import numpy as np
