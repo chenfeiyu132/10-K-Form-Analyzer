@@ -13,6 +13,7 @@ import csv
 
 def lemmatize(dataset, stop_words):
     for article in dataset:
+        article = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', article.lower())
         article = ' '.join([lemmatizer.lemmatize(i)
                          for i in article.split() if i not in stop_words])
     return dataset
@@ -71,10 +72,10 @@ def topTermsNB(df_form, vectorizer):
     return likelihood_df
 
 
-path_to_csv = 'src/label_reference.csv'  # 'label_reference.csv' #
+path_to_csv = 'label_reference.csv'  # 'src/label_reference.csv'  #
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/' #
+directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/'  # '/mnt/volume/10-K/10-K_files/'  #
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
@@ -126,8 +127,8 @@ for path in paths:
             form_text_T.append(soup.text)
         writer.writerow([filename[0], filename[1], date, soup.text, label]);
 df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
-df_all_forms['full text'] = df_all_forms['full text'].values.astype('U13')
-df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U13')
+df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
+df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 csv_out.close()
 print('new files found: ', counter)
 
