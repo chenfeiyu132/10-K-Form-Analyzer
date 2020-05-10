@@ -4,8 +4,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
-import nltk
-nltk.download('wordnet')
 from src.HTML_Extractor import *
 import pandas as pd
 import numpy as np
@@ -32,7 +30,7 @@ def topTermsIDF(vectorizer):
 def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     if lemmatization:
         df_form['full text'] = lemmatize(df_form['full text'], text.ENGLISH_STOP_WORDS)
-    response_all = vectorizer.fit_transform(df_form['full text'].values.astype('U13'))
+    response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'])
     indices = np.argsort(features_chi2[0])
@@ -58,9 +56,9 @@ def locate_file(dir, year, cik):
 
 
 def topTermsNB(df_form, vectorizer):
-    X = vectorizer.fit_transform(df_form['full text'].values.astype('U13'))
+    X = vectorizer.fit_transform(df_form['full text'])
     words = vectorizer.get_feature_names()
-    y = [int(pros) for pros in df_form['prosecution'].values.astype('U13')]
+    y = [int(pros) for pros in df_form['prosecution']]
 
     clf = MultinomialNB(alpha=0)
     clf.fit(X, y)
@@ -128,6 +126,8 @@ for path in paths:
             form_text_T.append(soup.text)
         writer.writerow([filename[0], filename[1], date, soup.text, label]);
 df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
+df_all_forms['full text'] = df_all_forms['full text'].values.astype('U13')
+df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U13')
 csv_out.close()
 print('new files found: ', counter)
 

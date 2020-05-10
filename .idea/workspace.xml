@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="21258" />
-          <entry key="txt" value="2043" />
+          <entry key="py" value="21349" />
+          <entry key="txt" value="2075" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2080" />
-          <entry key="Python" value="21016" />
+          <entry key="PLAIN_TEXT" value="2112" />
+          <entry key="Python" value="21107" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="142">
+              <caret line="129" column="55" selection-start-line="129" selection-start-column="55" selection-end-line="129" selection-end-column="55" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589079054078" expanded="true" signature="1025:2873" ph="..." />
-                <marker date="1589079054078" expanded="true" signature="2127:2873" ph="..." />
+                <marker date="1589079730063" expanded="true" signature="988:2857" ph="..." />
+                <marker date="1589079730063" expanded="true" signature="2111:2857" ph="..." />
               </folding>
             </state>
           </provider>
@@ -570,7 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589078480900</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added chi2 test for uni and bigram correlation">
+      <created>1589079087102</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1589079087102</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fixed Unicode fit_transform bug">
+      <created>1589079425580</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1589079425580</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -640,7 +654,8 @@
     <MESSAGE value="made changes to backup_locator for bug fixes" />
     <MESSAGE value="added function to conduct naive bayes text importance ranking" />
     <MESSAGE value="added chi2 test for uni and bigram correlation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added chi2 test for uni and bigram correlation" />
+    <MESSAGE value="fixed Unicode fit_transform bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed Unicode fit_transform bug" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -695,12 +710,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="142">
+          <caret line="129" column="55" selection-start-line="129" selection-start-column="55" selection-end-line="129" selection-end-column="55" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589079054078" expanded="true" signature="1025:2873" ph="..." />
-            <marker date="1589079054078" expanded="true" signature="2127:2873" ph="..." />
+            <marker date="1589079730063" expanded="true" signature="988:2857" ph="..." />
+            <marker date="1589079730063" expanded="true" signature="2111:2857" ph="..." />
           </folding>
         </state>
       </provider>
