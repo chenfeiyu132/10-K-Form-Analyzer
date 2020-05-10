@@ -28,12 +28,10 @@ def topTermsIDF(vectorizer):
     return top_features
 
 
-def chi2_analysis(vectorizer, t_set, f_set, n_terms, lemmatization):
-    df_form = pd.DataFrame({'text': t_set, 'proseuction': 1})
-    df_form = df_form.append({'text': f_set, 'prosecution': 0})
+def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     if lemmatization:
-        df_form['text'] = lemmatize(df_form['text'])
-    response_all = vectorizer.fit_transform(df_form['text'])
+        df_form['full text'] = lemmatize(df_form['full text'], text.ENGLISH_STOP_WORDS)
+    response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'])
     indices = np.argsort(features_chi2[0])
@@ -74,10 +72,10 @@ def topTermsNB(df_form, vectorizer):
     return likelihood_df
 
 
-path_to_csv = 'src/label_reference.csv' #'label_reference.csv'
+path_to_csv = 'src/label_reference.csv'  # 'label_reference.csv' #
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/mnt/volume/10-K/10-K_files/' #'/Users/Ju1y/Documents/GIES Research Project/10-K/'
+directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/' #
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
@@ -135,6 +133,9 @@ print('new files found: ', counter)
 lemmatized_truth_forms = lemmatize(form_text_T, my_stop_words);
 lemmatized_false_forms = lemmatize(form_text_F, my_stop_words);
 topTermsNB(df_all_forms, tfidf)
+print('-'*20, '\n')
+print('Chi2 analysis...\n')
+chi2_analysis(tfidf, df_all_forms, 20, True)
 #feature_names = tfidf.get_feature_names()
 #print(topTerms(tfidf, feature_names)
 
