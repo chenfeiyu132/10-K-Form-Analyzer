@@ -2,6 +2,8 @@ from sklearn.feature_extraction import text
 from sklearn.feature_selection import chi2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 from src.HTML_Extractor import *
@@ -61,7 +63,7 @@ def topTermsNB(df_form, vectorizer):
     words = vectorizer.get_feature_names()
     y = [int(pros) for pros in df_form['prosecution']]
 
-    clf = MultinomialNB(alpha=0.1)
+    clf = MultinomialNB(alpha=0.5, fit_prior= True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
@@ -75,14 +77,17 @@ def topTermsNB(df_form, vectorizer):
 path_to_csv = 'src/label_reference.csv'  # 'label_reference.csv'  #
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/'  #
+directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/' #
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
-tfidf = tfidf = TfidfVectorizer(ngram_range=(1,2), stop_words=my_stop_words, min_df=2, sublinear_tf=True)
-form_text_T = []
-form_text_F = []
-
+tfidf = tfidf = TfidfVectorizer(ngram_range=(1,2),
+                                stop_words=my_stop_words,
+                                min_df=2,
+                                max_df=0.2,
+                                sublinear_tf=True,
+                                norm=None,
+                                binary=True)
 
 # Scans label sheet and locates corresponding 10-K forms
 counter = 0
@@ -121,23 +126,42 @@ for path in paths:
         filename = filename.split('-')
         date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
         label = 0 if path == paths[0] else 1
-        if label == 0:
-            form_text_F.append(soup.text)
-        else:
-            form_text_T.append(soup.text)
         writer.writerow([filename[0], filename[1], date, soup.text, label]);
+
 df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
 df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
 df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 csv_out.close()
 print('new files found: ', counter)
+lemmatize(df_all_forms['full text'], my_stop_words)
 
-lemmatized_truth_forms = lemmatize(form_text_T, my_stop_words);
-lemmatized_false_forms = lemmatize(form_text_F, my_stop_words);
+# performing Naive Bayes test
 topTermsNB(df_all_forms, tfidf)
 print('-'*20, '\n')
 print('Chi2 analysis...\n')
+
+# performing chi2 test
 chi2_analysis(tfidf, df_all_forms, 20, True)
+
+
+mnb_pipeline = Pipeline([
+    ('tfidf_pipeline', TfidfVectorizer()),
+    ('mnb', MultinomialNB())
+])
+# different parameter settings to test out
+grid_params = {
+    'mnb__alpha': np.linspace(0.5, 1.5, 6),
+    'mnb__fit_prior': [True, False],
+    'tfidf_pipeline__max_df': np.linspace(0.1, 1, 10),
+    'tfidf_pipeline__binary': [True, False],
+    'tfidf_pipeline__norm': [None, 'l1', 'l2'],
+}
+clf = GridSearchCV(mnb_pipeline, grid_params, cv=5)
+clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
+
+print('Best Score: ', clf.best_score_)
+print('Best Params: ', clf.best_params_)
+
 #feature_names = tfidf.get_feature_names()
 #print(topTerms(tfidf, feature_names)
 
