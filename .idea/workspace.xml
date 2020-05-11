@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="22721" />
-          <entry key="txt" value="2412" />
+          <entry key="py" value="22725" />
+          <entry key="txt" value="2503" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2449" />
-          <entry key="Python" value="22479" />
+          <entry key="PLAIN_TEXT" value="2540" />
+          <entry key="Python" value="22483" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="153" column="42" lean-forward="true" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+            <state relative-caret-position="196">
+              <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589234657587" expanded="true" signature="1287:3126" ph="..." />
-                <marker date="1589234657587" expanded="true" signature="2367:3126" ph="..." />
+                <marker date="1589237782062" expanded="true" signature="1287:3126" ph="..." />
+                <marker date="1589237782062" expanded="true" signature="2367:3126" ph="..." />
               </folding>
             </state>
           </provider>
@@ -650,7 +650,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589231163553</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="enabled automatic detection of operating system">
+      <created>1589234672311</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1589234672311</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fixed max_df sequence in grid param">
+      <created>1589234862393</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589234862393</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -696,8 +710,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deleted delete_section since this version no longer uses deletion approach" />
-    <MESSAGE value="Optimized regex expression for item 9 to increase search accuracy" />
     <MESSAGE value="Changed approach of find_root_parent to deal with edge binding cases" />
     <MESSAGE value="Fixed minor bugs" />
     <MESSAGE value="Successfully located file using datadate and cik in label sheet" />
@@ -721,7 +733,9 @@
     <MESSAGE value="changed list printout for chi2 analysis" />
     <MESSAGE value="added ngram_range for hyperparameter tuning option" />
     <MESSAGE value="lowered hyperparameter tuning for" />
-    <option name="LAST_COMMIT_MESSAGE" value="lowered hyperparameter tuning for" />
+    <MESSAGE value="enabled automatic detection of operating system" />
+    <MESSAGE value="fixed max_df sequence in grid param" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed max_df sequence in grid param" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -776,12 +790,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="153" column="42" lean-forward="true" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+        <state relative-caret-position="196">
+          <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589234657587" expanded="true" signature="1287:3126" ph="..." />
-            <marker date="1589234657587" expanded="true" signature="2367:3126" ph="..." />
+            <marker date="1589237782062" expanded="true" signature="1287:3126" ph="..." />
+            <marker date="1589237782062" expanded="true" signature="2367:3126" ph="..." />
           </folding>
         </state>
       </provider>

@@ -64,7 +64,7 @@ def topTermsNB(df_form, vectorizer):
     words = vectorizer.get_feature_names()
     y = [int(pros) for pros in df_form['prosecution']]
 
-    clf = MultinomialNB(alpha=0.1, fit_prior=True)
+    clf = MultinomialNB(alpha=0.7, fit_prior=True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
@@ -164,13 +164,13 @@ clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
 print('Best Score: ', clf.best_score_)
 print('Best Params: ', clf.best_params_)
 
-NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
-X_train = tfidf.fit_transform(df_all_forms['full text'])
-y_train = [int(pros) for pros in df_all_forms['prosecution']]
-NB_optimal.fit(X_train, y_train)
-pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
-print('Most associative words ------')
-print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
+# NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
+# X_train = tfidf.fit_transform(df_all_forms['full text'])
+# y_train = [int(pros) for pros in df_all_forms['prosecution']]
+# NB_optimal.fit(X_train, y_train)
+# pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+# print('Most associative words ------')
+# print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
 
 #feature_names = tfidf.get_feature_names()
 #print(topTerms(tfidf, feature_names)
