@@ -6,18 +6,20 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
+from nltk.tokenize import PunktSentenceTokenizer, ToktokTokenizer
 from src.HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
 import csv
 
+en_stop = text.ENGLISH_STOP_WORDS
 
-def lemmatize(dataset, stop_words):
+def lemmatize(dataset):
     for article in dataset:
         article = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', article.lower())
         article = ' '.join([lemmatizer.lemmatize(i)
-                         for i in article.split() if i not in stop_words])
+                         for i in article.split() if i not in en_stop])
     return dataset
 
 
@@ -32,7 +34,7 @@ def topTermsIDF(vectorizer):
 
 def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     if lemmatization:
-        df_form['full text'] = lemmatize(df_form['full text'], text.ENGLISH_STOP_WORDS)
+        df_form['full text'] = lemmatize(df_form['full text'])
     response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
@@ -68,7 +70,7 @@ def topTermsNB(df_form, vectorizer):
                                  index=words)
     likelihood_df['Relative Prevalence for Prosecution'] = likelihood_df.eval('(exp(Prosecution) - exp(No_Prosecution))')
     print('Top 10 terms strongly associated to Prosecution according to Naive Bayes analysis:\n')
-    print(likelihood_df['Relative Prevalence for Prosecution'].sort_values(ascending=False).iloc[:10])
+    print(likelihood_df['Relative Prevalence for Prosecution'].sort_values(ascending=False)[:10])
     return likelihood_df
 
 
@@ -77,10 +79,10 @@ df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
 directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/'  #
 
-my_stop_words = text.ENGLISH_STOP_WORDS
+
 lemmatizer = WordNetLemmatizer()
 tfidf = tfidf = TfidfVectorizer(ngram_range=(1,2),
-                                stop_words=my_stop_words,
+                                stop_words=en_stop,
                                 min_df=2,
                                 max_df=0.2,
                                 sublinear_tf=True,
@@ -131,7 +133,7 @@ df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
 df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 csv_out.close()
 print('new files found: ', counter)
-lemmatize(df_all_forms['full text'], my_stop_words)
+lemmatize(df_all_forms['full text'])
 
 # performing Naive Bayes test
 topTermsNB(df_all_forms, tfidf)
@@ -148,12 +150,12 @@ mnb_pipeline = Pipeline([
 ])
 # different parameter settings to test out
 grid_params = {
-    'mnb__alpha': np.linspace(0.1, 1.5, 15),
-    'mnb__fit_prior': [True, False],
+    'mnb__alpha': np.linspace(0.1, 1, 10),
+    'mnb__fit_prior': [True],
+    'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__max_df': np.linspace(0.1, 1, 10),
-    'tfidf_pipeline__ngram_range': (1, np.linspace(2, 6, 1)),
-    'tfidf_pipeline__binary': [True, False],
-    'tfidf_pipeline__norm': [None, 'l1', 'l2'],
+    'tfidf_pipeline__binary': [True],
+    'tfidf_pipeline__norm': [None],
 }
 clf = GridSearchCV(mnb_pipeline, grid_params, cv=5)
 clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
