@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="Enabled hyperparameter tuning with GridSearchCV">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
@@ -13,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589146734503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589153497111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="21412" />
-          <entry key="txt" value="2160" />
+          <entry key="py" value="21957" />
+          <entry key="txt" value="2232" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2197" />
-          <entry key="Python" value="21170" />
+          <entry key="PLAIN_TEXT" value="2269" />
+          <entry key="Python" value="21715" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -73,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="84" column="99" lean-forward="true" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
+            <state relative-caret-position="-293">
+              <caret line="84" column="99" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+            <state relative-caret-position="62">
+              <caret line="76" column="68" lean-forward="true" selection-start-line="76" selection-start-column="68" selection-end-line="76" selection-end-column="68" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589146734489" expanded="true" signature="1104:2954" ph="..." />
-                <marker date="1589146734489" expanded="true" signature="2206:2954" ph="..." />
+                <marker date="1589164785529" expanded="true" signature="1191:3065" ph="..." />
+                <marker date="1589164785529" expanded="true" signature="2300:3065" ph="..." />
               </folding>
             </state>
           </provider>
@@ -606,7 +606,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589081091928</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="changed alpha settings">
+      <created>1589146761741</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1589146761741</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Enabled hyperparameter tuning with GridSearchCV">
+      <created>1589148936440</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1589148936441</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -652,8 +666,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Successfully implemented algorithm to identify start of item 8" />
-    <MESSAGE value="Added process outline&#10;&#10;Changed parser so document parses more robustly and accurately&#10;&#10;Successfully implemented algorithm to locate item 9&#10;&#10;Next step would be testing the deletion method" />
     <MESSAGE value="Successfully deleted all content after item 8 and exported new html file&#10;&#10;Current problem is certain content still persists in different documents which cannot be reached by sibling iteration" />
     <MESSAGE value="Coded methods to cleanly locate item 8 and item 9" />
     <MESSAGE value="Successfully cut out item 8 for first two documents&#10;&#10;Improvements in method design&#10;&#10;Future steps should delete privacy message and possibly automate the process completely" />
@@ -677,7 +689,9 @@
     <MESSAGE value="fixed Unicode fit_transform bug" />
     <MESSAGE value="enhanced lemmatization by removing title of section 8" />
     <MESSAGE value="fixed directory addreses" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed directory addreses" />
+    <MESSAGE value="changed alpha settings" />
+    <MESSAGE value="Enabled hyperparameter tuning with GridSearchCV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enabled hyperparameter tuning with GridSearchCV" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -718,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="84" column="99" lean-forward="true" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
+        <state relative-caret-position="-293">
+          <caret line="84" column="99" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="99" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
@@ -732,12 +746,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        <state relative-caret-position="62">
+          <caret line="76" column="68" lean-forward="true" selection-start-line="76" selection-start-column="68" selection-end-line="76" selection-end-column="68" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589146734489" expanded="true" signature="1104:2954" ph="..." />
-            <marker date="1589146734489" expanded="true" signature="2206:2954" ph="..." />
+            <marker date="1589164785529" expanded="true" signature="1191:3065" ph="..." />
+            <marker date="1589164785529" expanded="true" signature="2300:3065" ph="..." />
           </folding>
         </state>
       </provider>

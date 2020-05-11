@@ -35,7 +35,7 @@ def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
         df_form['full text'] = lemmatize(df_form['full text'], text.ENGLISH_STOP_WORDS)
     response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
-    features_chi2 = chi2(set_array, df_form['prosecution'])
+    features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
     indices = np.argsort(features_chi2[0])
     feature_names = np.array(vectorizer.get_feature_names())[indices]
 
@@ -63,7 +63,7 @@ def topTermsNB(df_form, vectorizer):
     words = vectorizer.get_feature_names()
     y = [int(pros) for pros in df_form['prosecution']]
 
-    clf = MultinomialNB(alpha=0.5, fit_prior= True)
+    clf = MultinomialNB(alpha=0.4, fit_prior= True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
@@ -77,7 +77,7 @@ def topTermsNB(df_form, vectorizer):
 path_to_csv = 'src/label_reference.csv'  # 'label_reference.csv'  #
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/' #
+directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/'  #
 
 my_stop_words = text.ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
@@ -150,7 +150,7 @@ mnb_pipeline = Pipeline([
 ])
 # different parameter settings to test out
 grid_params = {
-    'mnb__alpha': np.linspace(0.5, 1.5, 6),
+    'mnb__alpha': np.linspace(0.1, 1.5, 15),
     'mnb__fit_prior': [True, False],
     'tfidf_pipeline__max_df': np.linspace(0.1, 1, 10),
     'tfidf_pipeline__binary': [True, False],
