@@ -38,14 +38,12 @@ def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
     indices = np.argsort(features_chi2[0])
     feature_names = np.array(vectorizer.get_feature_names())[indices]
-
+    feature_names = feature_names[::-1]
     unigrams = [v for v in feature_names if len(v.split(' ')) == 1]
     bigrams = [v for v in feature_names if len(v.split(' ')) == 2]
-    print("  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[-n_terms:])))
-    print("  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[-n_terms:])))
 
-    feature_names = feature_names[::-1]
-
+    print("  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[:n_terms])))
+    print("  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[:n_terms])))
     print(feature_names[:n_terms])
 
 
