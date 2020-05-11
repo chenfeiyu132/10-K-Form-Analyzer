@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import os
 import csv
+import sys
 
 en_stop = text.ENGLISH_STOP_WORDS
 
@@ -63,7 +64,7 @@ def topTermsNB(df_form, vectorizer):
     words = vectorizer.get_feature_names()
     y = [int(pros) for pros in df_form['prosecution']]
 
-    clf = MultinomialNB(alpha=0.4, fit_prior= True)
+    clf = MultinomialNB(alpha=0.1, fit_prior=True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
@@ -74,10 +75,10 @@ def topTermsNB(df_form, vectorizer):
     return likelihood_df
 
 
-path_to_csv = 'src/label_reference.csv'  # 'label_reference.csv'  #
+path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
 df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/mnt/volume/10-K/10-K_files/'  # '/Users/Ju1y/Documents/GIES Research Project/10-K/'  #
+directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' if sys.platform == 'darwin' else '/mnt/volume/10-K/10-K_files/'
 
 
 lemmatizer = WordNetLemmatizer()
@@ -153,7 +154,7 @@ grid_params = {
     'mnb__alpha': np.linspace(0.1, 1, 10),
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__max_df': np.linspace(0.1, 1, 10),
+    'tfidf_pipeline__max_df': .2,
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
@@ -162,6 +163,14 @@ clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
 
 print('Best Score: ', clf.best_score_)
 print('Best Params: ', clf.best_params_)
+
+NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
+X_train = tfidf.fit_transform(df_all_forms['full text'])
+y_train = [int(pros) for pros in df_all_forms['prosecution']]
+NB_optimal.fit(X_train, y_train)
+pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+print('Most associative words ------')
+print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
 
 #feature_names = tfidf.get_feature_names()
 #print(topTerms(tfidf, feature_names)
