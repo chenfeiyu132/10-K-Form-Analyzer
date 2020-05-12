@@ -151,7 +151,7 @@ mnb_pipeline = Pipeline([
 ])
 # different parameter settings to test out
 grid_params = {
-    'mnb__alpha': np.linspace(0, 1, 0.1),
+    'mnb__alpha': np.linspace(0, 1, 10),
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__max_df': [.2],

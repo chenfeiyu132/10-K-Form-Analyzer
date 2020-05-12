@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="22769" />
-          <entry key="txt" value="2665" />
+          <entry key="py" value="22795" />
+          <entry key="txt" value="2722" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2702" />
-          <entry key="Python" value="22527" />
+          <entry key="PLAIN_TEXT" value="2759" />
+          <entry key="Python" value="22553" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="156" column="54" lean-forward="true" selection-start-line="156" selection-start-column="54" selection-end-line="156" selection-end-column="54" />
+            <state relative-caret-position="77">
+              <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589249366803" expanded="true" signature="1287:3126" ph="..." />
-                <marker date="1589249366803" expanded="true" signature="2367:3126" ph="..." />
+                <marker date="1589263966269" expanded="true" signature="1287:3126" ph="..." />
+                <marker date="1589263966269" expanded="true" signature="2367:3126" ph="..." />
               </folding>
             </state>
           </provider>
@@ -334,20 +334,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added process outline&#10;&#10;Changed parser so document parses more robustly and accurately&#10;&#10;Successfully implemented algorithm to locate item 9&#10;&#10;Next step would be testing the deletion method">
-      <created>1577411843112</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1577411843112</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Successfully deleted all content after item 8 and exported new html file&#10;&#10;Current problem is certain content still persists in different documents which cannot be reached by sibling iteration">
-      <created>1577511799470</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1577511799470</updated>
     </task>
     <task id="LOCAL-00006" summary="Coded methods to cleanly locate item 8 and item 9">
       <created>1577515295397</created>
@@ -678,7 +664,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589244930829</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fixed bug in max_df">
+      <created>1589249379507</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1589249379507</updated>
+    </task>
+    <task id="LOCAL-00054" summary="now tuning alpha value">
+      <created>1589250896881</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1589250896881</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -724,8 +724,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed import settings" />
-    <MESSAGE value="fixed directory names" />
     <MESSAGE value="added __init__.py" />
     <MESSAGE value="added counter for classifier" />
     <MESSAGE value="bug fixes for locate_file" />
@@ -749,7 +747,9 @@
     <MESSAGE value="now testing max df for grid param" />
     <MESSAGE value="changed max_df settings" />
     <MESSAGE value="fixed bug in max_df param" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in max_df param" />
+    <MESSAGE value="fixed bug in max_df" />
+    <MESSAGE value="now tuning alpha value" />
+    <option name="LAST_COMMIT_MESSAGE" value="now tuning alpha value" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -804,12 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="156" column="54" lean-forward="true" selection-start-line="156" selection-start-column="54" selection-end-line="156" selection-end-column="54" />
+        <state relative-caret-position="77">
+          <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589249366803" expanded="true" signature="1287:3126" ph="..." />
-            <marker date="1589249366803" expanded="true" signature="2367:3126" ph="..." />
+            <marker date="1589263966269" expanded="true" signature="1287:3126" ph="..." />
+            <marker date="1589263966269" expanded="true" signature="2367:3126" ph="..." />
           </folding>
         </state>
       </provider>
