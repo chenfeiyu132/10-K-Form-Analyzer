@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
-    </list>
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +52,12 @@
         <counts>
           <entry key="dummy" value="37" />
           <entry key="py" value="22760" />
-          <entry key="txt" value="2617" />
+          <entry key="txt" value="2640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2654" />
+          <entry key="PLAIN_TEXT" value="2677" />
           <entry key="Python" value="22518" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
@@ -334,13 +331,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Added test html file and extrator code file">
-      <created>1576844303859</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1576844303859</updated>
     </task>
     <task id="LOCAL-00002" summary="Successfully found a way to locate item 8 titles and check which one is bold">
       <created>1577167720977</created>
@@ -678,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589239455736</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="changed max_df settings">
+      <created>1589239775755</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1589239775759</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -724,7 +721,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Successfully located file using datadate and cik in label sheet" />
     <MESSAGE value="bug fixes" />
     <MESSAGE value="fixed import settings" />
     <MESSAGE value="fixed directory names" />
@@ -749,7 +745,8 @@
     <MESSAGE value="fixed max_df sequence in grid param" />
     <MESSAGE value="Commented out one classification test" />
     <MESSAGE value="now testing max df for grid param" />
-    <option name="LAST_COMMIT_MESSAGE" value="now testing max df for grid param" />
+    <MESSAGE value="changed max_df settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed max_df settings" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
