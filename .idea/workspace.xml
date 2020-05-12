@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="" />
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="22760" />
-          <entry key="txt" value="2640" />
+          <entry key="py" value="22769" />
+          <entry key="txt" value="2665" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2677" />
-          <entry key="Python" value="22518" />
+          <entry key="PLAIN_TEXT" value="2702" />
+          <entry key="Python" value="22527" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -95,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="156" column="47" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
+            <state relative-caret-position="122">
+              <caret line="156" column="54" lean-forward="true" selection-start-line="156" selection-start-column="54" selection-end-line="156" selection-end-column="54" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589239766783" expanded="true" signature="1287:3126" ph="..." />
-                <marker date="1589239766783" expanded="true" signature="2367:3126" ph="..." />
+                <marker date="1589249366803" expanded="true" signature="1287:3126" ph="..." />
+                <marker date="1589249366803" expanded="true" signature="2367:3126" ph="..." />
               </folding>
             </state>
           </provider>
@@ -331,20 +334,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Successfully found a way to locate item 8 titles and check which one is bold">
-      <created>1577167720977</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1577167720977</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Successfully implemented algorithm to identify start of item 8">
-      <created>1577356412196</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1577356412196</updated>
     </task>
     <task id="LOCAL-00004" summary="Added process outline&#10;&#10;Changed parser so document parses more robustly and accurately&#10;&#10;Successfully implemented algorithm to locate item 9&#10;&#10;Next step would be testing the deletion method">
       <created>1577411843112</created>
@@ -675,7 +664,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589239775759</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="changed max_df settings">
+      <created>1589244327982</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1589244327982</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fixed bug in max_df param">
+      <created>1589244930828</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1589244930829</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -721,7 +724,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bug fixes" />
     <MESSAGE value="fixed import settings" />
     <MESSAGE value="fixed directory names" />
     <MESSAGE value="added __init__.py" />
@@ -746,7 +748,8 @@
     <MESSAGE value="Commented out one classification test" />
     <MESSAGE value="now testing max df for grid param" />
     <MESSAGE value="changed max_df settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed max_df settings" />
+    <MESSAGE value="fixed bug in max_df param" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in max_df param" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -801,12 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="156" column="47" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
+        <state relative-caret-position="122">
+          <caret line="156" column="54" lean-forward="true" selection-start-line="156" selection-start-column="54" selection-end-line="156" selection-end-column="54" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589239766783" expanded="true" signature="1287:3126" ph="..." />
-            <marker date="1589239766783" expanded="true" signature="2367:3126" ph="..." />
+            <marker date="1589249366803" expanded="true" signature="1287:3126" ph="..." />
+            <marker date="1589249366803" expanded="true" signature="2367:3126" ph="..." />
           </folding>
         </state>
       </provider>
