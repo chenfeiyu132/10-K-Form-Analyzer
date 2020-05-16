@@ -189,7 +189,7 @@ grid_params = {
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
-clf = GridSearchCV(mnb_pipeline, grid_params, cv=5, n_jobs=2)
+clf = GridSearchCV(mnb_pipeline, grid_params, cv=5)
 clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
 
 print('Best Score: ', clf.best_score_)
