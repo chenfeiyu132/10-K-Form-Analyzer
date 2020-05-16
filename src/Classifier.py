@@ -15,13 +15,39 @@ import csv
 import sys
 
 en_stop = text.ENGLISH_STOP_WORDS
+stemmer = WordNetLemmatizer()
 
-def lemmatize(dataset):
-    for article in dataset:
-        article = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', article.lower())
-        article = ' '.join([lemmatizer.lemmatize(i)
-                         for i in article.split() if i not in en_stop])
-    return dataset
+def process_text(dataset):
+    for document in dataset:
+        # remove all mentions of the title
+        document = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', document.lower())
+
+        # Remove all the special characters
+        document = re.sub(r'\W', ' ', str(document))
+
+        # remove all single characters
+        document = re.sub(r'\s+[a-zA-Z]\s+', ' ', document)
+
+        # Remove single characters from the start
+        document = re.sub(r'\^[a-zA-Z]\s+', ' ', document)
+
+        # Substituting multiple spaces with single space
+        document = re.sub(r'\s+', ' ', document, flags=re.I)
+
+        # Removing prefixed 'b'
+        document = re.sub(r'^b\s+', '', document)
+
+        # Converting to Lowercase
+        document = document.lower()
+
+        # Lemmatization
+        tokens = document.split()
+        tokens = [stemmer.lemmatize(word) for word in tokens]
+        tokens = [word for word in tokens if word not in en_stop]
+
+        preprocessed_text = ' '.join(tokens)
+
+        return preprocessed_text
 
 
 # This calculates the idf value for the terms in the posts and prints the highest ones
@@ -35,7 +61,7 @@ def topTermsIDF(vectorizer):
 
 def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
     if lemmatization:
-        df_form['full text'] = lemmatize(df_form['full text'])
+        df_form['full text'] = process_text(df_form['full text'])
     response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
@@ -59,6 +85,21 @@ def locate_file(dir, year, cik):
     return ''
 
 
+def output_csv(filename, fields, paths, directory_name):
+    csv_out = open(filename, mode='w')
+    writer = csv.writer(csv_out)
+    writer.writerow(fields)
+    for path in paths:
+        for filename in os.listdir(directory_name + path):
+            page = open(directory_name + path + filename)
+            soup = bs(page.read(), "lxml")
+            filename = filename.split('-')
+            date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
+            label = 0 if path == paths[0] else 1
+            writer.writerow([filename[0], filename[1], date, soup.text, label]);
+    csv_out.close()
+
+
 def topTermsNB(df_form, vectorizer):
     X = vectorizer.fit_transform(df_form['full text'])
     words = vectorizer.get_feature_names()
@@ -80,12 +121,9 @@ df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
 directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' if sys.platform == 'darwin' else '/mnt/volume/10-K/10-K_files/'
 
-
-lemmatizer = WordNetLemmatizer()
-tfidf = tfidf = TfidfVectorizer(ngram_range=(1,2),
+tfidf = TfidfVectorizer(ngram_range=(1,2),
                                 stop_words=en_stop,
                                 min_df=2,
-                                max_df=0.2,
                                 sublinear_tf=True,
                                 norm=None,
                                 binary=True)
@@ -114,27 +152,19 @@ for ind in df_csv.index:
 convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
 convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 
-#making csv from processed false and truth sets
-csv_out = open('processed_10-K.csv', mode='w')
-writer = csv.writer(csv_out)
-fields = ['cik', 'company name', 'date', 'full text', 'prosecution']
-paths = ['False_Set_Processed/', 'Truth_Set_Processed/']
-writer.writerow(fields)
-for path in paths:
-    for filename in os.listdir(directory+path):
-        page = open(directory+path+filename)
-        soup = bs(page.read(), "lxml")
-        filename = filename.split('-')
-        date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
-        label = 0 if path == paths[0] else 1
-        writer.writerow([filename[0], filename[1], date, soup.text, label]);
+# outputting processed false and truth sets into csv
+output_csv('processed_10-K.csv',  # csv name
+           ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
+           ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
+           directory)  # directory in which the files are extracted from
 
+# making csv from processed false and truth sets
 df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
 df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
 df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
-csv_out.close()
+
 print('new files found: ', counter)
-lemmatize(df_all_forms['full text'])
+process_text(df_all_forms['full text'])
 
 # performing Naive Bayes test
 topTermsNB(df_all_forms, tfidf)
@@ -154,11 +184,12 @@ grid_params = {
     'mnb__alpha': np.linspace(0, 1, 10),
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__max_df': [.2],
+    'tfidf_pipeline__max_df': np.linspace(0, 1, 10),
+    'tfidf_pipeline__min_df': np.linspace(0, 1, 10),
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
-clf = GridSearchCV(mnb_pipeline, grid_params, cv=5)
+clf = GridSearchCV(mnb_pipeline, grid_params, cv=5, n_jobs=2, verbose=3)
 clf.fit(df_all_forms['full text'], df_all_forms['prosecution'])
 
 print('Best Score: ', clf.best_score_)
