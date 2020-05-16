@@ -45,9 +45,8 @@ def process_text(dataset):
         tokens = [stemmer.lemmatize(word) for word in tokens]
         tokens = [word for word in tokens if word not in en_stop]
 
-        preprocessed_text = ' '.join(tokens)
-
-        return preprocessed_text
+        document = ' '.join(tokens)
+    return dataset
 
 
 # This calculates the idf value for the terms in the posts and prints the highest ones
@@ -183,6 +182,7 @@ grid_params = {
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__max_df': [.2],
+    'tfidf_pipeline__min_df': [.1],
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
