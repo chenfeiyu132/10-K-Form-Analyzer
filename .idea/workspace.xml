@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +12,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589233282886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589665646229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -54,14 +53,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="22795" />
-          <entry key="txt" value="2722" />
+          <entry key="py" value="23431" />
+          <entry key="txt" value="2790" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2759" />
-          <entry key="Python" value="22553" />
+          <entry key="PLAIN_TEXT" value="2827" />
+          <entry key="Python" value="23189" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +97,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+            <state relative-caret-position="220">
+              <caret line="188" column="37" lean-forward="true" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589263966269" expanded="true" signature="1287:3126" ph="..." />
-                <marker date="1589263966269" expanded="true" signature="2367:3126" ph="..." />
+                <marker date="1589665851813" expanded="true" signature="2071:4524" ph="..." />
+                <marker date="1589665851813" expanded="true" signature="3765:4524" ph="..." />
               </folding>
             </state>
           </provider>
@@ -132,6 +131,7 @@
       <find>split</find>
       <find>text.</find>
       <find>y</find>
+      <find>lemmatize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -334,20 +334,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Coded methods to cleanly locate item 8 and item 9">
-      <created>1577515295397</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1577515295397</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Successfully cut out item 8 for first two documents&#10;&#10;Improvements in method design&#10;&#10;Future steps should delete privacy message and possibly automate the process completely">
-      <created>1577625145711</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1577625145711</updated>
     </task>
     <task id="LOCAL-00008" summary="Changed approach to cut out item 8 from deletion to completely creating a new soup object for export&#10;&#10;Optimized find_root_parent to more accurately detect parent tag">
       <created>1577798712767</created>
@@ -678,7 +664,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589250896881</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="fixed alpha tuning values">
+      <created>1589263978675</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1589263978676</updated>
+    </task>
+    <task id="LOCAL-00056" summary="now hyperparameter tuning max and min df">
+      <created>1589665872465</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1589665872465</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView">
@@ -705,7 +705,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3958904" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
@@ -724,8 +724,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added __init__.py" />
-    <MESSAGE value="added counter for classifier" />
     <MESSAGE value="bug fixes for locate_file" />
     <MESSAGE value="fixed algorithm for locate_file" />
     <MESSAGE value="initiating new file processing" />
@@ -749,7 +747,9 @@
     <MESSAGE value="fixed bug in max_df param" />
     <MESSAGE value="fixed bug in max_df" />
     <MESSAGE value="now tuning alpha value" />
-    <option name="LAST_COMMIT_MESSAGE" value="now tuning alpha value" />
+    <MESSAGE value="fixed alpha tuning values" />
+    <MESSAGE value="now hyperparameter tuning max and min df" />
+    <option name="LAST_COMMIT_MESSAGE" value="now hyperparameter tuning max and min df" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -804,12 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+        <state relative-caret-position="220">
+          <caret line="188" column="37" lean-forward="true" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589263966269" expanded="true" signature="1287:3126" ph="..." />
-            <marker date="1589263966269" expanded="true" signature="2367:3126" ph="..." />
+            <marker date="1589665851813" expanded="true" signature="2071:4524" ph="..." />
+            <marker date="1589665851813" expanded="true" signature="3765:4524" ph="..." />
           </folding>
         </state>
       </provider>
