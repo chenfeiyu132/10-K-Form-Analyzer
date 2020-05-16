@@ -59,9 +59,7 @@ def topTermsIDF(vectorizer):
     return top_features
 
 
-def chi2_analysis(vectorizer, df_form, n_terms, lemmatization):
-    if lemmatization:
-        df_form['full text'] = process_text(df_form['full text'])
+def chi2_analysis(vectorizer, df_form, n_terms):
     response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
     features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
@@ -164,7 +162,7 @@ df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
 df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 
 print('new files found: ', counter)
-process_text(df_all_forms['full text'])
+df_all_forms['full text'] = process_text(df_all_forms['full text'])
 
 # performing Naive Bayes test
 topTermsNB(df_all_forms, tfidf)
@@ -172,7 +170,7 @@ print('-'*20, '\n')
 print('Chi2 analysis...\n')
 
 # performing chi2 test
-chi2_analysis(tfidf, df_all_forms, 20, True)
+chi2_analysis(tfidf, df_all_forms, 20)
 
 
 mnb_pipeline = Pipeline([
@@ -184,8 +182,7 @@ grid_params = {
     'mnb__alpha': np.linspace(0, 1, 10),
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__max_df': [.3],
-    'tfidf_pipeline__min_df': [2],
+    'tfidf_pipeline__max_df': [.2],
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
