@@ -181,7 +181,7 @@ grid_params = {
     'mnb__alpha': [.1],
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__min_df': np.linspace(2, 10, 8),
+    'tfidf_pipeline__min_df': np.linspace(2, 8, dtype=int),
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }

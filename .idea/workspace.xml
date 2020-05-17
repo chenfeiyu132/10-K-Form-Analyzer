@@ -13,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589667975052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589680601229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="23585" />
-          <entry key="txt" value="2982" />
+          <entry key="py" value="23662" />
+          <entry key="txt" value="3010" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3019" />
-          <entry key="Python" value="23343" />
+          <entry key="PLAIN_TEXT" value="3047" />
+          <entry key="Python" value="23420" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
+            <state relative-caret-position="228">
+              <caret line="183" column="55" lean-forward="true" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589678106414" expanded="true" signature="2032:4397" ph="..." />
-                <marker date="1589678106414" expanded="true" signature="3638:4397" ph="..." />
+                <marker date="1589680519636" expanded="true" signature="2032:4397" ph="..." />
+                <marker date="1589680519636" expanded="true" signature="3638:4397" ph="..." />
               </folding>
             </state>
           </provider>
@@ -335,20 +335,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00015" summary="bug fixes">
-      <created>1588572005437</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1588572005437</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fixed import settings">
-      <created>1588572078944</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1588572078944</updated>
     </task>
     <task id="LOCAL-00017" summary="fixed import settings">
       <created>1588572371686</created>
@@ -679,7 +665,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589670870886</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="hyperparameter tuning">
+      <created>1589678132274</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1589678132274</updated>
+    </task>
+    <task id="LOCAL-00065" summary="hyperparameter tuning">
+      <created>1589679142694</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1589679142695</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView">
@@ -725,7 +725,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added function to conduct naive bayes text importance ranking" />
     <MESSAGE value="added chi2 test for uni and bigram correlation" />
     <MESSAGE value="fixed Unicode fit_transform bug" />
     <MESSAGE value="enhanced lemmatization by removing title of section 8" />
@@ -750,7 +749,8 @@
     <MESSAGE value="fixed parameter for GridSearch" />
     <MESSAGE value="fixed bug after making preprocessing text into function" />
     <MESSAGE value="fixed parameter in gridsearch to debug error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed parameter in gridsearch to debug error" />
+    <MESSAGE value="hyperparameter tuning" />
+    <option name="LAST_COMMIT_MESSAGE" value="hyperparameter tuning" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -805,12 +805,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
+        <state relative-caret-position="228">
+          <caret line="183" column="55" lean-forward="true" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589678106414" expanded="true" signature="2032:4397" ph="..." />
-            <marker date="1589678106414" expanded="true" signature="3638:4397" ph="..." />
+            <marker date="1589680519636" expanded="true" signature="2032:4397" ph="..." />
+            <marker date="1589680519636" expanded="true" signature="3638:4397" ph="..." />
           </folding>
         </state>
       </provider>
