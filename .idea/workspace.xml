@@ -54,14 +54,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="23583" />
-          <entry key="txt" value="2934" />
+          <entry key="py" value="23585" />
+          <entry key="txt" value="2982" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2971" />
-          <entry key="Python" value="23341" />
+          <entry key="PLAIN_TEXT" value="3019" />
+          <entry key="Python" value="23343" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +98,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="181" column="29" lean-forward="true" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
+            <state relative-caret-position="211">
+              <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589667975044" expanded="true" signature="2032:4397" ph="..." />
-                <marker date="1589667975044" expanded="true" signature="3638:4397" ph="..." />
+                <marker date="1589678106414" expanded="true" signature="2032:4397" ph="..." />
+                <marker date="1589678106414" expanded="true" signature="3638:4397" ph="..." />
               </folding>
             </state>
           </provider>
@@ -335,20 +335,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Successfully located file using datadate and cik in label sheet">
-      <created>1585860141552</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1585860141552</updated>
-    </task>
-    <task id="LOCAL-00014" summary="bug fixes">
-      <created>1588570358985</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1588570358985</updated>
     </task>
     <task id="LOCAL-00015" summary="bug fixes">
       <created>1588572005437</created>
@@ -679,7 +665,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589667783365</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fixed bug after making preprocessing text into function">
+      <created>1589668059055</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1589668059055</updated>
+    </task>
+    <task id="LOCAL-00063" summary="fixed parameter in gridsearch to debug error">
+      <created>1589670870885</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1589670870886</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView">
@@ -725,7 +725,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made changes to backup_locator for bug fixes" />
     <MESSAGE value="added function to conduct naive bayes text importance ranking" />
     <MESSAGE value="added chi2 test for uni and bigram correlation" />
     <MESSAGE value="fixed Unicode fit_transform bug" />
@@ -750,7 +749,8 @@
     <MESSAGE value="fixed hyperparameter for max_df" />
     <MESSAGE value="fixed parameter for GridSearch" />
     <MESSAGE value="fixed bug after making preprocessing text into function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug after making preprocessing text into function" />
+    <MESSAGE value="fixed parameter in gridsearch to debug error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed parameter in gridsearch to debug error" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -805,12 +805,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="181" column="29" lean-forward="true" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
+        <state relative-caret-position="211">
+          <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589667975044" expanded="true" signature="2032:4397" ph="..." />
-            <marker date="1589667975044" expanded="true" signature="3638:4397" ph="..." />
+            <marker date="1589678106414" expanded="true" signature="2032:4397" ph="..." />
+            <marker date="1589678106414" expanded="true" signature="3638:4397" ph="..." />
           </folding>
         </state>
       </provider>
