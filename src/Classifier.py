@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
+from sklearn import svm
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 from nltk.tokenize import PunktSentenceTokenizer, ToktokTokenizer
@@ -18,34 +19,36 @@ en_stop = text.ENGLISH_STOP_WORDS
 stemmer = WordNetLemmatizer()
 
 def process_text(dataset):
-    for document in dataset:
+    for index in range(len(dataset)):
         # remove all mentions of the title
-        document = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', document.lower())
-
+        dataset[index] = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', dataset[index].lower())
         # Remove all the special characters
-        document = re.sub(r'\W', ' ', str(document))
+        dataset[index] = re.sub(r'\W', ' ', str(dataset[index]))
 
         # remove all single characters
-        document = re.sub(r'\s+[a-zA-Z]\s+', ' ', document)
+        dataset[index] = re.sub(r'\s+[a-zA-Z]\s+', ' ', dataset[index])
 
         # Remove single characters from the start
-        document = re.sub(r'\^[a-zA-Z]\s+', ' ', document)
+        dataset[index] = re.sub(r'\^[a-zA-Z]\s+', ' ', dataset[index])
 
         # Substituting multiple spaces with single space
-        document = re.sub(r'\s+', ' ', document, flags=re.I)
+        dataset[index] = re.sub(r'\s+', ' ', dataset[index], flags=re.I)
+
+        # Remove all stand alone digits
+        dataset[index] = re.sub(r'\s+\d+\s+', ' ', dataset[index])
 
         # Removing prefixed 'b'
-        document = re.sub(r'^b\s+', '', document)
+        dataset[index] = re.sub(r'^b\s+', '', dataset[index])
 
         # Converting to Lowercase
-        document = document.lower()
+        dataset[index] = dataset[index].lower()
 
         # Lemmatization
-        tokens = document.split()
+        tokens = dataset[index].split()
         tokens = [stemmer.lemmatize(word) for word in tokens]
         tokens = [word for word in tokens if word not in en_stop]
 
-        document = ' '.join(tokens)
+        dataset[index] = ' '.join(tokens)
     return dataset
 
 
@@ -97,20 +100,24 @@ def output_csv(filename, fields, paths, directory_name):
     csv_out.close()
 
 
-def topTermsNB(df_form, vectorizer):
-    X = vectorizer.fit_transform(df_form['full text'])
-    words = vectorizer.get_feature_names()
-    y = [int(pros) for pros in df_form['prosecution']]
-
+def topTermsNB(X, y, feature_names):
     clf = MultinomialNB(alpha=0.1, fit_prior=True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
-                                 index=words)
+                                 index=feature_names)
     likelihood_df['Relative Prevalence for Prosecution'] = likelihood_df.eval('(exp(Prosecution) - exp(No_Prosecution))')
     print('Top 10 terms strongly associated to Prosecution according to Naive Bayes analysis:\n')
     print(likelihood_df['Relative Prevalence for Prosecution'].sort_values(ascending=False)[:10])
-    return likelihood_df
+
+
+def topTermsSVM(X, y, feature_names):
+    print(feature_names)
+    clf = svm.SVC(kernel='linear')
+    clf.fit(X, y)
+    importance, names = zip(*sorted(zip(clf.coef_, feature_names)))
+    print('Top 10 terms strongly associated to Prosecution according to SVM analysis:\n')
+    print(names[:10])
 
 
 path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
@@ -161,10 +168,20 @@ df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
 df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 
 print('new files found: ', counter)
+# Splitting dataset for classification
+before = df_all_forms['full text'][1]
 df_all_forms['full text'] = process_text(df_all_forms['full text'])
+print(df_all_forms['full text'][1] == before)
+X = tfidf.fit_transform(df_all_forms['full text'])
+feature_names = tfidf.get_feature_names()
+y = [int(pros) for pros in df_all_forms['prosecution']]
 
 # performing Naive Bayes test
-topTermsNB(df_all_forms, tfidf)
+print('MultinomialNB analysis...\n')
+topTermsNB(X, y, feature_names)
+print('-'*20, '\n')
+print('Linear SVM analysis...\n')
+topTermsSVM(X, y, feature_names)
 print('-'*20, '\n')
 print('Chi2 analysis...\n')
 
