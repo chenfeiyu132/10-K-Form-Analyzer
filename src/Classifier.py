@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
-from sklearn import svm
+from sklearn.svm import LinearSVC
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
 from nltk.tokenize import PunktSentenceTokenizer, ToktokTokenizer
@@ -14,6 +14,7 @@ import numpy as np
 import os
 import csv
 import sys
+from matplotlib import pyplot as plt
 
 en_stop = text.ENGLISH_STOP_WORDS
 stemmer = WordNetLemmatizer()
@@ -35,7 +36,7 @@ def process_text(dataset):
         dataset[index] = re.sub(r'\s+', ' ', dataset[index], flags=re.I)
 
         # Remove all stand alone digits
-        dataset[index] = re.sub(r'\s+\d+\s+', ' ', dataset[index])
+        dataset[index] = re.sub(r'\s*[\d+]', ' ', dataset[index])
 
         # Removing prefixed 'b'
         dataset[index] = re.sub(r'^b\s+', '', dataset[index])
@@ -100,7 +101,7 @@ def output_csv(filename, fields, paths, directory_name):
     csv_out.close()
 
 
-def topTermsNB(X, y, feature_names):
+def top_termsNB(X, y, feature_names):
     clf = MultinomialNB(alpha=0.1, fit_prior=True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
@@ -111,13 +112,20 @@ def topTermsNB(X, y, feature_names):
     print(likelihood_df['Relative Prevalence for Prosecution'].sort_values(ascending=False)[:10])
 
 
-def topTermsSVM(X, y, feature_names):
-    print(feature_names)
-    clf = svm.SVC(kernel='linear')
-    clf.fit(X, y)
-    importance, names = zip(*sorted(zip(clf.coef_, feature_names)))
-    print('Top 10 terms strongly associated to Prosecution according to SVM analysis:\n')
-    print(names[:10])
+def top_terms(classifier, feature_names, top_features=10):
+    coefficients = classifier.coef_.ravel()
+    top_positive_coefficients = np.argsort(coefficients)[-top_features:]
+    # top_negative_coefficients = np.argsort(coef)[:top_features]
+    print('Top ', top_features, ' most predictive terms for prosecution \n')
+    print(top_positive_coefficients)
+    # top_coefficients = np.hstack([top_negative_coefficients, top_positive_coefficients])
+    # # create plot
+    # plt.figure(figsize=(15, 5))
+    # colors = [‘red’ if c < 0 else ‘blue’ for c in coef[top_coefficients]]
+    # plt.bar(np.arange(2 * top_features), coef[top_coefficients], color=colors)
+    # feature_names = np.array(feature_names)
+    # plt.xticks(np.arange(1, 1 + 2 * top_features), feature_names[top_coefficients], rotation=60, ha=’right’)
+    # plt.show()
 
 
 path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
@@ -169,19 +177,19 @@ df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 
 print('new files found: ', counter)
 # Splitting dataset for classification
-before = df_all_forms['full text'][1]
 df_all_forms['full text'] = process_text(df_all_forms['full text'])
-print(df_all_forms['full text'][1] == before)
 X = tfidf.fit_transform(df_all_forms['full text'])
 feature_names = tfidf.get_feature_names()
 y = [int(pros) for pros in df_all_forms['prosecution']]
 
 # performing Naive Bayes test
 print('MultinomialNB analysis...\n')
-topTermsNB(X, y, feature_names)
+top_termsNB(X, y, feature_names)
 print('-'*20, '\n')
 print('Linear SVM analysis...\n')
-topTermsSVM(X, y, feature_names)
+svm = LinearSVC()
+svm.fit(X, y)
+top_terms(svm, feature_names)
 print('-'*20, '\n')
 print('Chi2 analysis...\n')
 

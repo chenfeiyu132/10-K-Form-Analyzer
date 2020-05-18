@@ -13,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589836994426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1589840376874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -55,14 +55,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="24737" />
-          <entry key="txt" value="3035" />
+          <entry key="py" value="25087" />
+          <entry key="txt" value="3063" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3072" />
-          <entry key="Python" value="24495" />
+          <entry key="PLAIN_TEXT" value="3100" />
+          <entry key="Python" value="24845" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -99,12 +99,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+            <state relative-caret-position="291">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589836845253" expanded="true" signature="2268:4760" ph="..." />
-                <marker date="1589836845253" expanded="true" signature="4524:4760" ph="..." />
+                <marker date="1589840755530" expanded="true" signature="2314:5343" ph="..." />
+                <marker date="1589840755530" expanded="true" signature="4506:4509" ph="..." />
+                <marker date="1589840755530" expanded="true" signature="4567:5343" ph="..." />
+                <marker date="1589840755530" expanded="true" signature="5340:5343" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,6 +136,7 @@
       <find>text.</find>
       <find>y</find>
       <find>lemmatize</find>
+      <find>document</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -334,13 +337,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fixed import settings">
-      <created>1588572638168</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1588572638168</updated>
     </task>
     <task id="LOCAL-00021" summary="fixed directory names">
       <created>1588572708184</created>
@@ -678,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589826754121</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fixed bug in preprocess text">
+      <created>1589837017670</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1589837017672</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView">
@@ -699,7 +702,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3958904" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.3958904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -713,7 +716,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.27705976" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -724,7 +727,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added chi2 test for uni and bigram correlation" />
     <MESSAGE value="fixed Unicode fit_transform bug" />
     <MESSAGE value="enhanced lemmatization by removing title of section 8" />
     <MESSAGE value="fixed directory addreses" />
@@ -749,7 +751,8 @@
     <MESSAGE value="fixed bug after making preprocessing text into function" />
     <MESSAGE value="fixed parameter in gridsearch to debug error" />
     <MESSAGE value="hyperparameter tuning" />
-    <option name="LAST_COMMIT_MESSAGE" value="hyperparameter tuning" />
+    <MESSAGE value="fixed bug in preprocess text" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in preprocess text" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -804,12 +807,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        <state relative-caret-position="291">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589836845253" expanded="true" signature="2268:4760" ph="..." />
-            <marker date="1589836845253" expanded="true" signature="4524:4760" ph="..." />
+            <marker date="1589840755530" expanded="true" signature="2314:5343" ph="..." />
+            <marker date="1589840755530" expanded="true" signature="4506:4509" ph="..." />
+            <marker date="1589840755530" expanded="true" signature="4567:5343" ph="..." />
+            <marker date="1589840755530" expanded="true" signature="5340:5343" ph="..." />
           </folding>
         </state>
       </provider>
