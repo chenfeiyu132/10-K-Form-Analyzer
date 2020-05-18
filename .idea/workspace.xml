@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,14 +53,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="23662" />
-          <entry key="txt" value="3010" />
+          <entry key="py" value="23726" />
+          <entry key="txt" value="3035" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3047" />
-          <entry key="Python" value="23420" />
+          <entry key="PLAIN_TEXT" value="3072" />
+          <entry key="Python" value="23484" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -98,12 +97,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="183" column="55" lean-forward="true" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
+            <state relative-caret-position="143">
+              <caret line="180" column="41" lean-forward="true" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589680519636" expanded="true" signature="2032:4397" ph="..." />
-                <marker date="1589680519636" expanded="true" signature="3638:4397" ph="..." />
+                <marker date="1589699109817" expanded="true" signature="2032:4397" ph="..." />
+                <marker date="1589699109817" expanded="true" signature="3638:4397" ph="..." />
               </folding>
             </state>
           </provider>
@@ -335,20 +334,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fixed import settings">
-      <created>1588572371686</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1588572371686</updated>
-    </task>
-    <task id="LOCAL-00018" summary="fixed import settings">
-      <created>1588572539186</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1588572539186</updated>
     </task>
     <task id="LOCAL-00019" summary="fixed import settings">
       <created>1588572613776</created>
@@ -679,7 +664,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589679142695</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="hyperparameter tuning">
+      <created>1589680676416</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1589680676418</updated>
+    </task>
+    <task id="LOCAL-00067" summary="hyperparameter tuning">
+      <created>1589699119970</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1589699119970</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView">
@@ -805,12 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="183" column="55" lean-forward="true" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
+        <state relative-caret-position="143">
+          <caret line="180" column="41" lean-forward="true" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589680519636" expanded="true" signature="2032:4397" ph="..." />
-            <marker date="1589680519636" expanded="true" signature="3638:4397" ph="..." />
+            <marker date="1589699109817" expanded="true" signature="2032:4397" ph="..." />
+            <marker date="1589699109817" expanded="true" signature="3638:4397" ph="..." />
           </folding>
         </state>
       </provider>
