@@ -7,14 +7,13 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.svm import LinearSVC
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
-from nltk.tokenize import PunktSentenceTokenizer, ToktokTokenizer
+# from nltk.tokenize import PunktSentenceTokenizer, ToktokTokenizer
 from src.HTML_Extractor import *
 import pandas as pd
 import numpy as np
 import os
 import csv
 import sys
-from matplotlib import pyplot as plt
 
 en_stop = text.ENGLISH_STOP_WORDS
 stemmer = WordNetLemmatizer()
