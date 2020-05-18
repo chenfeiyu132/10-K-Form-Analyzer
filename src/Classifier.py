@@ -116,7 +116,7 @@ def top_terms(classifier, feature_names, top_features=10):
     top_positive_coefficients = np.argsort(coefficients)[-top_features:]
     # top_negative_coefficients = np.argsort(coef)[:top_features]
     print('Top ', top_features, ' most predictive terms for prosecution \n')
-    print(top_positive_coefficients)
+    print(list(feature_names[x] for x in top_positive_coefficients))
     # top_coefficients = np.hstack([top_negative_coefficients, top_positive_coefficients])
     # # create plot
     # plt.figure(figsize=(15, 5))
