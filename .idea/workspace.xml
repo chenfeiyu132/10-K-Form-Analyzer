@@ -55,14 +55,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="25116" />
+          <entry key="py" value="25185" />
           <entry key="txt" value="3236" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3273" />
-          <entry key="Python" value="24874" />
+          <entry key="Python" value="24943" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -99,14 +99,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="118" column="68" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
+            <state relative-caret-position="230">
+              <caret line="204" column="42" lean-forward="true" selection-start-line="204" selection-start-column="42" selection-end-line="204" selection-end-column="42" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1589841733415" expanded="true" signature="2279:5340" ph="..." />
-                <marker date="1589841733415" expanded="true" signature="4471:4474" ph="..." />
-                <marker date="1589841733415" expanded="true" signature="4532:5340" ph="..." />
-                <marker date="1589841733415" expanded="true" signature="5337:5340" ph="..." />
+                <marker date="1589858480752" expanded="true" signature="2279:5340" ph="..." />
+                <marker date="1589858480752" expanded="true" signature="4471:4474" ph="..." />
+                <marker date="1589858480752" expanded="true" signature="4532:5340" ph="..." />
+                <marker date="1589858480752" expanded="true" signature="5337:5340" ph="..." />
               </folding>
             </state>
           </provider>
@@ -337,20 +337,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added __init__.py">
-      <created>1588573785302</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1588573785302</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added __init__.py">
-      <created>1588574760744</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1588574760746</updated>
     </task>
     <task id="LOCAL-00025" summary="bug fixes for locate_file">
       <created>1588577549299</created>
@@ -681,7 +667,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589840861618</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
+      <created>1589841762979</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1589841762979</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
+      <created>1589841834686</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1589841834686</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView">
@@ -807,14 +807,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="118" column="68" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
+        <state relative-caret-position="230">
+          <caret line="204" column="42" lean-forward="true" selection-start-line="204" selection-start-column="42" selection-end-line="204" selection-end-column="42" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1589841733415" expanded="true" signature="2279:5340" ph="..." />
-            <marker date="1589841733415" expanded="true" signature="4471:4474" ph="..." />
-            <marker date="1589841733415" expanded="true" signature="4532:5340" ph="..." />
-            <marker date="1589841733415" expanded="true" signature="5337:5340" ph="..." />
+            <marker date="1589858480752" expanded="true" signature="2279:5340" ph="..." />
+            <marker date="1589858480752" expanded="true" signature="4471:4474" ph="..." />
+            <marker date="1589858480752" expanded="true" signature="4532:5340" ph="..." />
+            <marker date="1589858480752" expanded="true" signature="5337:5340" ph="..." />
           </folding>
         </state>
       </provider>
