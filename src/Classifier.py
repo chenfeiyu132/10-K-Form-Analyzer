@@ -133,7 +133,7 @@ def top_terms(classifier, feature_names, top_features=10):
 def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     clf = GridSearchCV(pipeline, params, cv=5)
     clf.fit(X_train, y_train)
-    print('cross validation scores for {}'.format(pipeline[1].__class__))
+    print('cross validation scores for {}'.format(pipeline[1].__class__.__name__))
     print('Best Score: ', clf.best_score_)
     print('Best Params: ', clf.best_params_)
 
@@ -143,11 +143,11 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'],
                           title='Confusion matrix, without normalization')
-    plt.savefig('unnormalized graph {}.png'.format(pipeline[1].__class__))
+    plt.savefig('unnormalized graph {}.png'.format(pipeline[1].__class__.__name__))
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'], normalize=True,
                           title='Normalized confusion matrix')
-    plt.savefig('normalized graph {}.png'.format(pipeline[1].__class__))
+    plt.savefig('normalized graph {}.png'.format(pipeline[1].__class__.__name__))
 
 
 def plot_confusion_matrix(y_true, y_pred, classes,
@@ -283,13 +283,15 @@ mnb_params = {
     'mnb__alpha': [.1],
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__min_df': np.linspace(1, 10, 10, dtype=int),
+    'tfidf_pipeline__min_df': [2],
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
 svm_params = {
     'linearsvm__C': np.arange(0.01, 100, 10),
-    'linearsvm__gamma': [1,0.1,0.001,0.0001],
+    'linearsvm__penalty': ['l1', 'l2'],
+    'linearsvm__dual': [False],
+    'linearsvm__max_iter': [1000, 10000, 100000],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__min_df': [2],
     'tfidf_pipeline__binary': [True],
@@ -298,7 +300,7 @@ svm_params = {
 
 full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
                                                                             df_all_forms['prosecution'],
-                                                                            test_size=1/3, random_state=85)
+                                                                            test_size=0.2, random_state=85)
 
 cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
 cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
