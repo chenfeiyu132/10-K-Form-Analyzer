@@ -133,7 +133,7 @@ def top_terms(classifier, feature_names, top_features=10):
 def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     clf = GridSearchCV(pipeline, params, cv=5)
     clf.fit(X_train, y_train)
-    print('cross validation scores for {}'.format(pipeline[1].__class__.__name__))
+    print('cross validation scores for {}'.format(pipeline.steps[1][1].__class__.__name__))
     print('Best Score: ', clf.best_score_)
     print('Best Params: ', clf.best_params_)
 
@@ -143,11 +143,11 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'],
                           title='Confusion matrix, without normalization')
-    plt.savefig('unnormalized graph {}.png'.format(pipeline[1].__class__.__name__))
+    plt.savefig('unnormalized graph {}.png'.format(pipeline.steps[1][1].__class__.__name__))
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'], normalize=True,
                           title='Normalized confusion matrix')
-    plt.savefig('normalized graph {}.png'.format(pipeline[1].__class__.__name__))
+    plt.savefig('normalized graph {}.png'.format(pipeline.steps[1][1].__class__.__name__))
 
 
 def plot_confusion_matrix(y_true, y_pred, classes,
