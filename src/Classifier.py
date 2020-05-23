@@ -130,6 +130,26 @@ def top_terms(classifier, feature_names, top_features=10):
     # plt.show()
 
 
+def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
+    clf = GridSearchCV(pipeline, params, cv=5)
+    clf.fit(X_train, y_train)
+    print('cross validation scores for {}'.format(pipeline[1].__class__))
+    print('Best Score: ', clf.best_score_)
+    print('Best Params: ', clf.best_params_)
+
+    # generate confusion matrix
+    label_pred = clf.best_estimator_.predict(X_test)
+
+    plot_confusion_matrix(label_test, label_pred,
+                          classes=['NonProsecution', 'Prosecution'],
+                          title='Confusion matrix, without normalization')
+    plt.savefig('unnormalized graph {}.png'.format(pipeline[1].__class__))
+    plot_confusion_matrix(label_test, label_pred,
+                          classes=['NonProsecution', 'Prosecution'], normalize=True,
+                          title='Normalized confusion matrix')
+    plt.savefig('normalized graph {}.png'.format(pipeline[1].__class__))
+
+
 def plot_confusion_matrix(y_true, y_pred, classes,
                           normalize=False,
                           title=None,
@@ -254,10 +274,22 @@ mnb_pipeline = Pipeline([
     ('tfidf_pipeline', TfidfVectorizer()),
     ('mnb', MultinomialNB())
 ])
+svm_pipeline = Pipeline([
+    ('tfidf_pipeline', TfidfVectorizer()),
+    ('linearsvm', LinearSVC())
+])
 # different parameter settings to test out
-grid_params = {
-    'mnb__alpha': np.linspace(0.1, 2, 20),
+mnb_params = {
+    'mnb__alpha': [.1],
     'mnb__fit_prior': [True],
+    'tfidf_pipeline__ngram_range': [(1,2)],
+    'tfidf_pipeline__min_df': np.linspace(1, 10, 10, dtype=int),
+    'tfidf_pipeline__binary': [True],
+    'tfidf_pipeline__norm': [None],
+}
+svm_params = {
+    'linearsvm__C': np.arange(0.01, 100, 10),
+    'linearsvm__gamma': [1,0.1,0.001,0.0001],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__min_df': [2],
     'tfidf_pipeline__binary': [True],
@@ -268,24 +300,8 @@ full_text_train, full_text_test, label_train, label_test = train_test_split(df_a
                                                                             df_all_forms['prosecution'],
                                                                             test_size=1/3, random_state=85)
 
-clf = GridSearchCV(mnb_pipeline, grid_params, cv=5)
-clf.fit(full_text_train, label_train)
-
-print('Best Score: ', clf.best_score_)
-print('Best Params: ', clf.best_params_)
-
-# generate confusion matrix
-label_pred = clf.best_estimator_.predict(full_text_test)
-
-plot_confusion_matrix(label_test, label_pred,
-                      classes=['NonProsecution', 'Prosecution'],
-                      title='Confusion matrix, without normalization')
-plt.savefig('unnormalized graph.png')
-plot_confusion_matrix(label_test, label_pred,
-                      classes=['NonProsecution', 'Prosecution'], normalize=True,
-                      title='Normalized confusion matrix')
-plt.savefig('normalized graph.png')
-
+cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
 
 # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
 # X_train = tfidf.fit_transform(df_all_forms['full text'])
