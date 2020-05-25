@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="added count vectorizer testing for NB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
@@ -13,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1587422026675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1590431748413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$Classifier.coverage" NAME="Classifier Coverage Results" MODIFIED="1590433283310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/10_K_Form_Analyzer$HTML_Extractor.coverage" NAME="HTML Extractor Coverage Results" MODIFIED="1578113304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="DatabaseView">
@@ -55,7 +55,7 @@
           <entry key="csv" value="2" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="png" value="14" />
+          <entry key="png" value="19" />
           <entry key="py" value="11" />
           <entry key="txt" value="2" />
         </counts>
@@ -64,7 +64,7 @@
         <counts>
           <entry key="CSV" value="2" />
           <entry key="HTML" value="3" />
-          <entry key="Image" value="14" />
+          <entry key="Image" value="19" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="10" />
           <entry key="Scratch" value="1" />
@@ -73,14 +73,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="26841" />
+          <entry key="py" value="27079" />
           <entry key="txt" value="3547" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3584" />
-          <entry key="Python" value="26599" />
+          <entry key="Python" value="26837" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -92,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="72" column="33" selection-start-line="71" selection-start-column="13" selection-end-line="72" selection-end-column="33" />
+            <state relative-caret-position="-494">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
@@ -117,19 +117,44 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+            <state relative-caret-position="72">
+              <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1590433147008" expanded="true" signature="2425:8384" ph="..." />
-                <marker date="1590433147008" expanded="true" signature="4617:4620" ph="..." />
-                <marker date="1590433147008" expanded="true" signature="4678:8384" ph="..." />
-                <marker date="1590433147008" expanded="true" signature="5483:8384" ph="..." />
-                <marker date="1590433147008" expanded="true" signature="5562:6617" ph="..." />
-                <marker date="1590433147008" expanded="true" signature="8382:8384" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="2425:8476" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="4709:4712" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="4770:8476" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="5575:8476" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="5654:6709" ph="..." />
+                <marker date="1590436944875" expanded="true" signature="8474:8476" ph="..." />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC TfidfVectorizer.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/unnormalized graph LinearSVC TfidfVectorizer.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB TfidfVectorizer.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/normalized graph LinearSVC TfidfVectorizer.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -365,13 +390,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00035" summary="added chi2 test for uni and bigram correlation">
-      <created>1589079087102</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1589079087102</updated>
     </task>
     <task id="LOCAL-00036" summary="fixed Unicode fit_transform bug">
       <created>1589079425580</created>
@@ -709,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590433090383</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="added count vectorizer testing for NB">
+      <created>1590433154603</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1590433154603</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TodoView">
@@ -730,13 +755,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.3849315" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3958904" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
@@ -825,20 +850,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/normalized graph.png" />
-    <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="72" column="33" selection-start-line="71" selection-start-column="13" selection-end-line="72" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
-            <marker date="1589062699617" expanded="true" signature="2318:2319" ph="..." />
-            <marker date="1589062699617" expanded="true" signature="2367:2376" ph="..." />
-            <marker date="1589062699617" expanded="true" signature="2532:2533" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -857,18 +868,47 @@
         <state showInfoPanel="true" rowLines="3" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1589062699617" expanded="true" signature="346:348" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2318:2319" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2367:2376" ph="..." />
+            <marker date="1589062699617" expanded="true" signature="2532:2533" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph LinearSVC TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalized graph LinearSVC TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+        <state relative-caret-position="72">
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1590433147008" expanded="true" signature="2425:8384" ph="..." />
-            <marker date="1590433147008" expanded="true" signature="4617:4620" ph="..." />
-            <marker date="1590433147008" expanded="true" signature="4678:8384" ph="..." />
-            <marker date="1590433147008" expanded="true" signature="5483:8384" ph="..." />
-            <marker date="1590433147008" expanded="true" signature="5562:6617" ph="..." />
-            <marker date="1590433147008" expanded="true" signature="8382:8384" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="2425:8476" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="4709:4712" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="4770:8476" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="5575:8476" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="5654:6709" ph="..." />
+            <marker date="1590436944875" expanded="true" signature="8474:8476" ph="..." />
           </folding>
         </state>
       </provider>

@@ -103,8 +103,10 @@ def output_csv(filename, fields, paths, directory_name):
     csv_out.close()
 
 
-def top_termsNB(X, y, feature_names):
-    clf = MultinomialNB(alpha=0.1, fit_prior=True)
+def top_termsNB(X_raw, y, vectorizer):
+    X = vectorizer.fit_transform(X_raw)
+    feature_names = vectorizer.get_feature_names()
+    clf = MultinomialNB(alpha=0.2, fit_prior=True)
     clf.fit(X, y)
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
@@ -212,7 +214,7 @@ tfidf = TfidfVectorizer(ngram_range=(1,2),
                                 sublinear_tf=True,
                                 norm=None,
                                 binary=True)
-
+countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
 # Scans label sheet and locates corresponding 10-K forms
 counter = 0
 for ind in df_csv.index:
@@ -251,23 +253,28 @@ df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 print('new files found: ', counter)
 # Splitting dataset for classification
 df_all_forms['full text'] = process_text(df_all_forms['full text'])
-X = tfidf.fit_transform(df_all_forms['full text'])
 feature_names = tfidf.get_feature_names()
 y = [int(pros) for pros in df_all_forms['prosecution']]
 
 # performing Naive Bayes test
-print('MultinomialNB analysis...\n')
-top_termsNB(X, y, feature_names)
+print('MultinomialNB analysis with tfidf...\n')
+top_termsNB(df_all_forms['full text'], y, tfidf)
+print('-'*20, '\n')
+print('MultinomialNB analysis with countvectorizer...\n')
+top_termsNB(df_all_forms['full text'], y, countv)
 print('-'*20, '\n')
 print('Linear SVM analysis...\n')
-svm = LinearSVC()
+X = tfidf.fit_transform(df_all_forms['full text'])
+svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
 svm.fit(X, y)
 top_terms(svm, feature_names)
 print('-'*20, '\n')
-print('Chi2 analysis...\n')
+print('Chi2 analysis with tfidf...\n')
 
 # performing chi2 test
 chi2_analysis(tfidf, df_all_forms, 20)
+print('Chi2 analysis with countvectorizer...\n')
+chi2_analysis(countv, df_all_forms, 20)
 
 
 mnb_pipeline = Pipeline([
@@ -284,7 +291,7 @@ svm_pipeline = Pipeline([
 ])
 # different parameter settings to test out
 mnb_params = {
-    'mnb__alpha': np.linspace(0.1, 1, 10),
+    'mnb__alpha': [.2],
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__max_df': [.5, .7, 1.0],
@@ -293,7 +300,7 @@ mnb_params = {
     'tfidf_pipeline__norm': [None],
 }
 mnbcount_params = {
-    'mnb__alpha': np.linspace(0.1, 1, 10),
+    'mnb__alpha': [.3],
     'mnb__fit_prior': [True],
     'countvec__ngram_range': [(1,2)],
     'countvec__max_df': [.5],
@@ -301,9 +308,9 @@ mnbcount_params = {
 }
 svm_params = {
     'linearsvm__C': np.arange(0.01, 100, 10),
-    'linearsvm__penalty': ['l1', 'l2'],
+    'linearsvm__penalty': ['l2'],
     'linearsvm__dual': [False],
-    'linearsvm__max_iter': [1000, 10000, 100000],
+    'linearsvm__max_iter': [1000],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__min_df': [2],
     'tfidf_pipeline__binary': [True],
