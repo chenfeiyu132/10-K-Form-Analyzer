@@ -133,7 +133,7 @@ def top_terms(classifier, feature_names, top_features=10):
 def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     clf = GridSearchCV(pipeline, params, cv=5)
     clf.fit(X_train, y_train)
-    print('cross validation scores for {}'.format(pipeline.steps[1][1].__class__.__name__))
+    print('cross validation scores for {} {}'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
     print('Best Score: ', clf.best_score_)
     print('Best Params: ', clf.best_params_)
 
@@ -143,11 +143,11 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'],
                           title='Confusion matrix, without normalization')
-    plt.savefig('unnormalized graph {}.png'.format(pipeline.steps[1][1].__class__.__name__))
+    plt.savefig('unnormalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'], normalize=True,
                           title='Normalized confusion matrix')
-    plt.savefig('normalized graph {}.png'.format(pipeline.steps[1][1].__class__.__name__))
+    plt.savefig('normalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
 
 
 def plot_confusion_matrix(y_true, y_pred, classes,
@@ -284,7 +284,7 @@ svm_pipeline = Pipeline([
 ])
 # different parameter settings to test out
 mnb_params = {
-    'mnb__alpha': [.1],
+    'mnb__alpha': np.linspace(0.1, 1, 10),
     'mnb__fit_prior': [True],
     'tfidf_pipeline__ngram_range': [(1,2)],
     'tfidf_pipeline__min_df': [2],
@@ -292,7 +292,7 @@ mnb_params = {
     'tfidf_pipeline__norm': [None],
 }
 mnbcount_params = {
-    'mnb__alpha': np.linspace(0, 1, 10),
+    'mnb__alpha': np.linspace(0.1, 1, 10),
     'mnb__fit_prior': [True],
     'countvec__ngram_range': [(1,2)],
     'countvec__max_df': [.5],
