@@ -5,7 +5,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import LinearSVC
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 
 from nltk.stem import WordNetLemmatizer #for ignoring common words
@@ -137,11 +137,14 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     clf.fit(X_train, y_train)
     print('cross validation scores for {} {}'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
     print('Best Score: ', clf.best_score_)
+
     print('Best Params: ', clf.best_params_)
 
     # generate confusion matrix
     label_pred = clf.best_estimator_.predict(X_test)
-
+    print('Prediction Accuracy: ', accuracy_score(y_test, label_pred))
+    null_accuracy = y_test.value_counts().head(1) / len(y_test)
+    print('Null Accuracy: ', null_accuracy)
     plot_confusion_matrix(label_test, label_pred,
                           classes=['NonProsecution', 'Prosecution'],
                           title='Confusion matrix, without normalization')
