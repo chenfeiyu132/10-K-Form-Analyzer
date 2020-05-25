@@ -1,6 +1,6 @@
 from sklearn.feature_extraction import text
 from sklearn.feature_selection import chi2
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -274,6 +274,10 @@ mnb_pipeline = Pipeline([
     ('tfidf_pipeline', TfidfVectorizer()),
     ('mnb', MultinomialNB())
 ])
+mnbcount_pipeline = Pipeline([
+    ('countvec', CountVectorizer()),
+    ('mnb', MultinomialNB())
+])
 svm_pipeline = Pipeline([
     ('tfidf_pipeline', TfidfVectorizer()),
     ('linearsvm', LinearSVC())
@@ -286,6 +290,13 @@ mnb_params = {
     'tfidf_pipeline__min_df': [2],
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
+}
+mnbcount_params = {
+    'mnb__alpha': np.linspace(0, 1, 10),
+    'mnb__fit_prior': [True],
+    'countvec__ngram_range': [(1,2)],
+    'countvec__max_df': [.5],
+    'countvec__min_df': [2]
 }
 svm_params = {
     'linearsvm__C': np.arange(0.01, 100, 10),
@@ -302,7 +313,14 @@ full_text_train, full_text_test, label_train, label_test = train_test_split(df_a
                                                                             df_all_forms['prosecution'],
                                                                             test_size=0.2, random_state=85)
 
+print('mnb with tfidf')
+print('-'*20)
 cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+print('mnb with countvec')
+print('-'*20)
+cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
+print('svm with tfidf')
+print('-'*20)
 cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
 
 # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
