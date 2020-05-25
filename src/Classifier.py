@@ -253,7 +253,6 @@ df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 print('new files found: ', counter)
 # Splitting dataset for classification
 df_all_forms['full text'] = process_text(df_all_forms['full text'])
-feature_names = tfidf.get_feature_names()
 y = [int(pros) for pros in df_all_forms['prosecution']]
 
 # performing Naive Bayes test
@@ -265,6 +264,7 @@ top_termsNB(df_all_forms['full text'], y, countv)
 print('-'*20, '\n')
 print('Linear SVM analysis...\n')
 X = tfidf.fit_transform(df_all_forms['full text'])
+feature_names = tfidf.get_feature_names()
 svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
 svm.fit(X, y)
 top_terms(svm, feature_names)
