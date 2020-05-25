@@ -73,14 +73,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="26690" />
-          <entry key="txt" value="3507" />
+          <entry key="py" value="26841" />
+          <entry key="txt" value="3547" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3544" />
-          <entry key="Python" value="26448" />
+          <entry key="PLAIN_TEXT" value="3584" />
+          <entry key="Python" value="26599" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -117,16 +117,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="278" column="28" lean-forward="true" selection-start-line="278" selection-start-column="28" selection-end-line="278" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1590431748405" expanded="true" signature="2425:8252" ph="..." />
-                <marker date="1590431748405" expanded="true" signature="4617:4620" ph="..." />
-                <marker date="1590431748405" expanded="true" signature="4678:8252" ph="..." />
-                <marker date="1590431748405" expanded="true" signature="5483:8252" ph="..." />
-                <marker date="1590431748405" expanded="true" signature="5562:6485" ph="..." />
-                <marker date="1590431748405" expanded="true" signature="8250:8252" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="2425:8384" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="4617:4620" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="4678:8384" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="5483:8384" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="5562:6617" ph="..." />
+                <marker date="1590433147008" expanded="true" signature="8382:8384" ph="..." />
               </folding>
             </state>
           </provider>
@@ -365,20 +365,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added function to conduct naive bayes text importance ranking">
-      <created>1589071563383</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1589071563384</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added chi2 test for uni and bigram correlation">
-      <created>1589078480900</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1589078480900</updated>
     </task>
     <task id="LOCAL-00035" summary="added chi2 test for uni and bigram correlation">
       <created>1589079087102</created>
@@ -709,7 +695,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590285564716</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="added count vectorizer testing for NB">
+      <created>1590431867656</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1590431867656</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added count vectorizer testing for NB">
+      <created>1590433090382</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1590433090383</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView">
@@ -725,12 +725,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2835218" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2835218" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,7 +756,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed list printout for chi2 analysis" />
     <MESSAGE value="added ngram_range for hyperparameter tuning option" />
     <MESSAGE value="lowered hyperparameter tuning for" />
     <MESSAGE value="enabled automatic detection of operating system" />
@@ -781,7 +780,8 @@
     <MESSAGE value="added graphs" />
     <MESSAGE value="added function to automatically train with pipeline and params and produce confusion matrix" />
     <MESSAGE value="trying to fix issue with ubuntu's inability to access pipeline indices" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to fix issue with ubuntu's inability to access pipeline indices" />
+    <MESSAGE value="added count vectorizer testing for NB" />
+    <option name="LAST_COMMIT_MESSAGE" value="added count vectorizer testing for NB" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -859,16 +859,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="278" column="28" lean-forward="true" selection-start-line="278" selection-start-column="28" selection-end-line="278" selection-end-column="28" />
+        <state relative-caret-position="195">
+          <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1590431748405" expanded="true" signature="2425:8252" ph="..." />
-            <marker date="1590431748405" expanded="true" signature="4617:4620" ph="..." />
-            <marker date="1590431748405" expanded="true" signature="4678:8252" ph="..." />
-            <marker date="1590431748405" expanded="true" signature="5483:8252" ph="..." />
-            <marker date="1590431748405" expanded="true" signature="5562:6485" ph="..." />
-            <marker date="1590431748405" expanded="true" signature="8250:8252" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="2425:8384" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="4617:4620" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="4678:8384" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="5483:8384" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="5562:6617" ph="..." />
+            <marker date="1590433147008" expanded="true" signature="8382:8384" ph="..." />
           </folding>
         </state>
       </provider>
