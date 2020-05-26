@@ -310,6 +310,10 @@ svm_pipeline = Pipeline([
     ('tfidf_pipeline', TfidfVectorizer()),
     ('linearsvm', LinearSVC())
 ])
+svmcount_pipeline = Pipeline([
+    ('countvec', CountVectorizer()),
+    ('linearsvm', LinearSVC())
+])
 # different parameter settings to test out
 mnb_params = {
     'mnb__alpha': [.2],
@@ -337,6 +341,15 @@ svm_params = {
     'tfidf_pipeline__binary': [True],
     'tfidf_pipeline__norm': [None],
 }
+svmcount_params = {
+    'countvec__ngram_range': [(1, 2)],
+    'countvec__max_df': [.5],
+    'countvec__min_df': [2],
+    'linearsvm__C': np.arange(0.01, 100, 10),
+    'linearsvm__penalty': ['l2'],
+    'linearsvm__dual': [False],
+    'linearsvm__max_iter': [1000],
+}
 
 full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
                                                                             df_all_forms['prosecution'],
@@ -351,6 +364,9 @@ cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_te
 print('svm with tfidf')
 print('-'*20)
 cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+print('svm with count vectorizer')
+print('-'*20)
+cross_validation_cm(svm_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
 
 # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
 # X_train = tfidf.fit_transform(df_all_forms['full text'])
