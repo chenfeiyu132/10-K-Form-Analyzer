@@ -366,7 +366,7 @@ print('-'*20)
 cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
 print('svm with count vectorizer')
 print('-'*20)
-cross_validation_cm(svm_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
 
 # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
 # X_train = tfidf.fit_transform(df_all_forms['full text'])

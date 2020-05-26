@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,14 +73,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="27830" />
-          <entry key="txt" value="3716" />
+          <entry key="py" value="28015" />
+          <entry key="txt" value="3801" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3753" />
-          <entry key="Python" value="27588" />
+          <entry key="PLAIN_TEXT" value="3838" />
+          <entry key="Python" value="27773" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -116,16 +117,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="121" column="4" lean-forward="true" selection-start-line="121" selection-start-column="4" selection-end-line="123" selection-end-column="53" />
+            <state relative-caret-position="315">
+              <caret line="367" column="13" lean-forward="true" selection-start-line="367" selection-start-column="13" selection-end-line="367" selection-end-column="13" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1590450155029" expanded="true" signature="2441:9262" ph="..." />
-                <marker date="1590450155029" expanded="true" signature="5316:5319" ph="..." />
-                <marker date="1590450155029" expanded="true" signature="5377:9262" ph="..." />
-                <marker date="1590450155029" expanded="true" signature="6182:9262" ph="..." />
-                <marker date="1590450155029" expanded="true" signature="6261:7495" ph="..." />
-                <marker date="1590450155029" expanded="true" signature="9260:9262" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="2441:9262" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="5316:5319" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="5377:9262" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="6182:9262" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="6261:7495" ph="..." />
+                <marker date="1590469898729" expanded="true" signature="9260:9262" ph="..." />
               </folding>
             </state>
           </provider>
@@ -389,20 +390,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00040" summary="changed alpha settings">
-      <created>1589146761741</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1589146761741</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Enabled hyperparameter tuning with GridSearchCV">
-      <created>1589148936440</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1589148936441</updated>
     </task>
     <task id="LOCAL-00042" summary="fixed certain params for gridsearch">
       <created>1589164820785</created>
@@ -733,7 +720,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590467614608</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="added SVM analysis with Countvectorizer">
+      <created>1590468258770</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1590468258770</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added SVM with count vectorizer pipeline">
+      <created>1590469284348</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1590469284348</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView">
@@ -780,8 +781,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commented out one classification test" />
-    <MESSAGE value="now testing max df for grid param" />
     <MESSAGE value="changed max_df settings" />
     <MESSAGE value="fixed bug in max_df param" />
     <MESSAGE value="fixed bug in max_df" />
@@ -805,7 +804,20 @@
     <MESSAGE value="fixed bug with featurenames" />
     <MESSAGE value="added null accuracy as part of the cross validaiton test" />
     <MESSAGE value="added ratio testing for nb analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ratio testing for nb analysis" />
+    <MESSAGE value="added SVM analysis with Countvectorizer" />
+    <MESSAGE value="added SVM with count vectorizer pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="added SVM with count vectorizer pipeline" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/Classifier.py</url>
+          <line>363</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test_output_1.html" />
@@ -898,16 +910,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="121" column="4" lean-forward="true" selection-start-line="121" selection-start-column="4" selection-end-line="123" selection-end-column="53" />
+        <state relative-caret-position="315">
+          <caret line="367" column="13" lean-forward="true" selection-start-line="367" selection-start-column="13" selection-end-line="367" selection-end-column="13" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1590450155029" expanded="true" signature="2441:9262" ph="..." />
-            <marker date="1590450155029" expanded="true" signature="5316:5319" ph="..." />
-            <marker date="1590450155029" expanded="true" signature="5377:9262" ph="..." />
-            <marker date="1590450155029" expanded="true" signature="6182:9262" ph="..." />
-            <marker date="1590450155029" expanded="true" signature="6261:7495" ph="..." />
-            <marker date="1590450155029" expanded="true" signature="9260:9262" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="2441:9262" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="5316:5319" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="5377:9262" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="6182:9262" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="6261:7495" ph="..." />
+            <marker date="1590469898729" expanded="true" signature="9260:9262" ph="..." />
           </folding>
         </state>
       </provider>
