@@ -108,6 +108,17 @@ def top_termsNB(X_raw, y, vectorizer):
     feature_names = vectorizer.get_feature_names()
     clf = MultinomialNB(alpha=0.2, fit_prior=True)
     clf.fit(X, y)
+    print('naive bayes shape: ',clf.feature_count_.shape)
+    non_pros_token_count = clf.feature_count_[0, :] + 1
+    pros_token_count = clf.feature_count_[1, :] + 1
+    tokens = pd.DataFrame({'token': feature_names, 'non_pros': non_pros_token_count, 'pros': pros_token_count}).set_index(
+        'token')
+    tokens['non_pros'] = tokens.non_pros / clf.class_count_[0]
+    tokens['pros'] = tokens.pros / clf.class_count_[1]
+    tokens['pros_ratio'] = tokens.pros / tokens.non_pros
+    print('top 10 terms using new method')
+    print(tokens.sort_values('pros_ratio', ascending=False)[:10])
+
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
                                  columns=['No_Prosecution', 'Prosecution'],
                                  index=feature_names)
