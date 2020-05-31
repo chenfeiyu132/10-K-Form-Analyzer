@@ -7,8 +7,8 @@ The purpose of this project is to analyze past 10-K forms and certain legal info
 One difficulty with the analysis of these documents, which is also one of the bigger challenges to Natural Language Processing, is the presence of ambiguous legal languages which are often employed by companies to mitigate the severity of the legal problems they are facing. Thus, one primary target of this project is to process and filter out important indicative terms from 10-K text that are often associated with prosecution. 
 
 ## Data Collection:
-	The data being used are 10-K forms scraped from the SEC EDGAR database from 2019 to 2007. Due to the sheer sizes of the 10-K’s, the key focus of the data analysis will be only on section Item 8, “Financial Statements and Supplementary Data,” since researchers have found that companies often disclose legal information in this section.
+The data being used are 10-K forms scraped from the SEC EDGAR database from 2019 to 2007. Due to the sheer sizes of the 10-K’s, the key focus of the data analysis will be only on section Item 8, “Financial Statements and Supplementary Data,” since researchers have found that companies often disclose legal information in this section.
   
 ## Procedure:
-	The ultimate goal of the project is not only to isolate important terms associated with prosecution but also train machine learning models that could be used to identify 10-K documents in the future in terms of legal situations.
+The ultimate goal of the project is not only to isolate important terms associated with prosecution but also train machine learning models that could be used to identify 10-K documents in the future in terms of legal situations.
 
