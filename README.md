@@ -12,3 +12,5 @@ The data being used are 10-K forms scraped from the SEC EDGAR database from 2019
 ## Procedure:
 The ultimate goal of the project is not only to isolate important terms associated with prosecution but also train machine learning models that could be used to identify 10-K documents in the future in terms of legal situations.
 
+## Pipeline Flowchart:
+![Image of Flowchart](10-K diagram.png)
