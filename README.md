@@ -14,5 +14,5 @@ The ultimate goal of the project is not only to isolate important terms associat
 
 ## Pipeline Flowchart:
 <p align="center">
-![Image of Flowchart](https://github.com/chenfeiyu132/10-K-Form-Analyzer/blob/master/10-K%20diagram.png)
+  ![Image of Flowchart](https://github.com/chenfeiyu132/10-K-Form-Analyzer/blob/master/10-K%20diagram.png)
 </p>
