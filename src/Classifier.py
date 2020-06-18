@@ -21,38 +21,37 @@ import matplotlib.pylab as plt
 en_stop = text.ENGLISH_STOP_WORDS
 stemmer = WordNetLemmatizer()
 
-def process_text(dataset):
-    for index in range(len(dataset)):
-        # remove all mentions of the title
-        dataset[index] = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', dataset[index].lower())
-        # Remove all the special characters
-        dataset[index] = re.sub(r'\W', ' ', str(dataset[index]))
+def process_text(article):
+    # remove all mentions of the title
+    article = re.sub(r'((ITEM)\s*8)|FINANCIAL\s*STATEMENTS\s*AND\s*SUPPLEMENTARY?\s*DATA', '', article.lower())
+    # Remove all the special characters
+    article = re.sub(r'\W', ' ', str(article))
 
-        # remove all single characters
-        dataset[index] = re.sub(r'\s+[a-zA-Z]\s+', ' ', dataset[index])
+    # remove all single characters
+    article = re.sub(r'\s+[a-zA-Z]\s+', ' ', article)
 
-        # Remove single characters from the start
-        dataset[index] = re.sub(r'\^[a-zA-Z]\s+', ' ', dataset[index])
+    # Remove single characters from the start
+    article = re.sub(r'\^[a-zA-Z]\s+', ' ', article)
 
-        # Substituting multiple spaces with single space
-        dataset[index] = re.sub(r'\s+', ' ', dataset[index], flags=re.I)
+    # Substituting multiple spaces with single space
+    article = re.sub(r'\s+', ' ', article, flags=re.I)
 
-        # Remove all stand alone digits
-        dataset[index] = re.sub(r'\s*[\d+]', ' ', dataset[index])
+    # Remove all stand alone digits
+    article = re.sub(r'\s*[\d+]', ' ', article)
 
-        # Removing prefixed 'b'
-        dataset[index] = re.sub(r'^b\s+', '', dataset[index])
+    # Removing prefixed 'b'
+    article = re.sub(r'^b\s+', '', article)
 
-        # Converting to Lowercase
-        dataset[index] = dataset[index].lower()
+    # Converting to Lowercase
+    article = article.lower()
 
-        # Lemmatization
-        tokens = dataset[index].split()
-        tokens = [stemmer.lemmatize(word) for word in tokens]
-        tokens = [word for word in tokens if word not in en_stop]
+    # Lemmatization
+    tokens = article.split()
+    tokens = [stemmer.lemmatize(word) for word in tokens]
+    tokens = [word for word in tokens if word not in en_stop]
 
-        dataset[index] = ' '.join(tokens)
-    return dataset
+    article = ' '.join(tokens)
+    return article
 
 
 # This calculates the idf value for the terms in the posts and prints the highest ones
@@ -99,7 +98,7 @@ def output_csv(filename, fields, paths, directory_name):
             filename = filename.split('-')
             date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
             label = 0 if path == paths[0] else 1
-            writer.writerow([filename[0], filename[1], date, soup.text, label]);
+            writer.writerow([filename[0], filename[1], date, process_text(soup.text), label]);
     csv_out.close()
 
 
@@ -152,18 +151,30 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     print('Best Params: ', clf.best_params_)
 
     # generate confusion matrix
-    label_pred = clf.best_estimator_.predict(X_test)
-    print('Prediction Accuracy: ', accuracy_score(y_test, label_pred))
+    y_pred = clf.best_estimator_.predict(X_test)
+    print('Prediction Accuracy: ', accuracy_score(y_test, y_pred))
     null_accuracy = y_test.value_counts().head(1) / len(y_test)
     print('Null Accuracy: ', null_accuracy)
-    plot_confusion_matrix(label_test, label_pred,
+    plot_confusion_matrix(y_test, y_pred,
                           classes=['NonProsecution', 'Prosecution'],
                           title='Confusion matrix, without normalization')
     plt.savefig('unnormalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
-    plot_confusion_matrix(label_test, label_pred,
+    plot_confusion_matrix(y_test, y_pred,
                           classes=['NonProsecution', 'Prosecution'], normalize=True,
                           title='Normalized confusion matrix')
     plt.savefig('normalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
+
+
+def classify_unlabeled_set(pipeline, params, X_train, y_train, X_pred):
+    clf = GridSearchCV(pipeline, params, cv=5)
+    clf.fit(X, y)
+    print('cross validation scores for {} {}'.format(pipeline.steps[1][1].__class__.__name__,
+                                                     pipeline.steps[0][1].__class__.__name__))
+    print('Best Score: ', clf.best_score_)
+
+    print('Best Params: ', clf.best_params_)
+    y_pred = clf.best_estimator_.predict(X_pred)
+    return y_pred;
 
 
 def plot_confusion_matrix(y_true, y_pred, classes,
@@ -266,7 +277,6 @@ df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 
 print('new files found: ', counter)
 # Splitting dataset for classification
-df_all_forms['full text'] = process_text(df_all_forms['full text'])
 y = [int(pros) for pros in df_all_forms['prosecution']]
 
 # performing Naive Bayes test
@@ -351,22 +361,43 @@ svmcount_params = {
     'linearsvm__max_iter': [1000],
 }
 
-full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
-                                                                            df_all_forms['prosecution'],
-                                                                            test_size=0.2, random_state=85)
+#classifying rest of the unlabeled set
+# for folder in [folder for folder in os.listdir(directory) if re.match(r'\d+', folder)]:
+#     convert_html(directory + folder + "/", directory + 'Unlabeled_Set_Processed/')
+#
+# output_csv('unlabeled_10-K.csv',  # csv name
+#            ['cik', 'company name', 'date', 'full text', 'label'],  # column names
+#            ['Unlabeled_Set_Processed'],  # folder names in which the files are extracted from
+#            directory)
+# df_unlabeled_forms = pd.read_csv('unlabeled_10-K.csv', usecols=['full text', 'label'])
+# df_unlabeled_forms['full text'] = df_all_forms['full text'].values.astype('U')
+# df_unlabeled_forms['label'] = df_all_forms['label'].values.astype('U')
+#
+#
+# df_unlabeled_forms['label'] = classify_unlabeled_set(mnb_pipeline,
+#                                                      mnb_params,
+#                                                      df_all_forms['full text'],
+#                                                      df_all_forms['prosecution'],
+#                                                      df_unlabeled_forms['full text'])
 
-print('mnb with tfidf')
-print('-'*20)
-cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
-print('mnb with countvec')
-print('-'*20)
-cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
-print('svm with tfidf')
-print('-'*20)
-cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
-print('svm with count vectorizer')
-print('-'*20)
-cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+# Prints confusion matrix for different classifiers
+# full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
+#                                                                             df_all_forms['prosecution'],
+#                                                                             test_size=0.2, random_state=85)
+# # print('mnb with tfidf')
+# print('-'*20)
+# cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+# print('mnb with countvec')
+# print('-'*20)
+# cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
+# print('svm with tfidf')
+# print('-'*20)
+# cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+# print('svm with count vectorizer')
+# print('-'*20)
+# cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+
+
 
 # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
 # X_train = tfidf.fit_transform(df_all_forms['full text'])
