@@ -94,7 +94,6 @@ def prior_years(year, num_prior):
         num_year = int(year)
         for index in range(num_prior):
             years.append(num_year-index-1)
-            print('{0} was added'.format(num_year-index-1))
             print(years)
     except ValueError:
         print("not a valid number")
@@ -105,7 +104,6 @@ def prior_years(year, num_prior):
 def locate_prior_files(directory, year, quarter, cik, num_prior):
     years = prior_years(year, num_prior)
     folders = [(yr+quarter)for yr in years]
-    print(folders)
     prior_files = []
     for folder in folders:
         prior_file = locate_file(directory, folder, cik)
