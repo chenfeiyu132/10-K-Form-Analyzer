@@ -83,7 +83,6 @@ def locate_file(directory, regex, cik):
     folders = [folder for folder in os.listdir(directory) if re.match(regex, folder)]
     for folder in folders:
         for form in os.listdir(directory+folder):
-            print('{0} number of forms in directory'.format(len(os.listdir(directory+folder))))
             if form.split('-')[0] == cik:
                 return directory+folder+'/'+form
     return ''
@@ -317,7 +316,7 @@ for ind in df_csv.index:
                 shutil.copyfile(file, directory + 'Disclosure/' + tail)
             else:
                 shutil.copyfile(file, directory + 'Non_Disclosure/' + tail)
-            before = locate_prior_files(directory, str(actual_year), quarter, cik, num_years_prior)
+            before = locate_prior_files(directory, str(actual_year), quarter, str(cik), num_years_prior)
             for index_prior in range(len(before)):
                 head, tail = os.path.split(before[index_prior])
                 if int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
