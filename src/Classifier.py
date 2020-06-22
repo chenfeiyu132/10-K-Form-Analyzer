@@ -82,9 +82,8 @@ def chi2_analysis(vectorizer, df_form, n_terms):
 def locate_file(directory, regex, cik):
     folders = [folder for folder in os.listdir(directory) if re.match(regex, folder)]
     for folder in folders:
-        print('{0} folders found'.format(len(folder)))
-        print(folders)
         for form in os.listdir(directory+folder):
+            print('{0} number of forms in directory'.format(len(os.listdir(directory+folder))))
             if form.split('-')[0] == cik:
                 return directory+folder+'/'+form
     return ''
