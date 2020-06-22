@@ -17,6 +17,7 @@ import os
 import csv
 import sys
 import matplotlib.pylab as plt
+import shutil
 
 en_stop = text.ENGLISH_STOP_WORDS
 stemmer = WordNetLemmatizer()
@@ -78,13 +79,41 @@ def chi2_analysis(vectorizer, df_form, n_terms):
     print(feature_names[:n_terms])
 
 
-def locate_file(dir, year, cik):
-    folders = [folder for folder in os.listdir(dir) if re.match(year, folder)]
+def locate_file(directory, regex, cik):
+    folders = [folder for folder in os.listdir(directory) if re.match(regex, folder)]
     for folder in folders:
-        for form in os.listdir(dir+folder):
+        for form in os.listdir(directory+folder):
             if form.split('-')[0] == cik:
-                return dir+folder+'/'+form
+                return directory+folder+'/'+form
     return ''
+
+
+def prior_years(year, num_prior):
+    years = []
+    try:
+        num_year = int(year)
+        for index in range(num_prior):
+            years.append(num_year-index-1)
+            print('{0} was added'.format(num_year-index-1))
+            print(years)
+    except ValueError:
+        print("not a valid number")
+
+    return [str(y) for y in years]
+
+
+def locate_prior_files(directory, year, quarter, cik, num_prior):
+    years = prior_years(year, num_prior)
+    folders = [(yr+quarter)for yr in years]
+    print(folders)
+    prior_files = []
+    for folder in folders:
+        prior_file = locate_file(directory, folder, cik)
+        if prior_file != '':
+            prior_files.append(prior_file)
+        else:
+            print('prior file could not be found in {0}'.format(folder))
+    return prior_files
 
 
 def output_csv(filename, fields, paths, directory_name):
@@ -167,7 +196,7 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
 
 def classify_unlabeled_set(pipeline, params, X_train, y_train, X_pred):
     clf = GridSearchCV(pipeline, params, cv=5)
-    clf.fit(X, y)
+    clf.fit(X_train, y_train)
     print('cross validation scores for {} {}'.format(pipeline.steps[1][1].__class__.__name__,
                                                      pipeline.steps[0][1].__class__.__name__))
     print('Best Score: ', clf.best_score_)
@@ -241,71 +270,109 @@ tfidf = TfidfVectorizer(ngram_range=(1,2),
                                 binary=True)
 countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
 # Scans label sheet and locates corresponding 10-K forms
-counter = 0
+# counter = 0
+# for ind in df_csv.index:
+#     cik = df_csv['cik'][ind]
+#     date = df_csv['datadate'][ind]
+#     if not pd.isnull(date) and not pd.isnull(cik):
+#         date.astype(np.int64)
+#         cik = int(cik)
+#         month_date = str(int(date))[4:]
+#         if month_date == '1231':
+#             actual_year = int(str(date)[:4]) + 1
+#             file = locate_file(directory, str(actual_year), str(cik))
+#             if file != '':
+#                 dispo = df_csv['disposition'][ind]
+#                 head, tail = os.path.split(file)
+#                 if dispo == 1:
+#                     os.rename(file, directory+'False_Set/'+tail)
+#                 else:
+#                     os.rename(file, directory+'Truth_Set/'+tail)
+num_years_prior = 3  # how many years prior would the program examine
 for ind in df_csv.index:
     cik = df_csv['cik'][ind]
     date = df_csv['datadate'][ind]
+    dispo = df_csv['disposition'][ind]
     if not pd.isnull(date) and not pd.isnull(cik):
         date.astype(np.int64)
         cik = int(cik)
-        month_date = str(int(date))[4:]
-        if month_date == '1231':
-            actual_year = int(str(date)[:4]) + 1
-            file = locate_file(directory, str(actual_year), str(cik))
-            if file != '':
-                dispo = df_csv['disposition'][ind]
-                head, tail = os.path.split(file)
-                if dispo == 1:
-                    os.rename(file, directory+'False_Set/'+tail)
+        month_date = str(date)[4:]
+        actual_year = (int(str(date)[:4]) + 1) if month_date == '1231' else str(date)[:4]
+        file = locate_file(directory, str(actual_year), str(cik))
+        quarter = ''
+        if file == '':
+            if dispo == 1:
+                file = locate_file(directory, 'Truth_Set', str(cik))
+            else:
+                file = locate_file(directory, 'False_Set', str(cik))
+        else:
+            quarter = file.split('/')[-2][4:]
+            print('Quarter found to be {0}'.format(quarter))
+        if file != '':
+            head, tail = os.path.split(file)
+            print('file {0} successfully found'.format(tail))
+            if not pd.isnull(df_csv['settle'][ind]) and int(df_csv['settle'][ind]) != 0:
+                shutil.copyfile(file, directory + 'Disclosure/' + tail)
+            else:
+                shutil.copyfile(file, directory + 'Non_Disclosure/' + tail)
+            before = locate_prior_files(directory, str(actual_year), quarter, cik, num_years_prior)
+            for index_prior in range(len(before)):
+                head, tail = os.path.split(before[index_prior])
+                if int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
+                    shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
                 else:
-                    os.rename(file, directory+'Truth_Set/'+tail)
+                    shutil.copyfile(before[index_prior], directory + 'Non_Disclosure/' + tail)
 
-# Processes 10-K forms in the truth and false set folders
-convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
-convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 
-# outputting processed false and truth sets into csv
-output_csv('processed_10-K.csv',  # csv name
-           ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
-           ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
-           directory)  # directory in which the files are extracted from
 
-# making csv from processed false and truth sets
-df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
-df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
-df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
 
-print('new files found: ', counter)
-# Splitting dataset for classification
-y = [int(pros) for pros in df_all_forms['prosecution']]
 
-# performing Naive Bayes test
-print('MultinomialNB analysis with tfidf...\n')
-top_termsNB(df_all_forms['full text'], y, tfidf)
-print('-'*20, '\n')
-print('MultinomialNB analysis with countvectorizer...\n')
-top_termsNB(df_all_forms['full text'], y, countv)
-print('-'*20, '\n')
-print('Linear SVM analysis with tfidf...\n')
-X = tfidf.fit_transform(df_all_forms['full text'])
-feature_names = tfidf.get_feature_names()
-svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-svm.fit(X, y)
-top_terms(svm, feature_names)
-print('-'*20, '\n')
-print('Linear SVM analysis with tfidf...\n')
-X = countv.fit_transform(df_all_forms['full text'])
-feature_names = countv.get_feature_names()
-svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-svm.fit(X, y)
-top_terms(svm, feature_names)
-print('-'*20, '\n')
-print('Chi2 analysis with tfidf...\n')
-
-# performing chi2 test
-chi2_analysis(tfidf, df_all_forms, 20)
-print('Chi2 analysis with countvectorizer...\n')
-chi2_analysis(countv, df_all_forms, 20)
+        # Processes 10-K forms in the truth and false set folders
+# convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
+# convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
+#
+# # outputting processed false and truth sets into csv
+# output_csv('processed_10-K.csv',  # csv name
+#            ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
+#            ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
+#            directory)  # directory in which the files are extracted from
+#
+# # making csv from processed false and truth sets
+# df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
+# df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
+# df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
+#
+# print('new files found: ', counter)
+# # Splitting dataset for classification
+# y = [int(pros) for pros in df_all_forms['prosecution']]
+#
+# # performing Naive Bayes test
+# print('MultinomialNB analysis with tfidf...\n')
+# top_termsNB(df_all_forms['full text'], y, tfidf)
+# print('-'*20, '\n')
+# print('MultinomialNB analysis with countvectorizer...\n')
+# top_termsNB(df_all_forms['full text'], y, countv)
+# print('-'*20, '\n')
+# print('Linear SVM analysis with tfidf...\n')
+# X = tfidf.fit_transform(df_all_forms['full text'])
+# feature_names = tfidf.get_feature_names()
+# svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+# svm.fit(X, y)
+# top_terms(svm, feature_names)
+# print('-'*20, '\n')
+# print('Linear SVM analysis with tfidf...\n')
+# X = countv.fit_transform(df_all_forms['full text'])
+# feature_names = countv.get_feature_names()
+# svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+# svm.fit(X, y)
+# top_terms(svm, feature_names)
+# print('-'*20, '\n')
+# print('Chi2 analysis with tfidf...\n')
+#
+# # performing chi2 test
+# chi2_analysis(tfidf, df_all_forms, 20)
+# print('Chi2 analysis with countvectorizer...\n')
+# chi2_analysis(countv, df_all_forms, 20)
 
 
 mnb_pipeline = Pipeline([
