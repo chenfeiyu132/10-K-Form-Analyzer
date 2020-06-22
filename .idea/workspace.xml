@@ -75,12 +75,12 @@
         <counts>
           <entry key="dummy" value="37" />
           <entry key="py" value="31717" />
-          <entry key="txt" value="3939" />
+          <entry key="txt" value="3977" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="3976" />
+          <entry key="PLAIN_TEXT" value="4014" />
           <entry key="Python" value="31475" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
@@ -118,20 +118,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3362">
-              <caret line="318" column="86" selection-start-line="318" selection-start-column="86" selection-end-line="318" selection-end-column="86" />
+            <state relative-caret-position="-2763">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1592799362441" expanded="true" signature="2207:10423" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="3240:3543" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="4071:4074" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="4130:4135" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="6004:6007" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="6065:10423" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="6870:10423" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="6949:8656" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="8230:8656" ph="..." />
-                <marker date="1592799362441" expanded="true" signature="10421:10423" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="2207:10351" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="3240:3543" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="3999:4002" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="4058:4063" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="5932:5935" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="5993:10351" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="6798:10351" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="6877:8584" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="8158:8584" ph="..." />
+                <marker date="1592799519937" expanded="true" signature="10349:10351" ph="..." />
               </folding>
             </state>
           </provider>
@@ -389,20 +389,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fixed max_df sequence in grid param">
-      <created>1589234862393</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1589234862393</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Commented out one classification test">
-      <created>1589239153874</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1589239153874</updated>
     </task>
     <task id="LOCAL-00049" summary="now testing max df for grid param">
       <created>1589239455736</created>
@@ -733,7 +719,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592793327815</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fixed type cast issue with cik">
+      <created>1592799378670</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1592799378670</updated>
+    </task>
+    <task id="LOCAL-00097" summary="fixed type cast issue with cik">
+      <created>1592799441807</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1592799441807</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TodoView">
@@ -780,7 +780,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug in max_df" />
     <MESSAGE value="now tuning alpha value" />
     <MESSAGE value="fixed alpha tuning values" />
     <MESSAGE value="now hyperparameter tuning max and min df" />
@@ -805,14 +804,15 @@
     <MESSAGE value="added SVM with count vectorizer pipeline" />
     <MESSAGE value="Implemented search algorithm for prior files up to 3 years" />
     <MESSAGE value="Debugging prior search function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging prior search function" />
+    <MESSAGE value="fixed type cast issue with cik" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed type cast issue with cik" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Classifier.py</url>
-          <line>460</line>
+          <line>459</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -905,20 +905,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3362">
-          <caret line="318" column="86" selection-start-line="318" selection-start-column="86" selection-end-line="318" selection-end-column="86" />
+        <state relative-caret-position="-2763">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1592799362441" expanded="true" signature="2207:10423" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="3240:3543" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="4071:4074" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="4130:4135" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="6004:6007" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="6065:10423" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="6870:10423" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="6949:8656" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="8230:8656" ph="..." />
-            <marker date="1592799362441" expanded="true" signature="10421:10423" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="2207:10351" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="3240:3543" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="3999:4002" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="4058:4063" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="5932:5935" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="5993:10351" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="6798:10351" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="6877:8584" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="8158:8584" ph="..." />
+            <marker date="1592799519937" expanded="true" signature="10349:10351" ph="..." />
           </folding>
         </state>
       </provider>

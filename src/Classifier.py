@@ -108,7 +108,6 @@ def locate_prior_files(directory, year, quarter, cik, num_prior):
     print(folders)
     prior_files = []
     for folder in folders:
-        print('directory {0} and folder {1}'.format(directory, folder))
         prior_file = locate_file(directory, folder, cik)
         if prior_file != '':
             prior_files.append(prior_file)
