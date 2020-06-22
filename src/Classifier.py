@@ -320,7 +320,7 @@ for ind in df_csv.index:
             for index_prior in range(len(before)):
                 head, tail = os.path.split(before[index_prior])
                 if int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
-                    shutil.copyfile(before[index_prior], directory+'Disclsssosure/'+tail)
+                    shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
                 else:
                     shutil.copyfile(before[index_prior], directory + 'Non_Disclosure/' + tail)
 
