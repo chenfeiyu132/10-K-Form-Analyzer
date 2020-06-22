@@ -316,6 +316,8 @@ for ind in df_csv.index:
             before = locate_prior_files(directory, str(actual_year), quarter, str(cik), num_years_prior)
             for index_prior in range(len(before)):
                 head, tail = os.path.split(before[index_prior])
+                if pd.isnull(df_csv['settle_m{0}'.format(index_prior+1)][ind]):
+                    continue
                 if int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
                     shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
                 else:
