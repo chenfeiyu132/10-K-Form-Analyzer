@@ -5,7 +5,7 @@ import os
 
 
 def find_root_parent(tag_1, reference):  # finds the top most parent for certain element under body
-    if not tag_1:
+    if not (tag_1 and tag_1.parent):
         return tag_1
     while tag_1.parent.parent and reference not in tag_1.parent.descendants:
         tag_1.parent.unwrap()
