@@ -316,9 +316,9 @@ for ind in df_csv.index:
             before = locate_prior_files(directory, str(actual_year), quarter, str(cik), num_years_prior)
             for index_prior in range(len(before)):
                 head, tail = os.path.split(before[index_prior])
-                if pd.isnull(df_csv['settle_m{0}'.format(index_prior+1)][ind]):
+                if df_csv['settle_m{0}'.format(index_prior+1)][ind].isnull():
                     continue
-                if int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
+                elif int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
                     shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
                 else:
                     shutil.copyfile(before[index_prior], directory + 'Non_Disclosure/' + tail)
@@ -327,7 +327,7 @@ for ind in df_csv.index:
 
 
 
-        # Processes 10-K forms in the truth and false set folders
+# Processes 10-K forms in the truth and false set folders
 # convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
 # convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
 #
