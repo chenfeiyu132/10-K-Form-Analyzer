@@ -331,7 +331,7 @@ if __name__ == "__main__":
 
     # Processes 10-K forms in the truth and false set folders
     convert_html(directory+'Non_Disclosure/', directory+'Non_Disclosure_Processed/')
-    convert_html(directory+'Disclosure_Set/', directory+'Disclosure_Processed/')
+    convert_html(directory+'Disclosure/', directory+'Disclosure_Processed/')
     #
     # outputting processed false and truth sets into csv
     output_csv('processed_10-K_disclosure.csv',  # csv name
