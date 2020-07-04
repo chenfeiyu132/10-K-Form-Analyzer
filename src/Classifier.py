@@ -255,227 +255,229 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     fig.tight_layout()
     return ax
 
-path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
-df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' if sys.platform == 'darwin' else '/mnt/volume/10-K/10-K_files/'
+if __name__ == "__main__":
+    path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
+    df_csv = pd.read_csv(open(path_to_csv, 'rb'))
 
-tfidf = TfidfVectorizer(ngram_range=(1,2),
-                                stop_words=en_stop,
-                                min_df=2,
-                                sublinear_tf=True,
-                                norm=None,
-                                binary=True)
-countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
-# Scans label sheet and locates corresponding 10-K forms
-# counter = 0
-# for ind in df_csv.index:
-#     cik = df_csv['cik'][ind]
-#     date = df_csv['datadate'][ind]
-#     if not pd.isnull(date) and not pd.isnull(cik):
-#         date.astype(np.int64)
-#         cik = int(cik)
-#         month_date = str(int(date))[4:]
-#         if month_date == '1231':
-#             actual_year = int(str(date)[:4]) + 1
-#             file = locate_file(directory, str(actual_year), str(cik))
-#             if file != '':
-#                 dispo = df_csv['disposition'][ind]
-#                 head, tail = os.path.split(file)
-#                 if dispo == 1:
-#                     os.rename(file, directory+'False_Set/'+tail)
-#                 else:
-#                     os.rename(file, directory+'Truth_Set/'+tail)
-num_years_prior = 3  # how many years prior would the program examine
-for ind in df_csv.index:
-    cik = df_csv['cik'][ind]
-    date = df_csv['datadate'][ind]
-    dispo = df_csv['disposition'][ind]
-    if not pd.isnull(date) and not pd.isnull(cik):
-        date.astype(np.int64)
-        cik = int(cik)
-        month_date = str(date)[4:]
-        actual_year = (int(str(date)[:4]) + 1) if month_date == '1231' else str(date)[:4]
-        file = locate_file(directory, str(actual_year), str(cik))
-        quarter = ''
-        if file == '':
-            if dispo == 1:
-                file = locate_file(directory, 'Truth_Set', str(cik))
-            else:
-                file = locate_file(directory, 'False_Set', str(cik))
-        else:
-            quarter = file.split('/')[-2][4:]
-            print('Quarter found to be {0}'.format(quarter))
-        if file != '':
-            head, tail = os.path.split(file)
-            print('file {0} successfully found'.format(tail))
-            if not pd.isnull(df_csv['settle'][ind]) and int(df_csv['settle'][ind]) != 0:
-                shutil.copyfile(file, directory + 'Disclosure/' + tail)
-            else:
-                shutil.copyfile(file, directory + 'Non_Disclosure/' + tail)
-            before = locate_prior_files(directory, str(actual_year), quarter, str(cik), num_years_prior)
-            for index_prior in range(len(before)):
-                head, tail = os.path.split(before[index_prior])
-                if pd.isna(df_csv['settle_m{0}'.format(index_prior+1)][ind]):
-                    continue
-                elif int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
-                    shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
+    directory = '/Users/Ju1y/Documents/GIES Research Project/10-K/' if sys.platform == 'darwin' else '/mnt/volume/10-K/10-K_files/'
+
+    tfidf = TfidfVectorizer(ngram_range=(1,2),
+                                    stop_words=en_stop,
+                                    min_df=2,
+                                    sublinear_tf=True,
+                                    norm=None,
+                                    binary=True)
+    countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
+    # Scans label sheet and locates corresponding 10-K forms
+    # counter = 0
+    # for ind in df_csv.index:
+    #     cik = df_csv['cik'][ind]
+    #     date = df_csv['datadate'][ind]
+    #     if not pd.isnull(date) and not pd.isnull(cik):
+    #         date.astype(np.int64)
+    #         cik = int(cik)
+    #         month_date = str(int(date))[4:]
+    #         if month_date == '1231':
+    #             actual_year = int(str(date)[:4]) + 1
+    #             file = locate_file(directory, str(actual_year), str(cik))
+    #             if file != '':
+    #                 dispo = df_csv['disposition'][ind]
+    #                 head, tail = os.path.split(file)
+    #                 if dispo == 1:
+    #                     os.rename(file, directory+'False_Set/'+tail)
+    #                 else:
+    #                     os.rename(file, directory+'Truth_Set/'+tail)
+    num_years_prior = 3  # how many years prior would the program examine
+    for ind in df_csv.index:
+        cik = df_csv['cik'][ind]
+        date = df_csv['datadate'][ind]
+        dispo = df_csv['disposition'][ind]
+        if not pd.isnull(date) and not pd.isnull(cik):
+            date.astype(np.int64)
+            cik = int(cik)
+            month_date = str(date)[4:]
+            actual_year = (int(str(date)[:4]) + 1) if month_date == '1231' else str(date)[:4]
+            file = locate_file(directory, str(actual_year), str(cik))
+            quarter = ''
+            if file == '':
+                if dispo == 1:
+                    file = locate_file(directory, 'Truth_Set', str(cik))
                 else:
-                    shutil.copyfile(before[index_prior], directory + 'Non_Disclosure/' + tail)
+                    file = locate_file(directory, 'False_Set', str(cik))
+            else:
+                quarter = file.split('/')[-2][4:]
+                print('Quarter found to be {0}'.format(quarter))
+            if file != '':
+                head, tail = os.path.split(file)
+                print('file {0} successfully found'.format(tail))
+                if not pd.isnull(df_csv['settle'][ind]) and int(df_csv['settle'][ind]) != 0:
+                    shutil.copyfile(file, directory + 'Disclosure/' + tail)
+                else:
+                    shutil.copyfile(file, directory + 'Non_Disclosure/' + tail)
+                before = locate_prior_files(directory, str(actual_year), quarter, str(cik), num_years_prior)
+                for index_prior in range(len(before)):
+                    head, tail = os.path.split(before[index_prior])
+                    if pd.isna(df_csv['settle_m{0}'.format(index_prior+1)][ind]):
+                        continue
+                    elif int(df_csv['settle_m{0}'.format(index_prior+1)][ind]) != '0':
+                        shutil.copyfile(before[index_prior], directory+'Disclosure/'+tail)
+                    else:
+                        shutil.copyfile(before[index_prior], directory + 'Non_Disclosure/' + tail)
 
 
 
 
 
-# Processes 10-K forms in the truth and false set folders
-# convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
-# convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
-#
-# # outputting processed false and truth sets into csv
-# output_csv('processed_10-K.csv',  # csv name
-#            ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
-#            ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
-#            directory)  # directory in which the files are extracted from
-#
-# # making csv from processed false and truth sets
-# df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
-# df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
-# df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
-#
-# print('new files found: ', counter)
-# # Splitting dataset for classification
-# y = [int(pros) for pros in df_all_forms['prosecution']]
-#
-# # performing Naive Bayes test
-# print('MultinomialNB analysis with tfidf...\n')
-# top_termsNB(df_all_forms['full text'], y, tfidf)
-# print('-'*20, '\n')
-# print('MultinomialNB analysis with countvectorizer...\n')
-# top_termsNB(df_all_forms['full text'], y, countv)
-# print('-'*20, '\n')
-# print('Linear SVM analysis with tfidf...\n')
-# X = tfidf.fit_transform(df_all_forms['full text'])
-# feature_names = tfidf.get_feature_names()
-# svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-# svm.fit(X, y)
-# top_terms(svm, feature_names)
-# print('-'*20, '\n')
-# print('Linear SVM analysis with tfidf...\n')
-# X = countv.fit_transform(df_all_forms['full text'])
-# feature_names = countv.get_feature_names()
-# svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-# svm.fit(X, y)
-# top_terms(svm, feature_names)
-# print('-'*20, '\n')
-# print('Chi2 analysis with tfidf...\n')
-#
-# # performing chi2 test
-# chi2_analysis(tfidf, df_all_forms, 20)
-# print('Chi2 analysis with countvectorizer...\n')
-# chi2_analysis(countv, df_all_forms, 20)
+    # Processes 10-K forms in the truth and false set folders
+    # convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
+    # convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
+    #
+    # # outputting processed false and truth sets into csv
+    # output_csv('processed_10-K.csv',  # csv name
+    #            ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
+    #            ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
+    #            directory)  # directory in which the files are extracted from
+    #
+    # # making csv from processed false and truth sets
+    # df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
+    # df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
+    # df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
+    #
+    # print('new files found: ', counter)
+    # # Splitting dataset for classification
+    # y = [int(pros) for pros in df_all_forms['prosecution']]
+    #
+    # # performing Naive Bayes test
+    # print('MultinomialNB analysis with tfidf...\n')
+    # top_termsNB(df_all_forms['full text'], y, tfidf)
+    # print('-'*20, '\n')
+    # print('MultinomialNB analysis with countvectorizer...\n')
+    # top_termsNB(df_all_forms['full text'], y, countv)
+    # print('-'*20, '\n')
+    # print('Linear SVM analysis with tfidf...\n')
+    # X = tfidf.fit_transform(df_all_forms['full text'])
+    # feature_names = tfidf.get_feature_names()
+    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    # svm.fit(X, y)
+    # top_terms(svm, feature_names)
+    # print('-'*20, '\n')
+    # print('Linear SVM analysis with tfidf...\n')
+    # X = countv.fit_transform(df_all_forms['full text'])
+    # feature_names = countv.get_feature_names()
+    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    # svm.fit(X, y)
+    # top_terms(svm, feature_names)
+    # print('-'*20, '\n')
+    # print('Chi2 analysis with tfidf...\n')
+    #
+    # # performing chi2 test
+    # chi2_analysis(tfidf, df_all_forms, 20)
+    # print('Chi2 analysis with countvectorizer...\n')
+    # chi2_analysis(countv, df_all_forms, 20)
 
 
-mnb_pipeline = Pipeline([
-    ('tfidf_pipeline', TfidfVectorizer()),
-    ('mnb', MultinomialNB())
-])
-mnbcount_pipeline = Pipeline([
-    ('countvec', CountVectorizer()),
-    ('mnb', MultinomialNB())
-])
-svm_pipeline = Pipeline([
-    ('tfidf_pipeline', TfidfVectorizer()),
-    ('linearsvm', LinearSVC())
-])
-svmcount_pipeline = Pipeline([
-    ('countvec', CountVectorizer()),
-    ('linearsvm', LinearSVC())
-])
-# different parameter settings to test out
-mnb_params = {
-    'mnb__alpha': [.2],
-    'mnb__fit_prior': [True],
-    'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__max_df': [.5, .7, 1.0],
-    'tfidf_pipeline__min_df': [2],
-    'tfidf_pipeline__binary': [True],
-    'tfidf_pipeline__norm': [None],
-}
-mnbcount_params = {
-    'mnb__alpha': [.3],
-    'mnb__fit_prior': [True],
-    'countvec__ngram_range': [(1,2)],
-    'countvec__max_df': [.5],
-    'countvec__min_df': [2]
-}
-svm_params = {
-    'linearsvm__C': np.arange(0.01, 100, 10),
-    'linearsvm__penalty': ['l2'],
-    'linearsvm__dual': [False],
-    'linearsvm__max_iter': [1000],
-    'tfidf_pipeline__ngram_range': [(1,2)],
-    'tfidf_pipeline__min_df': [2],
-    'tfidf_pipeline__binary': [True],
-    'tfidf_pipeline__norm': [None],
-}
-svmcount_params = {
-    'countvec__ngram_range': [(1, 2)],
-    'countvec__max_df': [.5],
-    'countvec__min_df': [2],
-    'linearsvm__C': np.arange(0.01, 100, 10),
-    'linearsvm__penalty': ['l2'],
-    'linearsvm__dual': [False],
-    'linearsvm__max_iter': [1000],
-}
+    mnb_pipeline = Pipeline([
+        ('tfidf_pipeline', TfidfVectorizer()),
+        ('mnb', MultinomialNB())
+    ])
+    mnbcount_pipeline = Pipeline([
+        ('countvec', CountVectorizer()),
+        ('mnb', MultinomialNB())
+    ])
+    svm_pipeline = Pipeline([
+        ('tfidf_pipeline', TfidfVectorizer()),
+        ('linearsvm', LinearSVC())
+    ])
+    svmcount_pipeline = Pipeline([
+        ('countvec', CountVectorizer()),
+        ('linearsvm', LinearSVC())
+    ])
+    # different parameter settings to test out
+    mnb_params = {
+        'mnb__alpha': [.2],
+        'mnb__fit_prior': [True],
+        'tfidf_pipeline__ngram_range': [(1,2)],
+        'tfidf_pipeline__max_df': [.5, .7, 1.0],
+        'tfidf_pipeline__min_df': [2],
+        'tfidf_pipeline__binary': [True],
+        'tfidf_pipeline__norm': [None],
+    }
+    mnbcount_params = {
+        'mnb__alpha': [.3],
+        'mnb__fit_prior': [True],
+        'countvec__ngram_range': [(1,2)],
+        'countvec__max_df': [.5],
+        'countvec__min_df': [2]
+    }
+    svm_params = {
+        'linearsvm__C': np.arange(0.01, 100, 10),
+        'linearsvm__penalty': ['l2'],
+        'linearsvm__dual': [False],
+        'linearsvm__max_iter': [1000],
+        'tfidf_pipeline__ngram_range': [(1,2)],
+        'tfidf_pipeline__min_df': [2],
+        'tfidf_pipeline__binary': [True],
+        'tfidf_pipeline__norm': [None],
+    }
+    svmcount_params = {
+        'countvec__ngram_range': [(1, 2)],
+        'countvec__max_df': [.5],
+        'countvec__min_df': [2],
+        'linearsvm__C': np.arange(0.01, 100, 10),
+        'linearsvm__penalty': ['l2'],
+        'linearsvm__dual': [False],
+        'linearsvm__max_iter': [1000],
+    }
 
-#classifying rest of the unlabeled set
-# for folder in [folder for folder in os.listdir(directory) if re.match(r'\d+', folder)]:
-#     convert_html(directory + folder + "/", directory + 'Unlabeled_Set_Processed/')
-#
-# output_csv('unlabeled_10-K.csv',  # csv name
-#            ['cik', 'company name', 'date', 'full text', 'label'],  # column names
-#            ['Unlabeled_Set_Processed'],  # folder names in which the files are extracted from
-#            directory)
-# df_unlabeled_forms = pd.read_csv('unlabeled_10-K.csv', usecols=['full text', 'label'])
-# df_unlabeled_forms['full text'] = df_all_forms['full text'].values.astype('U')
-# df_unlabeled_forms['label'] = df_all_forms['label'].values.astype('U')
-#
-#
-# df_unlabeled_forms['label'] = classify_unlabeled_set(mnb_pipeline,
-#                                                      mnb_params,
-#                                                      df_all_forms['full text'],
-#                                                      df_all_forms['prosecution'],
-#                                                      df_unlabeled_forms['full text'])
+    #classifying rest of the unlabeled set
+    # for folder in [folder for folder in os.listdir(directory) if re.match(r'\d+', folder)]:
+    #     convert_html(directory + folder + "/", directory + 'Unlabeled_Set_Processed/')
+    #
+    # output_csv('unlabeled_10-K.csv',  # csv name
+    #            ['cik', 'company name', 'date', 'full text', 'label'],  # column names
+    #            ['Unlabeled_Set_Processed'],  # folder names in which the files are extracted from
+    #            directory)
+    # df_unlabeled_forms = pd.read_csv('unlabeled_10-K.csv', usecols=['full text', 'label'])
+    # df_unlabeled_forms['full text'] = df_all_forms['full text'].values.astype('U')
+    # df_unlabeled_forms['label'] = df_all_forms['label'].values.astype('U')
+    #
+    #
+    # df_unlabeled_forms['label'] = classify_unlabeled_set(mnb_pipeline,
+    #                                                      mnb_params,
+    #                                                      df_all_forms['full text'],
+    #                                                      df_all_forms['prosecution'],
+    #                                                      df_unlabeled_forms['full text'])
 
-# Prints confusion matrix for different classifiers
-# full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
-#                                                                             df_all_forms['prosecution'],
-#                                                                             test_size=0.2, random_state=85)
-# # print('mnb with tfidf')
-# print('-'*20)
-# cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
-# print('mnb with countvec')
-# print('-'*20)
-# cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
-# print('svm with tfidf')
-# print('-'*20)
-# cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
-# print('svm with count vectorizer')
-# print('-'*20)
-# cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+    # Prints confusion matrix for different classifiers
+    # full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
+    #                                                                             df_all_forms['prosecution'],
+    #                                                                             test_size=0.2, random_state=85)
+    # # print('mnb with tfidf')
+    # print('-'*20)
+    # cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+    # print('mnb with countvec')
+    # print('-'*20)
+    # cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
+    # print('svm with tfidf')
+    # print('-'*20)
+    # cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+    # print('svm with count vectorizer')
+    # print('-'*20)
+    # cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
 
 
 
-# NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
-# X_train = tfidf.fit_transform(df_all_forms['full text'])
-# y_train = [int(pros) for pros in df_all_forms['prosecution']]
-# NB_optimal.fit(X_train, y_train)
-# pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
-# print('Most associative words ------')
-# print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
+    # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
+    # X_train = tfidf.fit_transform(df_all_forms['full text'])
+    # y_train = [int(pros) for pros in df_all_forms['prosecution']]
+    # NB_optimal.fit(X_train, y_train)
+    # pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+    # print('Most associative words ------')
+    # print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
 
-#feature_names = tfidf.get_feature_names()
-#print(topTerms(tfidf, feature_names)
+    #feature_names = tfidf.get_feature_names()
+    #print(topTerms(tfidf, feature_names)
 
 
 
