@@ -135,13 +135,13 @@ def top_termsNB(X_raw, y, vectorizer):
     clf = MultinomialNB(alpha=0.2, fit_prior=True)
     clf.fit(X, y)
     print('naive bayes shape: ',clf.feature_count_.shape)
-    non_pros_token_count = clf.feature_count_[0, :] + 1
-    pros_token_count = clf.feature_count_[1, :] + 1
-    tokens = pd.DataFrame({'token': feature_names, 'non_dis': non_pros_token_count, 'dis': pros_token_count}).set_index(
+    non_dis_token_count = clf.feature_count_[0, :] + 1
+    dis_token_count = clf.feature_count_[1, :] + 1
+    tokens = pd.DataFrame({'token': feature_names, 'non_dis': non_dis_token_count, 'dis': dis_token_count}).set_index(
         'token')
-    tokens['non_dis'] = tokens.non_pros / clf.class_count_[0]
-    tokens['dis'] = tokens.pros / clf.class_count_[1]
-    tokens['dis_ratio'] = tokens.pros / tokens.non_pros
+    tokens['non_dis'] = tokens.non_dis / clf.class_count_[0]
+    tokens['dis'] = tokens.dis / clf.class_count_[1]
+    tokens['dis_ratio'] = tokens.dis / tokens.non_dis
     print('top 10 terms using new method')
     print(tokens.sort_values('dis_ratio', ascending=False)[:10])
 
@@ -470,7 +470,7 @@ if __name__ == "__main__":
 
     NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
     X_train = tfidf.fit_transform(df_all_forms['full text'])
-    y_train = [int(pros) for pros in df_all_forms['disclosure']]
+    y_train = [int(dis) for dis in df_all_forms['disclosure']]
     NB_optimal.fit(X_train, y_train)
     pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
     print('Most associative words ------')
