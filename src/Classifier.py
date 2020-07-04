@@ -270,7 +270,7 @@ if __name__ == "__main__":
                                     binary=True)
     countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
     # Scans label sheet and locates corresponding 10-K forms
-    counter = 0
+    # counter = 0
     # for ind in df_csv.index:
     #     cik = df_csv['cik'][ind]
     #     date = df_csv['datadate'][ind]
@@ -309,6 +309,7 @@ if __name__ == "__main__":
                 quarter = file.split('/')[-2][4:]
                 print('Quarter found to be {0}'.format(quarter))
             if file != '':
+                file = os.path.splittext(file)[0] + '.html'
                 head, tail = os.path.split(file)
                 print('file {0} successfully found'.format(tail))
                 if not pd.isnull(df_csv['settle'][ind]) and int(df_csv['settle'][ind]) != 0:

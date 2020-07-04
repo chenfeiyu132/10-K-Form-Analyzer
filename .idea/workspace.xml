@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HTML_Extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTML_Extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,14 +74,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="32212" />
-          <entry key="txt" value="4259" />
+          <entry key="py" value="32314" />
+          <entry key="txt" value="4319" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4296" />
-          <entry key="Python" value="31970" />
+          <entry key="PLAIN_TEXT" value="4356" />
+          <entry key="Python" value="32072" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -90,11 +90,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="237">
+              <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
@@ -106,23 +106,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1571">
-              <caret line="332" column="84" lean-forward="true" selection-start-line="332" selection-start-column="84" selection-end-line="332" selection-end-column="84" />
+            <state relative-caret-position="145">
+              <caret line="311" column="59" lean-forward="true" selection-start-line="311" selection-start-column="59" selection-end-line="311" selection-end-column="59" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1593895472456" expanded="true" signature="2207:10291" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="3239:3482" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="3919:3922" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="3978:3983" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="5841:5844" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="5902:10291" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="6706:10291" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="6785:8496" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="8070:8496" ph="..." />
-                <marker date="1593895472456" expanded="true" signature="10261:10291" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="2207:10283" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="3239:3482" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="3919:3922" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="3978:3983" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="5833:5836" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="5894:10283" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="6698:10283" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="6777:8488" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="8062:8488" ph="..." />
+                <marker date="1593905624839" expanded="true" signature="10253:10283" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,6 +180,8 @@
       <find>document</find>
       <find>normalized</find>
       <find>dataset[index]</find>
+      <find>non_pros</find>
+      <find>pros</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,8 +199,8 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
-        <option value="$PROJECT_DIR$/src/Classifier.py" />
         <option value="$PROJECT_DIR$/src/HTML_Extractor.py" />
+        <option value="$PROJECT_DIR$/src/Classifier.py" />
       </list>
     </option>
   </component>
@@ -376,20 +378,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00058" summary="fixed hyperparameter for max_df">
-      <created>1589666596170</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1589666596170</updated>
-    </task>
-    <task id="LOCAL-00059" summary="fixed parameter for GridSearch">
-      <created>1589666941218</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1589666941219</updated>
     </task>
     <task id="LOCAL-00060" summary="fixed parameter for GridSearch">
       <created>1589667127089</created>
@@ -720,7 +708,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593899096270</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="fixing error with unwrapping of element tags">
+      <created>1593899941959</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1593899941959</updated>
+    </task>
+    <task id="LOCAL-00108" summary="changed variable names to match closer with actual purpose">
+      <created>1593904901681</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1593904901681</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TodoView">
@@ -767,7 +769,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug after making preprocessing text into function" />
     <MESSAGE value="fixed parameter in gridsearch to debug error" />
     <MESSAGE value="hyperparameter tuning" />
     <MESSAGE value="fixed bug in preprocess text" />
@@ -792,14 +793,15 @@
     <MESSAGE value="trying to fix model __path__ not found error" />
     <MESSAGE value="Ready for first test run of classification" />
     <MESSAGE value="fixing error with unwrapping of element tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing error with unwrapping of element tags" />
+    <MESSAGE value="changed variable names to match closer with actual purpose" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed variable names to match closer with actual purpose" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Classifier.py</url>
-          <line>461</line>
+          <line>462</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -853,9 +855,6 @@
     <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC TfidfVectorizer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/unnormalized graph LinearSVC TfidfVectorizer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -881,36 +880,39 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1571">
-          <caret line="332" column="84" lean-forward="true" selection-start-line="332" selection-start-column="84" selection-end-line="332" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <marker date="1593895472456" expanded="true" signature="2207:10291" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="3239:3482" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="3919:3922" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="3978:3983" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="5841:5844" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="5902:10291" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="6706:10291" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="6785:8496" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="8070:8496" ph="..." />
-            <marker date="1593895472456" expanded="true" signature="10261:10291" ph="..." />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="237">
+          <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
             <marker date="1593899926835" expanded="true" signature="2344:2345" ph="..." />
             <marker date="1593899926835" expanded="true" signature="2393:2402" ph="..." />
             <marker date="1593899926835" expanded="true" signature="2558:2559" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="311" column="59" lean-forward="true" selection-start-line="311" selection-start-column="59" selection-end-line="311" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1593905624839" expanded="true" signature="2207:10283" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="3239:3482" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="3919:3922" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="3978:3983" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="5833:5836" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="5894:10283" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="6698:10283" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="6777:8488" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="8062:8488" ph="..." />
+            <marker date="1593905624839" expanded="true" signature="10253:10283" ph="..." />
           </folding>
         </state>
       </provider>
