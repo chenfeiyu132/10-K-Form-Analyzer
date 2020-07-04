@@ -67,7 +67,7 @@ def topTermsIDF(vectorizer):
 def chi2_analysis(vectorizer, df_form, n_terms):
     response_all = vectorizer.fit_transform(df_form['full text'])
     set_array = response_all.toarray()
-    features_chi2 = chi2(set_array, df_form['prosecution'] == '1')
+    features_chi2 = chi2(set_array, df_form['disclosure'] == '1')
     indices = np.argsort(features_chi2[0])
     feature_names = np.array(vectorizer.get_feature_names())[indices]
     feature_names = feature_names[::-1]
@@ -137,27 +137,27 @@ def top_termsNB(X_raw, y, vectorizer):
     print('naive bayes shape: ',clf.feature_count_.shape)
     non_pros_token_count = clf.feature_count_[0, :] + 1
     pros_token_count = clf.feature_count_[1, :] + 1
-    tokens = pd.DataFrame({'token': feature_names, 'non_pros': non_pros_token_count, 'pros': pros_token_count}).set_index(
+    tokens = pd.DataFrame({'token': feature_names, 'non_dis': non_pros_token_count, 'dis': pros_token_count}).set_index(
         'token')
-    tokens['non_pros'] = tokens.non_pros / clf.class_count_[0]
-    tokens['pros'] = tokens.pros / clf.class_count_[1]
-    tokens['pros_ratio'] = tokens.pros / tokens.non_pros
+    tokens['non_dis'] = tokens.non_pros / clf.class_count_[0]
+    tokens['dis'] = tokens.pros / clf.class_count_[1]
+    tokens['dis_ratio'] = tokens.pros / tokens.non_pros
     print('top 10 terms using new method')
-    print(tokens.sort_values('pros_ratio', ascending=False)[:10])
+    print(tokens.sort_values('dis_ratio', ascending=False)[:10])
 
     likelihood_df = pd.DataFrame(clf.feature_log_prob_.transpose(),
-                                 columns=['No_Prosecution', 'Prosecution'],
+                                 columns=['Non_Disclosure', 'Disclosure'],
                                  index=feature_names)
-    likelihood_df['Relative Prevalence for Prosecution'] = likelihood_df.eval('(exp(Prosecution) - exp(No_Prosecution))')
-    print('Top 10 terms strongly associated to Prosecution according to Naive Bayes analysis:\n')
-    print(likelihood_df['Relative Prevalence for Prosecution'].sort_values(ascending=False)[:10])
+    likelihood_df['Relative Prevalence for Disclosure'] = likelihood_df.eval('(exp(Disclosure) - exp(Non_Disclosure))')
+    print('Top 10 terms strongly associated to Disclosure according to Naive Bayes analysis:\n')
+    print(likelihood_df['Relative Prevalence for Disclosure'].sort_values(ascending=False)[:10])
 
 
 def top_terms(classifier, feature_names, top_features=10):
     coefficients = classifier.coef_.ravel()
     top_positive_coefficients = np.argsort(coefficients)[-top_features:]
     # top_negative_coefficients = np.argsort(coef)[:top_features]
-    print('Top ', top_features, ' most predictive terms for prosecution \n')
+    print('Top ', top_features, ' most predictive terms for disclosure \n')
     print(list(feature_names[x] for x in top_positive_coefficients))
     # top_coefficients = np.hstack([top_negative_coefficients, top_positive_coefficients])
     # # create plot
@@ -183,13 +183,13 @@ def cross_validation_cm(pipeline, params, X_train, X_test, y_train, y_test):
     null_accuracy = y_test.value_counts().head(1) / len(y_test)
     print('Null Accuracy: ', null_accuracy)
     plot_confusion_matrix(y_test, y_pred,
-                          classes=['NonProsecution', 'Prosecution'],
+                          classes=['NonDisclosure', 'Disclosure'],
                           title='Confusion matrix, without normalization')
-    plt.savefig('unnormalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
+    plt.savefig('Dis unnormalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
     plot_confusion_matrix(y_test, y_pred,
-                          classes=['NonProsecution', 'Prosecution'], normalize=True,
+                          classes=['NonDisclosure', 'Disclosure'], normalize=True,
                           title='Normalized confusion matrix')
-    plt.savefig('normalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
+    plt.savefig('Dis normalized graph {} {}.png'.format(pipeline.steps[1][1].__class__.__name__, pipeline.steps[0][1].__class__.__name__))
 
 
 def classify_unlabeled_set(pipeline, params, X_train, y_train, X_pred):
@@ -270,7 +270,7 @@ if __name__ == "__main__":
                                     binary=True)
     countv = CountVectorizer(ngram_range=(1,2), stop_words=en_stop, min_df=2, max_df=.5)
     # Scans label sheet and locates corresponding 10-K forms
-    # counter = 0
+    counter = 0
     # for ind in df_csv.index:
     #     cik = df_csv['cik'][ind]
     #     date = df_csv['datadate'][ind]
@@ -330,51 +330,51 @@ if __name__ == "__main__":
 
 
     # Processes 10-K forms in the truth and false set folders
-    # convert_html(directory+'False_Set/', directory+'False_Set_Processed/')
-    # convert_html(directory+'Truth_Set/', directory+'Truth_Set_Processed/')
+    convert_html(directory+'Non_Disclosure/', directory+'Non_Disclosure_Processed/')
+    convert_html(directory+'Disclosure_Set/', directory+'Disclosure_Processed/')
     #
-    # # outputting processed false and truth sets into csv
-    # output_csv('processed_10-K.csv',  # csv name
-    #            ['cik', 'company name', 'date', 'full text', 'prosecution'],  # column names
-    #            ['False_Set_Processed/', 'Truth_Set_Processed/'],  # folder names in which the files are extracted from
-    #            directory)  # directory in which the files are extracted from
+    # outputting processed false and truth sets into csv
+    output_csv('processed_10-K_disclosure.csv',  # csv name
+               ['cik', 'company name', 'date', 'full text', 'disclosure'],  # column names
+               ['Non_Disclosure_Processed/', 'Disclosure_Processed/'],  # folder names in which the files are extracted from
+               directory)  # directory in which the files are extracted from
     #
-    # # making csv from processed false and truth sets
-    # df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
-    # df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
-    # df_all_forms['prosecution'] = df_all_forms['prosecution'].values.astype('U')
+    # making csv from processed false and truth sets
+    df_all_forms = pd.read_csv('processed_10-K.csv', usecols=['full text', 'prosecution'])
+    df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
+    df_all_forms['disclosure'] = df_all_forms['prosecution'].values.astype('U')
     #
-    # print('new files found: ', counter)
-    # # Splitting dataset for classification
-    # y = [int(pros) for pros in df_all_forms['prosecution']]
-    #
-    # # performing Naive Bayes test
-    # print('MultinomialNB analysis with tfidf...\n')
-    # top_termsNB(df_all_forms['full text'], y, tfidf)
-    # print('-'*20, '\n')
-    # print('MultinomialNB analysis with countvectorizer...\n')
-    # top_termsNB(df_all_forms['full text'], y, countv)
-    # print('-'*20, '\n')
-    # print('Linear SVM analysis with tfidf...\n')
-    # X = tfidf.fit_transform(df_all_forms['full text'])
-    # feature_names = tfidf.get_feature_names()
-    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-    # svm.fit(X, y)
-    # top_terms(svm, feature_names)
-    # print('-'*20, '\n')
-    # print('Linear SVM analysis with tfidf...\n')
-    # X = countv.fit_transform(df_all_forms['full text'])
-    # feature_names = countv.get_feature_names()
-    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-    # svm.fit(X, y)
-    # top_terms(svm, feature_names)
-    # print('-'*20, '\n')
-    # print('Chi2 analysis with tfidf...\n')
-    #
-    # # performing chi2 test
-    # chi2_analysis(tfidf, df_all_forms, 20)
-    # print('Chi2 analysis with countvectorizer...\n')
-    # chi2_analysis(countv, df_all_forms, 20)
+    print('new files found: ', counter)
+    # Splitting dataset for classification
+    y = [int(disclosure) for disclosure in df_all_forms['disclosure']]
+
+    # performing Naive Bayes test
+    print('MultinomialNB analysis with tfidf...\n')
+    top_termsNB(df_all_forms['full text'], y, tfidf)
+    print('-'*20, '\n')
+    print('MultinomialNB analysis with countvectorizer...\n')
+    top_termsNB(df_all_forms['full text'], y, countv)
+    print('-'*20, '\n')
+    print('Linear SVM analysis with tfidf...\n')
+    X = tfidf.fit_transform(df_all_forms['full text'])
+    feature_names = tfidf.get_feature_names()
+    svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    svm.fit(X, y)
+    top_terms(svm, feature_names)
+    print('-'*20, '\n')
+    print('Linear SVM analysis with tfidf...\n')
+    X = countv.fit_transform(df_all_forms['full text'])
+    feature_names = countv.get_feature_names()
+    svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    svm.fit(X, y)
+    top_terms(svm, feature_names)
+    print('-'*20, '\n')
+    print('Chi2 analysis with tfidf...\n')
+
+    # performing chi2 test
+    chi2_analysis(tfidf, df_all_forms, 20)
+    print('Chi2 analysis with countvectorizer...\n')
+    chi2_analysis(countv, df_all_forms, 20)
 
 
     mnb_pipeline = Pipeline([
@@ -450,34 +450,34 @@ if __name__ == "__main__":
     #                                                      df_unlabeled_forms['full text'])
 
     # Prints confusion matrix for different classifiers
-    # full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
-    #                                                                             df_all_forms['prosecution'],
-    #                                                                             test_size=0.2, random_state=85)
-    # # print('mnb with tfidf')
-    # print('-'*20)
-    # cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
-    # print('mnb with countvec')
-    # print('-'*20)
-    # cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
-    # print('svm with tfidf')
-    # print('-'*20)
-    # cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
-    # print('svm with count vectorizer')
-    # print('-'*20)
-    # cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+    full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
+                                                                                df_all_forms['disclosure'],
+                                                                                test_size=0.2, random_state=85)
+    # print('mnb with tfidf')
+    print('-'*20)
+    cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+    print('mnb with countvec')
+    print('-'*20)
+    cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
+    print('svm with tfidf')
+    print('-'*20)
+    cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+    print('svm with count vectorizer')
+    print('-'*20)
+    cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
 
 
 
-    # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
-    # X_train = tfidf.fit_transform(df_all_forms['full text'])
-    # y_train = [int(pros) for pros in df_all_forms['prosecution']]
-    # NB_optimal.fit(X_train, y_train)
-    # pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
-    # print('Most associative words ------')
-    # print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
+    NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
+    X_train = tfidf.fit_transform(df_all_forms['full text'])
+    y_train = [int(pros) for pros in df_all_forms['disclosure']]
+    NB_optimal.fit(X_train, y_train)
+    pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+    print('Most associative words ------')
+    print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
 
-    #feature_names = tfidf.get_feature_names()
-    #print(topTerms(tfidf, feature_names)
+    feature_names = tfidf.get_feature_names()
+    print(topTerms(tfidf, feature_names))
 
 
 
