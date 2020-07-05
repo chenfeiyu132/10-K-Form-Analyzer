@@ -312,7 +312,7 @@ if __name__ == "__main__":
                 quarter = file.split('/')[-2][4:]
                 print('Quarter found to be {0}'.format(quarter))
             if file != '':
-                file = os.path.splittext(file)[0] + '.html'
+                file = os.path.splitext(file)[0] + '.html'
                 head, tail = os.path.split(file)
                 filename = tail.split('.')[0]
                 if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     df_all_forms['full text'] = df_all_forms['full text'].values.astype('U')
     df_all_forms['disclosure'] = df_all_forms['prosecution'].values.astype('U')
     #
-    print('new files found: ', counter)
+    # print('new files found: ', counter)
     # Splitting dataset for classification
     y = [int(disclosure) for disclosure in df_all_forms['disclosure']]
 
