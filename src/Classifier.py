@@ -256,6 +256,9 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     return ax
 
 
+def filename_exists(target_directory, filename):
+    return (filename + '.txt') in os.listdir(directory) or (filename + '.html') in os.listdir(directory)
+
 if __name__ == "__main__":
     path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
     df_csv = pd.read_csv(open(path_to_csv, 'rb'))
@@ -311,6 +314,9 @@ if __name__ == "__main__":
             if file != '':
                 file = os.path.splittext(file)[0] + '.html'
                 head, tail = os.path.split(file)
+                filename = tail.split('.')[0]
+                if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
+                    continue
                 print('file {0} successfully found'.format(tail))
                 if not pd.isnull(df_csv['settle'][ind]) and int(df_csv['settle'][ind]) != 0:
                     shutil.copyfile(file, directory + 'Disclosure/' + tail)
@@ -469,16 +475,16 @@ if __name__ == "__main__":
 
 
 
-    NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
-    X_train = tfidf.fit_transform(df_all_forms['full text'])
-    y_train = [int(dis) for dis in df_all_forms['disclosure']]
-    NB_optimal.fit(X_train, y_train)
-    pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
-    print('Most associative words ------')
-    print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
-
-    feature_names = tfidf.get_feature_names()
-    print(topTerms(tfidf, feature_names))
+    # NB_optimal = MultinomialNB(alpha=.1, fit_prior=True)
+    # X_train = tfidf.fit_transform(df_all_forms['full text'])
+    # y_train = [int(dis) for dis in df_all_forms['disclosure']]
+    # NB_optimal.fit(X_train, y_train)
+    # pos_class_prob_sorted = NB_optimal.feature_log_prob_[1, :].argsort()
+    # print('Most associative words ------')
+    # print(np.take(tfidf.get_feature_names(), pos_class_prob_sorted[:10]))
+    #
+    # feature_names = tfidf.get_feature_names()
+    # print(top_terms(tfidf, feature_names))
 
 
 
