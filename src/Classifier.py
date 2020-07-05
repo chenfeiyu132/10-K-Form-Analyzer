@@ -114,18 +114,18 @@ def locate_prior_files(directory, year, quarter, cik, num_prior):
     return prior_files
 
 
-def output_csv(filename, fields, paths, directory_name):
-    csv_out = open(filename, mode='w')
+def output_csv(csvname, fields, paths, directory_name):
+    csv_out = open(csvname, mode='w')
     writer = csv.writer(csv_out)
     writer.writerow(fields)
     for path in paths:
-        for filename in os.listdir(directory_name + path):
-            page = open(directory_name + path + filename)
+        for file in os.listdir(directory_name + path):
+            page = open(directory_name + path + file)
             soup = bs(page.read(), "lxml")
-            filename = filename.split('-')
-            date = filename[4] + '-' + filename[5] + '-' + filename[6][0:2]
+            file = file.split('-')
+            date = file[4] + '-' + file[5] + '-' + file[6][0:2]
             label = 0 if path == paths[0] else 1
-            writer.writerow([filename[0], filename[1], date, process_text(soup.text), label]);
+            writer.writerow([file[0], file[1], date, process_text(soup.text), label]);
     csv_out.close()
 
 
