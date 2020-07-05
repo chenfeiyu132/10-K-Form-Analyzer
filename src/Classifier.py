@@ -312,9 +312,9 @@ if __name__ == "__main__":
                 quarter = file.split('/')[-2][4:]
                 print('Quarter found to be {0}'.format(quarter))
             if file != '':
-                file = os.path.splitext(file)[0] + '.html'
                 head, tail = os.path.split(file)
                 filename = tail.split('.')[0]
+                tail = filename + '.html'
                 if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
                     continue
                 print('file {0} successfully found'.format(tail))
