@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="removed syntax errors">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,14 +73,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="32763" />
-          <entry key="txt" value="4359" />
+          <entry key="py" value="32857" />
+          <entry key="txt" value="4381" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4396" />
-          <entry key="Python" value="32521" />
+          <entry key="PLAIN_TEXT" value="4418" />
+          <entry key="Python" value="32615" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -108,21 +108,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="314" column="58" lean-forward="true" selection-start-line="314" selection-start-column="58" selection-end-line="314" selection-end-column="58" />
+            <state relative-caret-position="168">
+              <caret line="126" column="48" lean-forward="true" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1593974849889" expanded="true" signature="2207:10438" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="3239:3482" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="3919:3922" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="3978:3983" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="5833:5836" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="5894:10438" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="6698:10438" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="6777:8488" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="8062:8488" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="10253:10438" ph="..." />
-                <marker date="1593974849889" expanded="true" signature="10304:10411" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="2207:10382" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="3239:3482" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="3919:3922" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="3977:3982" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="5777:5780" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="5838:10382" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="6642:10382" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="6721:8432" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="8006:8432" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="10197:10382" ph="..." />
+                <marker date="1593997660157" expanded="true" signature="10248:10355" ph="..." />
               </folding>
             </state>
           </provider>
@@ -378,27 +378,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00062" summary="fixed bug after making preprocessing text into function">
-      <created>1589668059055</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1589668059055</updated>
-    </task>
-    <task id="LOCAL-00063" summary="fixed parameter in gridsearch to debug error">
-      <created>1589670870885</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1589670870886</updated>
-    </task>
-    <task id="LOCAL-00064" summary="hyperparameter tuning">
-      <created>1589678132274</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1589678132274</updated>
     </task>
     <task id="LOCAL-00065" summary="hyperparameter tuning">
       <created>1589679142694</created>
@@ -722,7 +701,28 @@
       <option name="project" value="LOCAL" />
       <updated>1593922958569</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="removed syntax errors">
+      <created>1593974867284</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1593974867284</updated>
+    </task>
+    <task id="LOCAL-00112" summary="removed syntax errors">
+      <created>1593975074153</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1593975074154</updated>
+    </task>
+    <task id="LOCAL-00113" summary="removed syntax errors">
+      <created>1593979782436</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1593979782437</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TodoView">
@@ -738,12 +738,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2907916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2907916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -769,7 +769,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hyperparameter tuning" />
     <MESSAGE value="fixed bug in preprocess text" />
     <MESSAGE value="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier" />
     <MESSAGE value="hypertuning the alpha value" />
@@ -794,7 +793,8 @@
     <MESSAGE value="fixing error with unwrapping of element tags" />
     <MESSAGE value="changed variable names to match closer with actual purpose" />
     <MESSAGE value="added line to avoid redundancy in code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added line to avoid redundancy in code" />
+    <MESSAGE value="removed syntax errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed syntax errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -899,21 +899,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="314" column="58" lean-forward="true" selection-start-line="314" selection-start-column="58" selection-end-line="314" selection-end-column="58" />
+        <state relative-caret-position="168">
+          <caret line="126" column="48" lean-forward="true" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1593974849889" expanded="true" signature="2207:10438" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="3239:3482" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="3919:3922" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="3978:3983" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="5833:5836" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="5894:10438" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="6698:10438" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="6777:8488" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="8062:8488" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="10253:10438" ph="..." />
-            <marker date="1593974849889" expanded="true" signature="10304:10411" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="2207:10382" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="3239:3482" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="3919:3922" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="3977:3982" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="5777:5780" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="5838:10382" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="6642:10382" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="6721:8432" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="8006:8432" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="10197:10382" ph="..." />
+            <marker date="1593997660157" expanded="true" signature="10248:10355" ph="..." />
           </folding>
         </state>
       </provider>

@@ -122,8 +122,8 @@ def output_csv(csvname, fields, paths, directory_name):
         for file in os.listdir(directory_name + path):
             page = open(directory_name + path + file)
             soup = bs(page.read(), "lxml")
-            file = file.split('-')
-            date = file[4] + '-' + file[5] + '-' + file[6][0:2]
+            file = file.split('-10-K-')
+            date = file[1].split('.')[0]
             label = 0 if path == paths[0] else 1
             writer.writerow([file[0], file[1], date, process_text(soup.text), label]);
     csv_out.close()
