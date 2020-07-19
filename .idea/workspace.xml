@@ -75,14 +75,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33005" />
-          <entry key="txt" value="4430" />
+          <entry key="py" value="33030" />
+          <entry key="txt" value="4581" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4467" />
-          <entry key="Python" value="32763" />
+          <entry key="PLAIN_TEXT" value="4618" />
+          <entry key="Python" value="32788" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -110,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="412" column="5" lean-forward="true" selection-start-line="412" selection-start-column="5" selection-end-line="412" selection-end-column="5" />
+            <state relative-caret-position="392">
+              <caret line="124" column="65" lean-forward="true" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -217,6 +217,11 @@
             <path>
               <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
               <item name="10-K-Form-Analyzer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="10-K-Form-Analyzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
@@ -369,20 +374,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00067" summary="hyperparameter tuning">
-      <created>1589699119970</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1589699119970</updated>
-    </task>
-    <task id="LOCAL-00068" summary="hyperparameter tuning">
-      <created>1589826754121</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1589826754121</updated>
     </task>
     <task id="LOCAL-00069" summary="fixed bug in preprocess text">
       <created>1589837017670</created>
@@ -713,7 +704,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594007084384</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="hyperparameter tuning Mutil NB with tfidf">
+      <created>1595186266027</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1595186266027</updated>
+    </task>
+    <task id="LOCAL-00117" summary="fixed bug in detecting if file exists in disclosure or non disclosure directories">
+      <created>1595187781716</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1595187781717</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TodoView">
@@ -729,7 +734,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2956381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2956381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -760,8 +765,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier" />
-    <MESSAGE value="hypertuning the alpha value" />
     <MESSAGE value="added function to generate confusion matrix from test set" />
     <MESSAGE value="added graphs" />
     <MESSAGE value="added function to automatically train with pipeline and params and produce confusion matrix" />
@@ -785,7 +788,9 @@
     <MESSAGE value="added line to avoid redundancy in code" />
     <MESSAGE value="removed syntax errors" />
     <MESSAGE value="changed approach to extract date from file name" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed approach to extract date from file name" />
+    <MESSAGE value="hyperparameter tuning Mutil NB with tfidf" />
+    <MESSAGE value="fixed bug in detecting if file exists in disclosure or non disclosure directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in detecting if file exists in disclosure or non disclosure directories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -890,8 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="412" column="5" lean-forward="true" selection-start-line="412" selection-start-column="5" selection-end-line="412" selection-end-column="5" />
+        <state relative-caret-position="392">
+          <caret line="124" column="65" lean-forward="true" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

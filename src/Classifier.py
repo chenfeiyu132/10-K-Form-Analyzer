@@ -122,7 +122,7 @@ def output_csv(csvname, fields, paths, directory_name):
         for file_name in os.listdir(directory_name + path):
             page = open(directory_name + path + file_name)
             soup = bs(page.read(), "lxml")
-            date = file_name.split('-10-K-')[1].split('.')[0]
+            date = file_name.split('10-K')[1].split('.')[0][-10:]
             company_name = file_name.split('-')[1]
             cik = file_name.split('-')[0]
             label = 0 if path == paths[0] else 1
