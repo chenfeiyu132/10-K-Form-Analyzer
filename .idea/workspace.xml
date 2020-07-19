@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="removed syntax errors">
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,13 +34,14 @@
     <session id="2023454949">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
@@ -47,7 +49,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -73,14 +75,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="32857" />
-          <entry key="txt" value="4381" />
+          <entry key="py" value="33005" />
+          <entry key="txt" value="4430" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4418" />
-          <entry key="Python" value="32615" />
+          <entry key="PLAIN_TEXT" value="4467" />
+          <entry key="Python" value="32763" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -92,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+            <state relative-caret-position="1710">
+              <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
@@ -108,21 +110,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="126" column="48" lean-forward="true" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+            <state relative-caret-position="218">
+              <caret line="412" column="5" lean-forward="true" selection-start-line="412" selection-start-column="5" selection-end-line="412" selection-end-column="5" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <marker date="1593997660157" expanded="true" signature="2207:10382" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="3239:3482" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="3919:3922" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="3977:3982" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="5777:5780" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="5838:10382" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="6642:10382" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="6721:8432" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="8006:8432" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="10197:10382" ph="..." />
-                <marker date="1593997660157" expanded="true" signature="10248:10355" ph="..." />
               </folding>
             </state>
           </provider>
@@ -219,6 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,7 +231,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,20 +369,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00065" summary="hyperparameter tuning">
-      <created>1589679142694</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1589679142695</updated>
-    </task>
-    <task id="LOCAL-00066" summary="hyperparameter tuning">
-      <created>1589680676416</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1589680676418</updated>
     </task>
     <task id="LOCAL-00067" summary="hyperparameter tuning">
       <created>1589699119970</created>
@@ -722,7 +699,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593979782437</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="changed approach to extract date from file name">
+      <created>1593997675371</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1593997675372</updated>
+    </task>
+    <task id="LOCAL-00115" summary="changed approach to extract date from file name">
+      <created>1594007084383</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1594007084384</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TodoView">
@@ -738,12 +729,12 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2907916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2956381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3849315" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.3849315" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -769,7 +760,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug in preprocess text" />
     <MESSAGE value="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier" />
     <MESSAGE value="hypertuning the alpha value" />
     <MESSAGE value="added function to generate confusion matrix from test set" />
@@ -794,14 +784,15 @@
     <MESSAGE value="changed variable names to match closer with actual purpose" />
     <MESSAGE value="added line to avoid redundancy in code" />
     <MESSAGE value="removed syntax errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed syntax errors" />
+    <MESSAGE value="changed approach to extract date from file name" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed approach to extract date from file name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Classifier.py</url>
-          <line>468</line>
+          <line>469</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -855,18 +846,6 @@
     <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC TfidfVectorizer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unnormalized graph LinearSVC TfidfVectorizer.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB TfidfVectorizer.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/normalized graph LinearSVC TfidfVectorizer.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -880,13 +859,10 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="117" column="61" lean-forward="true" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+        <state relative-caret-position="1710">
+          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
@@ -897,23 +873,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph LinearSVC TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/normalized graph LinearSVC TfidfVectorizer.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="126" column="48" lean-forward="true" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+        <state relative-caret-position="218">
+          <caret line="412" column="5" lean-forward="true" selection-start-line="412" selection-start-column="5" selection-end-line="412" selection-end-column="5" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <marker date="1593997660157" expanded="true" signature="2207:10382" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="3239:3482" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="3919:3922" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="3977:3982" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="5777:5780" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="5838:10382" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="6642:10382" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="6721:8432" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="8006:8432" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="10197:10382" ph="..." />
-            <marker date="1593997660157" expanded="true" signature="10248:10355" ph="..." />
           </folding>
         </state>
       </provider>

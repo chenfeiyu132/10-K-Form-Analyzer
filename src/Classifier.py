@@ -403,7 +403,7 @@ if __name__ == "__main__":
     ])
     # different parameter settings to test out
     mnb_params = {
-        'mnb__alpha': [.2],
+        'mnb__alpha': np.linspace(0, 2, 10),
         'mnb__fit_prior': [True],
         'tfidf_pipeline__ngram_range': [(1,2)],
         'tfidf_pipeline__max_df': [.5, .7, 1.0],
@@ -461,18 +461,18 @@ if __name__ == "__main__":
     full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
                                                                                 df_all_forms['disclosure'],
                                                                                 test_size=0.2, random_state=85)
-    # print('mnb with tfidf')
+    print('mnb with tfidf')
     print('-'*20)
     cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
-    print('mnb with countvec')
-    print('-'*20)
-    cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
-    print('svm with tfidf')
-    print('-'*20)
-    cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
-    print('svm with count vectorizer')
-    print('-'*20)
-    cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
+    # print('mnb with countvec')
+    # print('-'*20)
+    # cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
+    # print('svm with tfidf')
+    # print('-'*20)
+    # cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+    # print('svm with count vectorizer')
+    # print('-'*20)
+    # cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)
 
 
 
