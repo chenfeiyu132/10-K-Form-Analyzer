@@ -257,8 +257,8 @@ def plot_confusion_matrix(y_true, y_pred, classes,
     return ax
 
 
-def filename_exists(target_directory, filename):
-    return (filename + '.txt') in os.listdir(directory) or (filename + '.html') in os.listdir(directory)
+def filename_exists(target_directory, file_name):
+    return (file_name + '.txt') in os.listdir(target_directory) or (file_name + '.html') in os.listdir(target_directory)
 
 if __name__ == "__main__":
     path_to_csv = 'label_reference.csv' if sys.platform == 'darwin' else 'src/label_reference.csv'
