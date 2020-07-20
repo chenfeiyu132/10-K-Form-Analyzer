@@ -120,13 +120,16 @@ def output_csv(csvname, fields, paths, directory_name):
     writer.writerow(fields)
     for path in paths:
         for file_name in os.listdir(directory_name + path):
-            page = open(directory_name + path + file_name)
-            soup = bs(page.read(), "lxml")
-            date = file_name.split('10-K')[1].split('.')[0][-10:]
-            company_name = file_name.split('-')[1]
-            cik = file_name.split('-')[0]
-            label = 0 if path == paths[0] else 1
-            writer.writerow([cik, company_name, date, process_text(soup.text), label]);
+            try:
+                page = open(directory_name + path + file_name)
+                soup = bs(page.read(), "lxml")
+                date = file_name.split('10-K')[1].split('.')[0][-10:]
+                company_name = file_name.split('-')[1]
+                cik = file_name.split('-')[0]
+                label = 0 if path == paths[0] else 1
+                writer.writerow([cik, company_name, date, process_text(soup.text), label]);
+            except:
+                print(file_name)
     csv_out.close()
 
 
