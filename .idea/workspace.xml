@@ -34,7 +34,7 @@
     <session id="2023454949">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.14" value="1" />
@@ -43,19 +43,20 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="2" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="html" value="3" />
           <entry key="png" value="19" />
           <entry key="py" value="13" />
@@ -67,7 +68,7 @@
           <entry key="CSV" value="2" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="19" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="12" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -75,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33162" />
-          <entry key="txt" value="4626" />
+          <entry key="py" value="33185" />
+          <entry key="txt" value="4677" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4663" />
-          <entry key="Python" value="32920" />
+          <entry key="PLAIN_TEXT" value="4714" />
+          <entry key="Python" value="32943" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -110,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="319" column="74" lean-forward="true" selection-start-line="319" selection-start-column="74" selection-end-line="319" selection-end-column="74" />
+            <state relative-caret-position="276">
+              <caret line="319" column="48" lean-forward="true" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -173,6 +174,7 @@
       <find>dataset[index]</find>
       <find>non_pros</find>
       <find>pros</find>
+      <find>filename</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,11 +219,6 @@
             <path>
               <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
               <item name="10-K-Form-Analyzer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="10-K-Form-Analyzer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="10-K-Form-Analyzer" type="b2602c69:ProjectViewProjectNode" />
@@ -374,13 +371,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
-      <created>1589840861618</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1589840861618</updated>
     </task>
     <task id="LOCAL-00072" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
       <created>1589841762979</created>
@@ -718,7 +708,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595215995523</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="fixing error with non-existent date for files">
+      <created>1595706988694</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1595706988694</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TodoView">
@@ -734,7 +731,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2956381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30048466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -765,7 +762,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added function to automatically train with pipeline and params and produce confusion matrix" />
     <MESSAGE value="trying to fix issue with ubuntu's inability to access pipeline indices" />
     <MESSAGE value="added count vectorizer testing for NB" />
     <MESSAGE value="added count vectorizer to analysis" />
@@ -790,7 +786,8 @@
     <MESSAGE value="fixed bug in detecting if file exists in disclosure or non disclosure directories" />
     <MESSAGE value="fixed error in extracting date" />
     <MESSAGE value="debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging" />
+    <MESSAGE value="fixing error with non-existent date for files" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing error with non-existent date for files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -828,9 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graph?.png" />
     <entry file="file://$PROJECT_DIR$/src/normalized graph.png" />
     <entry file="file://$PROJECT_DIR$/src/unnormalized graph.png" />
@@ -864,6 +858,13 @@
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="132" column="6" lean-forward="true" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
@@ -895,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="319" column="74" lean-forward="true" selection-start-line="319" selection-start-column="74" selection-end-line="319" selection-end-column="74" />
+        <state relative-caret-position="276">
+          <caret line="319" column="48" lean-forward="true" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
