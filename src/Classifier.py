@@ -123,7 +123,7 @@ def output_csv(csvname, fields, paths, directory_name):
             try:
                 page = open(directory_name + path + file_name)
                 soup = bs(page.read(), "lxml")
-                date = file_name.split('10-K')[1].split('.')[0][-10:]
+                date = re.match('.*dddd-dd-dd.*', file_name)
                 company_name = file_name.split('-')[1]
                 cik = file_name.split('-')[0]
                 label = 0 if path == paths[0] else 1
@@ -317,7 +317,7 @@ if __name__ == "__main__":
                 print('Quarter found to be {0}'.format(quarter))
             if file != '':
                 head, tail = os.path.split(file)
-                filename = tail.split('.')[0]
+                filename = tail.split('.html')[0] or tail.split('.txt')[0]
                 tail = filename + '.html'
                 if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
                     continue
