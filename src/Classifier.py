@@ -406,13 +406,13 @@ if __name__ == "__main__":
     ])
     # different parameter settings to test out
     mnb_params = {
-        'mnb__alpha': np.linspace(0, 2, 10),
+        'mnb__alpha': [.4],
         'mnb__fit_prior': [True],
         'tfidf_pipeline__ngram_range': [(1,2)],
-        'tfidf_pipeline__max_df': [.5, .7, 1.0],
-        'tfidf_pipeline__min_df': [2],
-        'tfidf_pipeline__binary': [True],
-        'tfidf_pipeline__norm': [None],
+        'tfidf_pipeline__max_df': [.5],
+        'tfidf_pipeline__min_df': np.linspace(1, 10, 10),
+        'tfidf_pipeline__binary': [True, False],
+        'tfidf_pipeline__norm': [None, 'l1', 'l2'],
     }
     mnbcount_params = {
         'mnb__alpha': [.3],
