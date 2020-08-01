@@ -76,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33185" />
-          <entry key="txt" value="4677" />
+          <entry key="py" value="33290" />
+          <entry key="txt" value="4763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4714" />
-          <entry key="Python" value="32943" />
+          <entry key="PLAIN_TEXT" value="4800" />
+          <entry key="Python" value="33048" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -111,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="319" column="48" lean-forward="true" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="412" column="52" lean-forward="true" selection-start-line="412" selection-start-column="52" selection-end-line="412" selection-end-column="52" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -371,20 +371,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
-      <created>1589841762979</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1589841762979</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Implemented top terms function to take any linear classifier with coef_ attribute and outputs the top terms from the features associated with the classifier">
-      <created>1589841834686</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1589841834686</updated>
     </task>
     <task id="LOCAL-00074" summary="hypertuning the alpha value">
       <created>1589858491862</created>
@@ -715,7 +701,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595706988694</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="fixing error correctly extracting file name">
+      <created>1595711232899</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1595711232900</updated>
+    </task>
+    <task id="LOCAL-00122" summary="hyperparameter tuning">
+      <created>1595718761685</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1595718761685</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TodoView">
@@ -762,8 +762,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trying to fix issue with ubuntu's inability to access pipeline indices" />
-    <MESSAGE value="added count vectorizer testing for NB" />
     <MESSAGE value="added count vectorizer to analysis" />
     <MESSAGE value="fixed bug with featurenames" />
     <MESSAGE value="added null accuracy as part of the cross validaiton test" />
@@ -787,7 +785,9 @@
     <MESSAGE value="fixed error in extracting date" />
     <MESSAGE value="debugging" />
     <MESSAGE value="fixing error with non-existent date for files" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing error with non-existent date for files" />
+    <MESSAGE value="fixing error correctly extracting file name" />
+    <MESSAGE value="hyperparameter tuning" />
+    <option name="LAST_COMMIT_MESSAGE" value="hyperparameter tuning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -896,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="319" column="48" lean-forward="true" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
+        <state relative-caret-position="170">
+          <caret line="412" column="52" lean-forward="true" selection-start-line="412" selection-start-column="52" selection-end-line="412" selection-end-column="52" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

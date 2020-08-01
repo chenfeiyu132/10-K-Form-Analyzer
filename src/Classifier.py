@@ -317,7 +317,7 @@ if __name__ == "__main__":
                 print('Quarter found to be {0}'.format(quarter))
             if file != '':
                 head, tail = os.path.split(file)
-                filename = tail.split('.txt')[0]
+                filename = os.path.splitext(tail)[0]
                 tail = filename + '.html'
                 if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
                     continue
@@ -410,7 +410,7 @@ if __name__ == "__main__":
         'mnb__fit_prior': [True],
         'tfidf_pipeline__ngram_range': [(1,2)],
         'tfidf_pipeline__max_df': [.5],
-        'tfidf_pipeline__min_df': np.linspace(1, 10, 10),
+        'tfidf_pipeline__min_df': np.arrange(1, 10),
         'tfidf_pipeline__binary': [True, False],
         'tfidf_pipeline__norm': [None, 'l1', 'l2'],
     }
