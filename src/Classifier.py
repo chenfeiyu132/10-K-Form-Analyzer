@@ -411,9 +411,9 @@ if __name__ == "__main__":
         'mnb__fit_prior': [True],
         'tfidf_pipeline__ngram_range': [(1,2)],
         'tfidf_pipeline__max_df': [.5],
-        'tfidf_pipeline__min_df': np.arange(1, 10),
+        'tfidf_pipeline__min_df': [4],
         'tfidf_pipeline__binary': [True, False],
-        'tfidf_pipeline__norm': [None, 'l1', 'l2'],
+        'tfidf_pipeline__norm': [None],
     }
     mnbcount_params = {
         'mnb__alpha': [.3],
@@ -424,13 +424,13 @@ if __name__ == "__main__":
     }
     svm_params = {
         'linearsvm__C': np.arange(0.01, 100, 10),
-        'linearsvm__penalty': ['l2'],
+        'linearsvm__penalty': ['l1', 'l2'],
         'linearsvm__dual': [False],
         'linearsvm__max_iter': [1000],
         'tfidf_pipeline__ngram_range': [(1,2)],
-        'tfidf_pipeline__min_df': [2],
+        'tfidf_pipeline__min_df': np.arange(1, 10),
         'tfidf_pipeline__binary': [True],
-        'tfidf_pipeline__norm': [None],
+        'tfidf_pipeline__norm': [None, 'l1', 'l2'],
     }
     svmcount_params = {
         'countvec__ngram_range': [(1, 2)],
@@ -465,15 +465,15 @@ if __name__ == "__main__":
     full_text_train, full_text_test, label_train, label_test = train_test_split(df_all_forms['full text'],
                                                                                 df_all_forms['disclosure'],
                                                                                 test_size=0.2, random_state=85)
-    print('mnb with tfidf')
-    print('-'*20)
-    cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
+    # print('mnb with tfidf')
+    # print('-'*20)
+    # cross_validation_cm(mnb_pipeline, mnb_params, full_text_train, full_text_test, label_train, label_test)
     # print('mnb with countvec')
     # print('-'*20)
     # cross_validation_cm(mnbcount_pipeline, mnbcount_params, full_text_train, full_text_test, label_train, label_test)
-    # print('svm with tfidf')
-    # print('-'*20)
-    # cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
+    print('svm with tfidf')
+    print('-'*20)
+    cross_validation_cm(svm_pipeline, svm_params, full_text_train, full_text_test, label_train, label_test)
     # print('svm with count vectorizer')
     # print('-'*20)
     # cross_validation_cm(svmcount_pipeline, svmcount_params, full_text_train, full_text_test, label_train, label_test)

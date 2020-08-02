@@ -76,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33290" />
+          <entry key="py" value="33376" />
           <entry key="txt" value="4763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="4800" />
-          <entry key="Python" value="33048" />
+          <entry key="Python" value="33134" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -95,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+            <state relative-caret-position="1005">
+              <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
@@ -111,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="412" column="52" lean-forward="true" selection-start-line="412" selection-start-column="52" selection-end-line="412" selection-end-column="52" />
+            <state relative-caret-position="323">
+              <caret line="428" column="38" lean-forward="true" selection-start-line="428" selection-start-column="38" selection-end-line="428" selection-end-column="38" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -371,20 +371,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00074" summary="hypertuning the alpha value">
-      <created>1589858491862</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1589858491862</updated>
-    </task>
-    <task id="LOCAL-00075" summary="added function to generate confusion matrix from test set">
-      <created>1590200511090</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1590200511091</updated>
     </task>
     <task id="LOCAL-00076" summary="added graphs">
       <created>1590205023966</created>
@@ -715,7 +701,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595718761685</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="hyperparameter tuning">
+      <created>1596320636307</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1596320636307</updated>
+    </task>
+    <task id="LOCAL-00124" summary="hyperparameter tuning">
+      <created>1596345340790</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1596345340790</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TodoView">
@@ -794,7 +794,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Classifier.py</url>
-          <line>472</line>
+          <line>473</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -865,20 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
-            <marker date="1593899926835" expanded="true" signature="2344:2345" ph="..." />
-            <marker date="1593899926835" expanded="true" signature="2393:2402" ph="..." />
-            <marker date="1593899926835" expanded="true" signature="2558:2559" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/unnormalized graph MultinomialNB CountVectorizer.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -894,10 +880,24 @@
     <entry file="file://$PROJECT_DIR$/src/normalized graph LinearSVC.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/HTML_Extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1593899926835" expanded="true" signature="372:374" ph="..." />
+            <marker date="1593899926835" expanded="true" signature="2344:2345" ph="..." />
+            <marker date="1593899926835" expanded="true" signature="2393:2402" ph="..." />
+            <marker date="1593899926835" expanded="true" signature="2558:2559" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="412" column="52" lean-forward="true" selection-start-line="412" selection-start-column="52" selection-end-line="412" selection-end-column="52" />
+        <state relative-caret-position="323">
+          <caret line="428" column="38" lean-forward="true" selection-start-line="428" selection-start-column="38" selection-end-line="428" selection-end-column="38" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
