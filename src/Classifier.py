@@ -318,6 +318,7 @@ if __name__ == "__main__":
             if file != '':
                 head, tail = os.path.split(file)
                 filename = os.path.splitext(tail)[0]
+                print(filename)
                 tail = filename + '.html'
                 if filename_exists(directory + 'Disclosure/', filename) or filename_exists(directory + 'Non_Disclosure/', filename):
                     continue
@@ -359,33 +360,33 @@ if __name__ == "__main__":
     # Splitting dataset for classification
     y = [int(disclosure) for disclosure in df_all_forms['disclosure']]
 
-    # performing Naive Bayes test
-    print('MultinomialNB analysis with tfidf...\n')
-    top_termsNB(df_all_forms['full text'], y, tfidf)
-    print('-'*20, '\n')
-    print('MultinomialNB analysis with countvectorizer...\n')
-    top_termsNB(df_all_forms['full text'], y, countv)
-    print('-'*20, '\n')
-    print('Linear SVM analysis with tfidf...\n')
-    X = tfidf.fit_transform(df_all_forms['full text'])
-    feature_names = tfidf.get_feature_names()
-    svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-    svm.fit(X, y)
-    top_terms(svm, feature_names)
-    print('-'*20, '\n')
-    print('Linear SVM analysis with tfidf...\n')
-    X = countv.fit_transform(df_all_forms['full text'])
-    feature_names = countv.get_feature_names()
-    svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
-    svm.fit(X, y)
-    top_terms(svm, feature_names)
-    print('-'*20, '\n')
-    print('Chi2 analysis with tfidf...\n')
+    # # performing Naive Bayes test
+    # print('MultinomialNB analysis with tfidf...\n')
+    # top_termsNB(df_all_forms['full text'], y, tfidf)
+    # print('-'*20, '\n')
+    # print('MultinomialNB analysis with countvectorizer...\n')
+    # top_termsNB(df_all_forms['full text'], y, countv)
+    # print('-'*20, '\n')
+    # print('Linear SVM analysis with tfidf...\n')
+    # X = tfidf.fit_transform(df_all_forms['full text'])
+    # feature_names = tfidf.get_feature_names()
+    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    # svm.fit(X, y)
+    # top_terms(svm, feature_names)
+    # print('-'*20, '\n')
+    # print('Linear SVM analysis with tfidf...\n')
+    # X = countv.fit_transform(df_all_forms['full text'])
+    # feature_names = countv.get_feature_names()
+    # svm = LinearSVC(C=0.01, dual=False, max_iter=1000, penalty='l2')
+    # svm.fit(X, y)
+    # top_terms(svm, feature_names)
+    # print('-'*20, '\n')
+    # print('Chi2 analysis with tfidf...\n')
 
     # performing chi2 test
-    chi2_analysis(tfidf, df_all_forms, 20)
-    print('Chi2 analysis with countvectorizer...\n')
-    chi2_analysis(countv, df_all_forms, 20)
+    # chi2_analysis(tfidf, df_all_forms, 20)
+    # print('Chi2 analysis with countvectorizer...\n')
+    # chi2_analysis(countv, df_all_forms, 20)
 
 
     mnb_pipeline = Pipeline([
@@ -410,7 +411,7 @@ if __name__ == "__main__":
         'mnb__fit_prior': [True],
         'tfidf_pipeline__ngram_range': [(1,2)],
         'tfidf_pipeline__max_df': [.5],
-        'tfidf_pipeline__min_df': np.arrange(1, 10),
+        'tfidf_pipeline__min_df': np.arange(1, 10),
         'tfidf_pipeline__binary': [True, False],
         'tfidf_pipeline__norm': [None, 'l1', 'l2'],
     }
