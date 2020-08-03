@@ -424,9 +424,9 @@ if __name__ == "__main__":
     }
     svm_params = {
         'linearsvm__C': np.arange(0.01, 100, 10),
-        'linearsvm__penalty': ['l1', 'l2'],
+        'linearsvm__penalty': ['l2'],
         'linearsvm__dual': [False],
-        'linearsvm__max_iter': [1000],
+        'linearsvm__max_iter': [100],
         'tfidf_pipeline__ngram_range': [(1,2)],
         'tfidf_pipeline__min_df': np.arange(1, 10),
         'tfidf_pipeline__binary': [True],
