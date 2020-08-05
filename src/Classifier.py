@@ -423,14 +423,14 @@ if __name__ == "__main__":
         'countvec__min_df': [2]
     }
     svm_params = {
-        'linearsvm__C': np.arange(0.01, 100, 10),
+        'linearsvm__C': [20],
         'linearsvm__penalty': ['l2'],
         'linearsvm__dual': [False],
         'linearsvm__max_iter': [10000],
         'tfidf_pipeline__ngram_range': [(1,2)],
-        'tfidf_pipeline__min_df': [2],
+        'tfidf_pipeline__min_df': np.arrange(1, 10),
         'tfidf_pipeline__binary': [True],
-        'tfidf_pipeline__norm': [None, 'l1', 'l2'],
+        'tfidf_pipeline__norm': ['l2'],
     }
     svmcount_params = {
         'countvec__ngram_range': [(1, 2)],
