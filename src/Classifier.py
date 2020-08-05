@@ -423,12 +423,12 @@ if __name__ == "__main__":
         'countvec__min_df': [2]
     }
     svm_params = {
-        'linearsvm__C': [20],
+        'linearsvm__C': np.linspace(1, 1000, 9),
         'linearsvm__penalty': ['l2'],
         'linearsvm__dual': [False],
         'linearsvm__max_iter': [10000],
         'tfidf_pipeline__ngram_range': [(1,2)],
-        'tfidf_pipeline__min_df': np.arange(0, 10),
+        'tfidf_pipeline__min_df': [6],
         'tfidf_pipeline__binary': [True],
         'tfidf_pipeline__norm': ['l2'],
     }

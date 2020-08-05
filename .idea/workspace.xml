@@ -76,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33407" />
+          <entry key="py" value="33448" />
           <entry key="txt" value="4763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="4800" />
-          <entry key="Python" value="33165" />
+          <entry key="Python" value="33206" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -111,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="430" column="50" selection-start-line="430" selection-start-column="50" selection-end-line="430" selection-end-column="50" />
+            <state relative-caret-position="308">
+              <caret line="425" column="46" selection-start-line="425" selection-start-column="46" selection-end-line="425" selection-end-column="46" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -371,20 +371,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00080" summary="trying to fix issue with ubuntu's inability to access pipeline indices">
-      <created>1590285319269</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1590285319269</updated>
-    </task>
-    <task id="LOCAL-00081" summary="trying to fix issue with ubuntu's inability to access pipeline indices">
-      <created>1590285564716</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1590285564716</updated>
     </task>
     <task id="LOCAL-00082" summary="added count vectorizer testing for NB">
       <created>1590431867656</created>
@@ -715,7 +701,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596590702447</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="hyperparameter tuning">
+      <created>1596592324037</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1596592324038</updated>
+    </task>
+    <task id="LOCAL-00130" summary="hyperparameter tuning">
+      <created>1596592995512</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1596592995512</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TodoView">
@@ -896,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="430" column="50" selection-start-line="430" selection-start-column="50" selection-end-line="430" selection-end-column="50" />
+        <state relative-caret-position="308">
+          <caret line="425" column="46" selection-start-line="425" selection-start-column="46" selection-end-line="425" selection-end-column="46" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
