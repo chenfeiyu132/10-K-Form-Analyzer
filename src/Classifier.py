@@ -428,7 +428,7 @@ if __name__ == "__main__":
         'linearsvm__dual': [False],
         'linearsvm__max_iter': [10000],
         'tfidf_pipeline__ngram_range': [(1,2)],
-        'tfidf_pipeline__min_df': np.arrange(1, 10),
+        'tfidf_pipeline__min_df': np.arange(0, 10),
         'tfidf_pipeline__binary': [True],
         'tfidf_pipeline__norm': ['l2'],
     }
