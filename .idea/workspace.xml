@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="" />
+    <list default="true" id="c6347184-7ca9-4219-9e39-f21c89fcbaa5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classifier.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +75,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="py" value="33448" />
-          <entry key="txt" value="4763" />
+          <entry key="py" value="33505" />
+          <entry key="txt" value="4776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4800" />
-          <entry key="Python" value="33206" />
+          <entry key="PLAIN_TEXT" value="4813" />
+          <entry key="Python" value="33263" />
           <entry key="RegExp" value="6" />
           <entry key="Scratch" value="236" />
         </counts>
@@ -108,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="425" column="46" selection-start-line="425" selection-start-column="46" selection-end-line="425" selection-end-column="46" />
+            <state relative-caret-position="203">
+              <caret line="409" column="28" selection-start-line="409" selection-start-column="28" selection-end-line="409" selection-end-column="28" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -368,20 +370,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576843847230</updated>
-    </task>
-    <task id="LOCAL-00083" summary="added count vectorizer testing for NB">
-      <created>1590433090382</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1590433090383</updated>
-    </task>
-    <task id="LOCAL-00084" summary="added count vectorizer testing for NB">
-      <created>1590433154603</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1590433154603</updated>
     </task>
     <task id="LOCAL-00085" summary="added count vectorizer to analysis">
       <created>1590437115377</created>
@@ -712,7 +700,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596602553241</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="hyperparameter tuning for mnbcount">
+      <created>1596763945252</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1596763945252</updated>
+    </task>
+    <task id="LOCAL-00133" summary="hyperparameter tuning for mnbcount">
+      <created>1596763979795</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1596763979795</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TodoView">
@@ -759,7 +761,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added count vectorizer to analysis" />
     <MESSAGE value="fixed bug with featurenames" />
     <MESSAGE value="added null accuracy as part of the cross validaiton test" />
     <MESSAGE value="added ratio testing for nb analysis" />
@@ -784,7 +785,8 @@
     <MESSAGE value="fixing error with non-existent date for files" />
     <MESSAGE value="fixing error correctly extracting file name" />
     <MESSAGE value="hyperparameter tuning" />
-    <option name="LAST_COMMIT_MESSAGE" value="hyperparameter tuning" />
+    <MESSAGE value="hyperparameter tuning for mnbcount" />
+    <option name="LAST_COMMIT_MESSAGE" value="hyperparameter tuning for mnbcount" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -893,8 +895,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="425" column="46" selection-start-line="425" selection-start-column="46" selection-end-line="425" selection-end-column="46" />
+        <state relative-caret-position="203">
+          <caret line="409" column="28" selection-start-line="409" selection-start-column="28" selection-end-line="409" selection-end-column="28" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

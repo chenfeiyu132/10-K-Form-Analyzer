@@ -420,7 +420,7 @@ if __name__ == "__main__":
         'mnb__fit_prior': [True],
         'countvec__ngram_range': [(1,2)],
         'countvec__max_df': [.5],
-        'countvec__min_df': np.arange(1, 10)
+        'countvec__min_df': [4]
     }
     svm_params = {
         'linearsvm__C': 130,
