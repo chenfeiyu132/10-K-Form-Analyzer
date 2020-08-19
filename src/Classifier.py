@@ -416,7 +416,7 @@ if __name__ == "__main__":
         'tfidf_pipeline__norm': [None],
     }
     mnbcount_params = {
-        'mnb__alpha': 1.7,
+        'mnb__alpha': [1.7],
         'mnb__fit_prior': [True],
         'countvec__ngram_range': [(1,2)],
         'countvec__max_df': [.5],
