@@ -416,11 +416,11 @@ if __name__ == "__main__":
         'tfidf_pipeline__norm': [None],
     }
     mnbcount_params = {
-        'mnb__alpha': np.linspace(0.1, 5, 10),
+        'mnb__alpha': 1.7,
         'mnb__fit_prior': [True],
         'countvec__ngram_range': [(1,2)],
         'countvec__max_df': [.5],
-        'countvec__min_df': [4]
+        'countvec__min_df': np.arange(1, 10)
     }
     svm_params = {
         'linearsvm__C': 130,
